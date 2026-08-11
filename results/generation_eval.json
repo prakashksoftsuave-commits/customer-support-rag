@@ -1,0 +1,68 @@
+{
+  "cited": [
+    {
+      "question": "How long does a password reset link stay valid before it expires?",
+      "table_based": false,
+      "answer": "A password reset link is valid for 30 minutes for security reasons [source: kb-account-001::section_aware::6].",
+      "source_chunk_ids": [
+        "kb-account-001::section_aware::6",
+        "kb-account-001::section_aware::10",
+        "kb-account-001::section_aware::5",
+        "kb-account-001::section_aware::1"
+      ]
+    },
+    {
+      "question": "Can someone with the Commenter role edit the actual content of a document?",
+      "table_based": false,
+      "answer": "No, a Commenter can only add comments without editing the content [source: kb-share-003::section_aware::6].",
+      "source_chunk_ids": [
+        "kb-share-003::section_aware::6",
+        "kb-share-003::section_aware::0",
+        "kb-share-003::section_aware::3",
+        "kb-share-003::section_aware::8"
+      ]
+    },
+    {
+      "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
+      "table_based": true,
+      "answer": "The error code `NB\u2011SYNC\u2011101` may appear briefly during rapid file edits but resolves automatically [source: kb-errors-006::section_aware::8].",
+      "source_chunk_ids": [
+        "kb-errors-006::section_aware::8",
+        "kb-errors-006::section_aware::1",
+        "kb-errors-006::section_aware::5",
+        "kb-errors-006::section_aware::7"
+      ]
+    }
+  ],
+  "refusals": [
+    {
+      "question": "What's the refund policy if I cancel my subscription in the middle of a billing cycle?",
+      "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+      "correctly_refused": true
+    },
+    {
+      "question": "Can I still recover a file after its trash retention period has ended?",
+      "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+      "correctly_refused": true
+    },
+    {
+      "question": "Is there a native Nimbus desktop app for Linux?",
+      "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+      "correctly_refused": true
+    }
+  ],
+  "ambiguous": [
+    {
+      "question": "How do I stop getting notifications?",
+      "note": "Could resolve to the notifications article (muting a folder / per-event toggles) or the mobile article (OS-level push permission). Used to show how retrieval spreads across articles for an underspecified question, and how a product_area filter would disambiguate it.",
+      "retrieved_article_ids": [
+        "kb-notify-005",
+        "kb-notify-005",
+        "kb-notify-005",
+        "kb-notify-005",
+        "kb-notify-005"
+      ],
+      "spans_multiple_articles": false
+    }
+  ]
+}

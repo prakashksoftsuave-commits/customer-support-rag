@@ -1,0 +1,1381 @@
+{
+  "profiles": {
+    "recursive_small": {
+      "strategy": "recursive",
+      "chunk_size": 280,
+      "chunk_overlap": 40,
+      "hit_in_top_3": "8/8",
+      "per_question_top_3": [
+        {
+          "question": "How long does a password reset link stay valid before it expires?",
+          "table_based": false,
+          "expected_article_id": "kb-account-001",
+          "retrieved": [
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_small::38",
+              "score": 0.5728
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_small::31",
+              "score": 0.5448
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::12",
+              "score": 0.5126
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "When two devices edit the same file before syncing, what happens to the older version?",
+          "table_based": false,
+          "expected_article_id": "kb-sync-002",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::8",
+              "score": 0.6567
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::30",
+              "score": 0.5257
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::4",
+              "score": 0.523
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What is the maximum size allowed for a single file upload?",
+          "table_based": false,
+          "expected_article_id": "kb-sync-002",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::10",
+              "score": 0.6509
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::20",
+              "score": 0.5135
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::7",
+              "score": 0.4869
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "Can someone with the Commenter role edit the actual content of a document?",
+          "table_based": false,
+          "expected_article_id": "kb-share-003",
+          "retrieved": [
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_small::9",
+              "score": 0.3168
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_small::24",
+              "score": 0.3115
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::17",
+              "score": 0.2799
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "If I turn off email notifications for every individual event, does that also stop the weekly digest email?",
+          "table_based": false,
+          "expected_article_id": "kb-notify-005",
+          "retrieved": [
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_small::12",
+              "score": 0.5966
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_small::20",
+              "score": 0.5225
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_small::5",
+              "score": 0.5215
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::14",
+              "score": 0.822
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::30",
+              "score": 0.6828
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::4",
+              "score": 0.6795
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::12",
+              "score": 0.6788
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::14",
+              "score": 0.5445
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::13",
+              "score": 0.5427
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What should I do about error code NB-SHARE-512?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::16",
+              "score": 0.6044
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::14",
+              "score": 0.59
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::4",
+              "score": 0.579
+            }
+          ],
+          "hit": true
+        }
+      ],
+      "hit_in_top_5": "8/8",
+      "per_question_top_5": [
+        {
+          "question": "How long does a password reset link stay valid before it expires?",
+          "table_based": false,
+          "expected_article_id": "kb-account-001",
+          "retrieved": [
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_small::38",
+              "score": 0.5728
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_small::31",
+              "score": 0.5448
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::12",
+              "score": 0.5126
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_small::11",
+              "score": 0.4573
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_small::20",
+              "score": 0.4515
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "When two devices edit the same file before syncing, what happens to the older version?",
+          "table_based": false,
+          "expected_article_id": "kb-sync-002",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::8",
+              "score": 0.6567
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::30",
+              "score": 0.5257
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::4",
+              "score": 0.523
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::11",
+              "score": 0.5199
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::19",
+              "score": 0.5079
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What is the maximum size allowed for a single file upload?",
+          "table_based": false,
+          "expected_article_id": "kb-sync-002",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::10",
+              "score": 0.6509
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::20",
+              "score": 0.5135
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::7",
+              "score": 0.4869
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::4",
+              "score": 0.4348
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::23",
+              "score": 0.4291
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "Can someone with the Commenter role edit the actual content of a document?",
+          "table_based": false,
+          "expected_article_id": "kb-share-003",
+          "retrieved": [
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_small::9",
+              "score": 0.3168
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_small::24",
+              "score": 0.3115
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::17",
+              "score": 0.2799
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_small::0",
+              "score": 0.2708
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_small::23",
+              "score": 0.2564
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "If I turn off email notifications for every individual event, does that also stop the weekly digest email?",
+          "table_based": false,
+          "expected_article_id": "kb-notify-005",
+          "retrieved": [
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_small::12",
+              "score": 0.5966
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_small::20",
+              "score": 0.5225
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_small::5",
+              "score": 0.5215
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_small::22",
+              "score": 0.3981
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_small::9",
+              "score": 0.3944
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::14",
+              "score": 0.822
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::30",
+              "score": 0.6828
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::4",
+              "score": 0.6795
+            },
+            {
+              "article_id": "kb-mobile-004",
+              "chunk_id": "kb-mobile-004::recursive_small::15",
+              "score": 0.6457
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::21",
+              "score": 0.5603
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::12",
+              "score": 0.6788
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::14",
+              "score": 0.5445
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::13",
+              "score": 0.5427
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_small::25",
+              "score": 0.4717
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_small::38",
+              "score": 0.4521
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What should I do about error code NB-SHARE-512?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::16",
+              "score": 0.6044
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::14",
+              "score": 0.59
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::4",
+              "score": 0.579
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::17",
+              "score": 0.5766
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::22",
+              "score": 0.5473
+            }
+          ],
+          "hit": true
+        }
+      ]
+    },
+    "recursive_large": {
+      "strategy": "recursive",
+      "chunk_size": 900,
+      "chunk_overlap": 120,
+      "hit_in_top_3": "8/8",
+      "per_question_top_3": [
+        {
+          "question": "How long does a password reset link stay valid before it expires?",
+          "table_based": false,
+          "expected_article_id": "kb-account-001",
+          "retrieved": [
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::12",
+              "score": 0.4906
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::18",
+              "score": 0.4293
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::10",
+              "score": 0.4177
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "When two devices edit the same file before syncing, what happens to the older version?",
+          "table_based": false,
+          "expected_article_id": "kb-sync-002",
+          "retrieved": [
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::0",
+              "score": 0.4875
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::1",
+              "score": 0.462
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::2",
+              "score": 0.4289
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What is the maximum size allowed for a single file upload?",
+          "table_based": false,
+          "expected_article_id": "kb-sync-002",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::2",
+              "score": 0.4248
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::5",
+              "score": 0.3636
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::1",
+              "score": 0.3563
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "Can someone with the Commenter role edit the actual content of a document?",
+          "table_based": false,
+          "expected_article_id": "kb-share-003",
+          "retrieved": [
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_large::7",
+              "score": 0.2525
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_large::5",
+              "score": 0.2
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_large::0",
+              "score": 0.1929
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "If I turn off email notifications for every individual event, does that also stop the weekly digest email?",
+          "table_based": false,
+          "expected_article_id": "kb-notify-005",
+          "retrieved": [
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_large::3",
+              "score": 0.5887
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_large::5",
+              "score": 0.4291
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_large::0",
+              "score": 0.4114
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::10",
+              "score": 0.7418
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::7",
+              "score": 0.6427
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::0",
+              "score": 0.6299
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::4",
+              "score": 0.6099
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::12",
+              "score": 0.5344
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::8",
+              "score": 0.462
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What should I do about error code NB-SHARE-512?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::5",
+              "score": 0.6305
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::0",
+              "score": 0.6174
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::7",
+              "score": 0.5718
+            }
+          ],
+          "hit": true
+        }
+      ],
+      "hit_in_top_5": "8/8",
+      "per_question_top_5": [
+        {
+          "question": "How long does a password reset link stay valid before it expires?",
+          "table_based": false,
+          "expected_article_id": "kb-account-001",
+          "retrieved": [
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::12",
+              "score": 0.4906
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::18",
+              "score": 0.4293
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::10",
+              "score": 0.4177
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::13",
+              "score": 0.4096
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::4",
+              "score": 0.3843
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "When two devices edit the same file before syncing, what happens to the older version?",
+          "table_based": false,
+          "expected_article_id": "kb-sync-002",
+          "retrieved": [
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::0",
+              "score": 0.4875
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::1",
+              "score": 0.462
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::2",
+              "score": 0.4289
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::2",
+              "score": 0.4272
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::6",
+              "score": 0.4084
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What is the maximum size allowed for a single file upload?",
+          "table_based": false,
+          "expected_article_id": "kb-sync-002",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::2",
+              "score": 0.4248
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::5",
+              "score": 0.3636
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::1",
+              "score": 0.3563
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::2",
+              "score": 0.3502
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::6",
+              "score": 0.3099
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "Can someone with the Commenter role edit the actual content of a document?",
+          "table_based": false,
+          "expected_article_id": "kb-share-003",
+          "retrieved": [
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_large::7",
+              "score": 0.2525
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_large::5",
+              "score": 0.2
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_large::0",
+              "score": 0.1929
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::5",
+              "score": 0.1633
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_large::2",
+              "score": 0.1553
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "If I turn off email notifications for every individual event, does that also stop the weekly digest email?",
+          "table_based": false,
+          "expected_article_id": "kb-notify-005",
+          "retrieved": [
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_large::3",
+              "score": 0.5887
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_large::5",
+              "score": 0.4291
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_large::0",
+              "score": 0.4114
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_large::6",
+              "score": 0.3925
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::recursive_large::8",
+              "score": 0.3674
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::10",
+              "score": 0.7418
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::7",
+              "score": 0.6427
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::0",
+              "score": 0.6299
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::9",
+              "score": 0.5635
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::3",
+              "score": 0.5587
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::4",
+              "score": 0.6099
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::12",
+              "score": 0.5344
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::8",
+              "score": 0.462
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::10",
+              "score": 0.4378
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::10",
+              "score": 0.4167
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What should I do about error code NB-SHARE-512?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::5",
+              "score": 0.6305
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::0",
+              "score": 0.6174
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::7",
+              "score": 0.5718
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::10",
+              "score": 0.525
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::3",
+              "score": 0.5233
+            }
+          ],
+          "hit": true
+        }
+      ]
+    },
+    "section_aware": {
+      "strategy": "section_aware",
+      "chunk_size": null,
+      "chunk_overlap": null,
+      "hit_in_top_3": "8/8",
+      "per_question_top_3": [
+        {
+          "question": "How long does a password reset link stay valid before it expires?",
+          "table_based": false,
+          "expected_article_id": "kb-account-001",
+          "retrieved": [
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::6",
+              "score": 0.4696
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::10",
+              "score": 0.4293
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::5",
+              "score": 0.4123
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "When two devices edit the same file before syncing, what happens to the older version?",
+          "table_based": false,
+          "expected_article_id": "kb-sync-002",
+          "retrieved": [
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::1",
+              "score": 0.551
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::2",
+              "score": 0.4596
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::3",
+              "score": 0.448
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What is the maximum size allowed for a single file upload?",
+          "table_based": false,
+          "expected_article_id": "kb-sync-002",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::3",
+              "score": 0.4157
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::5",
+              "score": 0.3721
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::2",
+              "score": 0.3511
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "Can someone with the Commenter role edit the actual content of a document?",
+          "table_based": false,
+          "expected_article_id": "kb-share-003",
+          "retrieved": [
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::section_aware::6",
+              "score": 0.2525
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::section_aware::0",
+              "score": 0.2009
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::section_aware::3",
+              "score": 0.1592
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "If I turn off email notifications for every individual event, does that also stop the weekly digest email?",
+          "table_based": false,
+          "expected_article_id": "kb-notify-005",
+          "retrieved": [
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::section_aware::1",
+              "score": 0.4494
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::section_aware::6",
+              "score": 0.4291
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::section_aware::7",
+              "score": 0.3948
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::8",
+              "score": 0.7418
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::1",
+              "score": 0.6869
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::5",
+              "score": 0.6332
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::6",
+              "score": 0.5041
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::8",
+              "score": 0.4378
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::5",
+              "score": 0.4294
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What should I do about error code NB-SHARE-512?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::1",
+              "score": 0.5777
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::5",
+              "score": 0.5643
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::0",
+              "score": 0.5446
+            }
+          ],
+          "hit": true
+        }
+      ],
+      "hit_in_top_5": "8/8",
+      "per_question_top_5": [
+        {
+          "question": "How long does a password reset link stay valid before it expires?",
+          "table_based": false,
+          "expected_article_id": "kb-account-001",
+          "retrieved": [
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::6",
+              "score": 0.4696
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::10",
+              "score": 0.4293
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::5",
+              "score": 0.4123
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::1",
+              "score": 0.3414
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::8",
+              "score": 0.3352
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "When two devices edit the same file before syncing, what happens to the older version?",
+          "table_based": false,
+          "expected_article_id": "kb-sync-002",
+          "retrieved": [
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::1",
+              "score": 0.551
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::2",
+              "score": 0.4596
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::3",
+              "score": 0.448
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::3",
+              "score": 0.4216
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::0",
+              "score": 0.4145
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What is the maximum size allowed for a single file upload?",
+          "table_based": false,
+          "expected_article_id": "kb-sync-002",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::3",
+              "score": 0.4157
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::5",
+              "score": 0.3721
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::2",
+              "score": 0.3511
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::3",
+              "score": 0.3402
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::5",
+              "score": 0.3199
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "Can someone with the Commenter role edit the actual content of a document?",
+          "table_based": false,
+          "expected_article_id": "kb-share-003",
+          "retrieved": [
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::section_aware::6",
+              "score": 0.2525
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::section_aware::0",
+              "score": 0.2009
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::section_aware::3",
+              "score": 0.1592
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::section_aware::8",
+              "score": 0.1519
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::section_aware::6",
+              "score": 0.1457
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "If I turn off email notifications for every individual event, does that also stop the weekly digest email?",
+          "table_based": false,
+          "expected_article_id": "kb-notify-005",
+          "retrieved": [
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::section_aware::1",
+              "score": 0.4494
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::section_aware::6",
+              "score": 0.4291
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::section_aware::7",
+              "score": 0.3948
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::section_aware::4",
+              "score": 0.3904
+            },
+            {
+              "article_id": "kb-notify-005",
+              "chunk_id": "kb-notify-005::section_aware::2",
+              "score": 0.3728
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::8",
+              "score": 0.7418
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::1",
+              "score": 0.6869
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::5",
+              "score": 0.6332
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::7",
+              "score": 0.5545
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::7",
+              "score": 0.5337
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::6",
+              "score": 0.5041
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::8",
+              "score": 0.4378
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::5",
+              "score": 0.4294
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::8",
+              "score": 0.4148
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::4",
+              "score": 0.3985
+            }
+          ],
+          "hit": true
+        },
+        {
+          "question": "What should I do about error code NB-SHARE-512?",
+          "table_based": true,
+          "expected_article_id": "kb-errors-006",
+          "retrieved": [
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::1",
+              "score": 0.5777
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::5",
+              "score": 0.5643
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::0",
+              "score": 0.5446
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::8",
+              "score": 0.525
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::7",
+              "score": 0.4395
+            }
+          ],
+          "hit": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "known_answer_questions": [
+    {
+      "question": "How long does a password reset link stay valid before it expires?",
+      "expected_article_id": "kb-account-001",
+      "expected_section": "Resetting a forgotten password",
+      "table_based": false
+    },
+    {
+      "question": "When two devices edit the same file before syncing, what happens to the older version?",
+      "expected_article_id": "kb-sync-002",
+      "expected_section": "Resolving sync conflicts between two edited copies",
+      "table_based": false
+    },
+    {
+      "question": "What is the maximum size allowed for a single file upload?",
+      "expected_article_id": "kb-sync-002",
+      "expected_section": "Upload fails for files larger than 2 GB",
+      "table_based": false
+    },
+    {
+      "question": "Can someone with the Commenter role edit the actual content of a document?",
+      "expected_article_id": "kb-share-003",
+      "expected_section": "Viewer, Commenter, and Editor roles explained",
+      "table_based": false
+    },
+    {
+      "question": "If I turn off email notifications for every individual event, does that also stop the weekly digest email?",
+      "expected_article_id": "kb-notify-005",
+      "expected_section": "Weekly digest emails: what they include",
+      "table_based": false
+    },
+    {
+      "question": "What does error code NB‑SYNC‑101 mean and how do I fix it?",
+      "expected_article_id": "kb-errors-006",
+      "expected_section": "Sync and upload errors",
+      "table_based": true
+    },
+    {
+      "question": "I got NB-AUTH-410 when using my password reset link — what does that mean?",
+      "expected_article_id": "kb-errors-006",
+      "expected_section": "Account and sign-in errors",
+      "table_based": true
+    },
+    {
+      "question": "What should I do about error code NB-SHARE-512?",
+      "expected_article_id": "kb-errors-006",
+      "expected_section": "Sharing errors",
+      "table_based": true
+    }
+  ],
+  "ambiguous_questions": [
+    {
+      "question": "How do I stop getting notifications?",
+      "note": "Could resolve to the notifications article (muting a folder / per-event toggles) or the mobile article (OS-level push permission). Used to show how retrieval spreads across articles for an underspecified question, and how a product_area filter would disambiguate it."
+    }
+  ],
+  "out_of_corpus_questions": [
+    "What's the refund policy if I cancel my subscription in the middle of a billing cycle?",
+    "Can I still recover a file after its trash retention period has ended?",
+    "Is there a native Nimbus desktop app for Linux?"
+  ]
+}
