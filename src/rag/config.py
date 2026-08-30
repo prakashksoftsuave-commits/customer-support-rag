@@ -12,7 +12,7 @@ KB_DIR = ROOT_DIR / "data" / "kb"
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
-GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
 EMBED_MODEL = os.getenv("EMBED_MODEL", "all-MiniLM-L6-v2")
 
 

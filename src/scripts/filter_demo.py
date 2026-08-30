@@ -1,5 +1,8 @@
 """Show a query where a product_area metadata filter changes the top-1 retrieved chunk."""
 
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
 import json
 
 from src.rag.chain import product_area_filter

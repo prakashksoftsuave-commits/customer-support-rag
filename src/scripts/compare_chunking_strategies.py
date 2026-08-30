@@ -1,6 +1,9 @@
 """Compare retrieval across chunking strategies (and chunk-size/overlap within one strategy),
 at both Top-3 and Top-5, on the same 8 known-answer questions."""
 
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
 import json
 
 from src.rag.config import CHUNK_PROFILES, ROOT_DIR

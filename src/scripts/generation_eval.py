@@ -1,6 +1,9 @@
 """Run cited answers (mixing prose and table-based questions), confirm refusal on
 out-of-corpus questions, and show how an ambiguous question spreads across articles."""
 
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
 import json
 
 from src.rag.chain import REFUSAL_TEXT, answer_question, get_llm
