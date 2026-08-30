@@ -1,10 +1,10 @@
-from qdrant_client.http import models as qmodels
 from langchain_core.documents import Document
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 from sentence_transformers import CrossEncoder
 from src.rag.config import GROQ_API_KEY, GROQ_MODEL
+from src.rag.vectorstore import product_area_filter
 
 REFUSAL_TEXT = "I don't know — the help center articles I have don't cover that."
 
@@ -12,6 +12,8 @@ SYSTEM_PROMPT = f"""You are a support assistant for Nimbus, a cloud file-sync pr
 Answer the user's question using ONLY the excerpts inside the Context block below.
 
 Rules:
+- Every factual claim must end with a citation in the form [source: <chunk_id>], using the full chunk_id
+shown above each excerpt.
 - If the Context does not fully contain the answer, respond with exactly this sentence and nothing else: \
 "{REFUSAL_TEXT}"
 - Never use outside knowledge, and never guess to fill a gap in the Context, even if you believe you know \
@@ -26,18 +28,8 @@ PROMPT = ChatPromptTemplate.from_messages(
 )
 
 
-def product_area_filter(product_area: str) -> qmodels.Filter:
-    return qmodels.Filter(
-        must=[
-            qmodels.FieldCondition(
-                key="metadata.product_area", match=qmodels.MatchValue(value=product_area)
-            )
-        ]
-    )
-
-
 def format_docs(docs: list[Document]) -> str:
-    return "\n\n".join(f"{d.page_content}" for d in docs)
+    return "\n\n".join(f"[source: {d.metadata['chunk_id']}]\n{d.page_content}" for d in docs)
 
 
 def get_llm() -> ChatGroq:
@@ -126,31 +118,21 @@ def answer_question(
     product_area: str | None = None,
     use_hybrid: bool = False,
     use_rerank: bool = False,
-    use_query_rewrite: bool = False,
 ) -> tuple[str, list[Document]]:
-    """Retrieve, optionally rewrite query, optionally rerank, then answer.
-    Returns (answer, source_docs).
-    """
+    """Retrieve, optionally rerank, then answer. Returns (answer, source_docs)."""
     llm = llm or get_llm()
-    # Query rewriting placeholder (HyDE)
-    effective_query = question
-    if use_query_rewrite:
-        # TODO: implement actual rewriting via LLM
-        effective_query = question
-    # Retrieval (semantic + optional hybrid)
-    docs = retrieve(
-        vectorstore,
-        effective_query,
-        k=k,
-        product_area=product_area,
-        use_hybrid=use_hybrid,
-    )
-    # Optional reranking
+    docs = retrieve(vectorstore, question, k=k, product_area=product_area, use_hybrid=use_hybrid)
     if use_rerank:
         reranker = get_reranker()
-        docs = rerank_docs(docs, effective_query, reranker)
+        docs = rerank_docs(docs, question, reranker)
     chain = PROMPT | llm | StrOutputParser()
-    answer = chain.invoke({"context": format_docs(docs), "question": effective_query})
+    answer = chain.invoke({"context": format_docs(docs), "question": question})
+    # The model sometimes cites the article_id instead of the full chunk_id — normalize it.
+    for d in docs:
+        article_id = d.metadata.get("article_id")
+        chunk_id = d.metadata.get("chunk_id")
+        if article_id and chunk_id:
+            answer = answer.replace(f"[source: {article_id}]", f"[source: {chunk_id}]")
     return answer, docs
 
 def get_reranker() -> CrossEncoder:

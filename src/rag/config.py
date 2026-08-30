@@ -8,7 +8,13 @@ load_dotenv()
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 KB_DIR = ROOT_DIR / "data" / "kb"
-# Qdrant server (Docker), so collections/vectors are browsable at localhost:6333/dashboard.
+
+# Which vector store backend to use — "faiss" (local files, no server, no grpc — the default,
+# since qdrant-client's grpc dependency is blocked by this machine's Application Control Policy)
+# or "qdrant" (Docker server, browsable dashboard — switch back to this on a machine without
+# that restriction by setting VECTOR_BACKEND=qdrant, no code changes needed).
+VECTOR_BACKEND = os.getenv("VECTOR_BACKEND", "faiss")
+FAISS_DIR = os.getenv("FAISS_DIR", str(ROOT_DIR / "data" / "faiss_storage"))
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
@@ -43,3 +49,10 @@ SECTION_AWARE = ChunkProfile(
 )
 
 CHUNK_PROFILES = [RECURSIVE_SMALL, RECURSIVE_LARGE, SECTION_AWARE]
+
+# Used for arbitrary user-uploaded files (pdf/docx/md/txt) — those don't reliably have
+# markdown "##" headers to split on, so section_aware doesn't apply; plain recursive does.
+UPLOAD_PROFILE = ChunkProfile(
+    name="upload_recursive", strategy="recursive", collection="uploaded_docs",
+    chunk_size=500, chunk_overlap=75,
+)

@@ -1,0 +1,34 @@
+{
+  "failing_questions": [
+    {
+      "question": "I keep getting logged out and my files won't upload, what's going on?",
+      "expected_article_id": "kb-account-001",
+      "note": "Compound question blending two topics (session/logout + upload). The session-timeout content is semantically thinner than the sync/upload content pulled in by the other half of the question."
+    },
+    {
+      "question": "My files keep failing to upload and I had to sign in again, why?",
+      "expected_article_id": "kb-account-001",
+      "note": "Same compound pattern, upload-heavy phrasing dominates."
+    },
+    {
+      "question": "Every time I try to sync a big file my session ends and I'm logged out",
+      "expected_article_id": "kb-account-001",
+      "note": "Same compound pattern; 'sync a big file' pulls hard toward kb-sync-002."
+    },
+    {
+      "question": "Nothing uploads and I don't get any alerts about it either",
+      "expected_article_id": "kb-sync-002",
+      "note": "Compound question blending sync failure + missing notifications; notifications content dominates."
+    },
+    {
+      "question": "My account keeps disconnecting whenever I try to move a lot of files",
+      "expected_article_id": "kb-account-001",
+      "note": "Same compound pattern as above, phrased around 'disconnecting' during bulk file moves."
+    },
+    {
+      "question": "My connection to the workspace drops during big file transfers, why?",
+      "expected_article_id": "kb-account-001",
+      "note": "Same compound pattern; 'connection drops' + 'file transfers' skews toward kb-sync-002."
+    }
+  ]
+}

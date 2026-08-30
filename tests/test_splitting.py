@@ -20,7 +20,7 @@ def test_recursive_chunks_stay_within_profile_size_budget():
 def test_section_aware_never_splits_a_table_from_its_header_row():
     documents = load_kb_documents()
     chunks = split_documents(documents, SECTION_AWARE)
-    table_chunks = [c for c in chunks if "| Code | Meaning | Fix |" in c.page_content]
+    table_chunks = [c for c in chunks if "| Code | Meaning | Common Cause | Recommended Resolution |" in c.page_content]
     assert table_chunks, "expected at least one chunk to contain a full troubleshooting table"
     for chunk in table_chunks:
         assert "NB-" in chunk.page_content
