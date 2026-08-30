@@ -1,5 +1,8 @@
 """Ingest the Nimbus help-center KB into Qdrant under every chunking strategy/profile."""
 
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
 from src.rag.config import CHUNK_PROFILES
 from src.rag.loader import load_kb_documents
 from src.rag.splitting import split_documents

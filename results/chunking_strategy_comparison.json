@@ -19,12 +19,12 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_small::31",
-              "score": 0.5448
+              "score": 0.5463
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::12",
-              "score": 0.5126
+              "score": 0.4977
             }
           ],
           "hit": true
@@ -37,17 +37,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::8",
-              "score": 0.6567
-            },
-            {
-              "article_id": "kb-sync-002",
-              "chunk_id": "kb-sync-002::recursive_small::30",
-              "score": 0.5257
+              "score": 0.6414
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::4",
               "score": 0.523
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::11",
+              "score": 0.5199
             }
           ],
           "hit": true
@@ -60,7 +60,7 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::10",
-              "score": 0.6509
+              "score": 0.6219
             },
             {
               "article_id": "kb-sync-002",
@@ -70,7 +70,7 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::7",
-              "score": 0.4869
+              "score": 0.4863
             }
           ],
           "hit": true
@@ -82,18 +82,18 @@
           "retrieved": [
             {
               "article_id": "kb-share-003",
-              "chunk_id": "kb-share-003::recursive_small::9",
-              "score": 0.3168
-            },
-            {
-              "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_small::24",
               "score": 0.3115
             },
             {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::17",
-              "score": 0.2799
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_small::9",
+              "score": 0.3107
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_small::0",
+              "score": 0.2708
             }
           ],
           "hit": true
@@ -111,7 +111,7 @@
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_small::20",
-              "score": 0.5225
+              "score": 0.5241
             },
             {
               "article_id": "kb-notify-005",
@@ -129,17 +129,17 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::14",
-              "score": 0.822
+              "score": 0.8363
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::30",
-              "score": 0.6828
+              "score": 0.6977
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::4",
-              "score": 0.6795
+              "score": 0.6833
             }
           ],
           "hit": true
@@ -152,17 +152,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::12",
-              "score": 0.6788
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::14",
-              "score": 0.5445
+              "score": 0.6628
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::13",
-              "score": 0.5427
+              "score": 0.571
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::14",
+              "score": 0.5533
             }
           ],
           "hit": true
@@ -173,19 +173,19 @@
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::16",
-              "score": 0.6044
-            },
-            {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::14",
-              "score": 0.59
+              "score": 0.61
             },
             {
               "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::4",
-              "score": 0.579
+              "chunk_id": "kb-errors-006::recursive_small::16",
+              "score": 0.608
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::17",
+              "score": 0.5975
             }
           ],
           "hit": true
@@ -206,17 +206,17 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_small::31",
-              "score": 0.5448
+              "score": 0.5463
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::12",
-              "score": 0.5126
+              "score": 0.4977
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_small::11",
-              "score": 0.4573
+              "score": 0.4549
             },
             {
               "article_id": "kb-share-003",
@@ -234,12 +234,7 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::8",
-              "score": 0.6567
-            },
-            {
-              "article_id": "kb-sync-002",
-              "chunk_id": "kb-sync-002::recursive_small::30",
-              "score": 0.5257
+              "score": 0.6414
             },
             {
               "article_id": "kb-sync-002",
@@ -250,6 +245,11 @@
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::11",
               "score": 0.5199
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_small::30",
+              "score": 0.5181
             },
             {
               "article_id": "kb-sync-002",
@@ -267,7 +267,7 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::10",
-              "score": 0.6509
+              "score": 0.6219
             },
             {
               "article_id": "kb-sync-002",
@@ -277,7 +277,7 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::7",
-              "score": 0.4869
+              "score": 0.4863
             },
             {
               "article_id": "kb-sync-002",
@@ -287,7 +287,7 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::23",
-              "score": 0.4291
+              "score": 0.4285
             }
           ],
           "hit": true
@@ -299,23 +299,23 @@
           "retrieved": [
             {
               "article_id": "kb-share-003",
-              "chunk_id": "kb-share-003::recursive_small::9",
-              "score": 0.3168
-            },
-            {
-              "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_small::24",
               "score": 0.3115
             },
             {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::17",
-              "score": 0.2799
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_small::9",
+              "score": 0.3107
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_small::0",
               "score": 0.2708
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::17",
+              "score": 0.2654
             },
             {
               "article_id": "kb-share-003",
@@ -338,7 +338,7 @@
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_small::20",
-              "score": 0.5225
+              "score": 0.5241
             },
             {
               "article_id": "kb-notify-005",
@@ -366,27 +366,27 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::14",
-              "score": 0.822
+              "score": 0.8363
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::30",
-              "score": 0.6828
+              "score": 0.6977
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::4",
-              "score": 0.6795
+              "score": 0.6833
             },
             {
               "article_id": "kb-mobile-004",
               "chunk_id": "kb-mobile-004::recursive_small::15",
-              "score": 0.6457
+              "score": 0.6591
             },
             {
               "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::21",
-              "score": 0.5603
+              "chunk_id": "kb-errors-006::recursive_small::26",
+              "score": 0.5621
             }
           ],
           "hit": true
@@ -399,22 +399,22 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::12",
-              "score": 0.6788
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::14",
-              "score": 0.5445
+              "score": 0.6628
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::13",
-              "score": 0.5427
+              "score": 0.571
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::14",
+              "score": 0.5533
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_small::25",
-              "score": 0.4717
+              "score": 0.47
             },
             {
               "article_id": "kb-account-001",
@@ -430,29 +430,29 @@
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::16",
-              "score": 0.6044
-            },
-            {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::14",
-              "score": 0.59
+              "score": 0.61
             },
             {
               "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::4",
-              "score": 0.579
+              "chunk_id": "kb-errors-006::recursive_small::16",
+              "score": 0.608
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::17",
-              "score": 0.5766
+              "score": 0.5975
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::4",
+              "score": 0.5847
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::22",
-              "score": 0.5473
+              "score": 0.5546
             }
           ],
           "hit": true
@@ -473,17 +473,17 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::12",
-              "score": 0.4906
+              "score": 0.485
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::18",
-              "score": 0.4293
+              "score": 0.4235
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::10",
-              "score": 0.4177
+              "score": 0.4141
             }
           ],
           "hit": true
@@ -496,12 +496,12 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::0",
-              "score": 0.4875
+              "score": 0.4839
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::1",
-              "score": 0.462
+              "score": 0.4606
             },
             {
               "article_id": "kb-sync-002",
@@ -519,17 +519,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::2",
-              "score": 0.4248
+              "score": 0.4207
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::5",
-              "score": 0.3636
+              "score": 0.3632
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::1",
-              "score": 0.3563
+              "score": 0.3513
             }
           ],
           "hit": true
@@ -542,17 +542,17 @@
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_large::7",
-              "score": 0.2525
+              "score": 0.2526
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_large::5",
-              "score": 0.2
+              "score": 0.2004
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_large::0",
-              "score": 0.1929
+              "score": 0.1913
             }
           ],
           "hit": true
@@ -570,12 +570,12 @@
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::5",
-              "score": 0.4291
+              "score": 0.4329
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::0",
-              "score": 0.4114
+              "score": 0.4124
             }
           ],
           "hit": true
@@ -588,17 +588,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::10",
-              "score": 0.7418
+              "score": 0.7443
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::7",
-              "score": 0.6427
+              "score": 0.6511
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::0",
-              "score": 0.6299
+              "score": 0.6319
             }
           ],
           "hit": true
@@ -611,17 +611,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::4",
-              "score": 0.6099
+              "score": 0.6122
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::12",
-              "score": 0.5344
+              "score": 0.53
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::8",
-              "score": 0.462
+              "score": 0.4601
             }
           ],
           "hit": true
@@ -634,17 +634,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::5",
-              "score": 0.6305
+              "score": 0.633
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::0",
-              "score": 0.6174
+              "score": 0.6172
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::7",
-              "score": 0.5718
+              "score": 0.5812
             }
           ],
           "hit": true
@@ -660,17 +660,17 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::12",
-              "score": 0.4906
+              "score": 0.485
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::18",
-              "score": 0.4293
+              "score": 0.4235
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::10",
-              "score": 0.4177
+              "score": 0.4141
             },
             {
               "article_id": "kb-account-001",
@@ -680,7 +680,7 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::4",
-              "score": 0.3843
+              "score": 0.3691
             }
           ],
           "hit": true
@@ -693,12 +693,12 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::0",
-              "score": 0.4875
+              "score": 0.4839
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::1",
-              "score": 0.462
+              "score": 0.4606
             },
             {
               "article_id": "kb-sync-002",
@@ -708,12 +708,12 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::2",
-              "score": 0.4272
+              "score": 0.4282
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::6",
-              "score": 0.4084
+              "score": 0.407
             }
           ],
           "hit": true
@@ -726,17 +726,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::2",
-              "score": 0.4248
+              "score": 0.4207
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::5",
-              "score": 0.3636
+              "score": 0.3632
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::1",
-              "score": 0.3563
+              "score": 0.3513
             },
             {
               "article_id": "kb-sync-002",
@@ -746,7 +746,7 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::6",
-              "score": 0.3099
+              "score": 0.3081
             }
           ],
           "hit": true
@@ -759,27 +759,27 @@
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_large::7",
-              "score": 0.2525
+              "score": 0.2526
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_large::5",
-              "score": 0.2
+              "score": 0.2004
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_large::0",
-              "score": 0.1929
+              "score": 0.1913
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::5",
-              "score": 0.1633
+              "score": 0.1618
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_large::2",
-              "score": 0.1553
+              "score": 0.1517
             }
           ],
           "hit": true
@@ -797,22 +797,22 @@
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::5",
-              "score": 0.4291
+              "score": 0.4329
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::0",
-              "score": 0.4114
+              "score": 0.4124
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::6",
-              "score": 0.3925
+              "score": 0.3932
             },
             {
               "article_id": "kb-notify-005",
-              "chunk_id": "kb-notify-005::recursive_large::8",
-              "score": 0.3674
+              "chunk_id": "kb-notify-005::recursive_large::2",
+              "score": 0.366
             }
           ],
           "hit": true
@@ -825,27 +825,27 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::10",
-              "score": 0.7418
+              "score": 0.7443
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::7",
-              "score": 0.6427
+              "score": 0.6511
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::0",
-              "score": 0.6299
+              "score": 0.6319
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::9",
-              "score": 0.5635
+              "score": 0.5662
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::3",
-              "score": 0.5587
+              "score": 0.5657
             }
           ],
           "hit": true
@@ -858,27 +858,27 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::4",
-              "score": 0.6099
+              "score": 0.6122
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::12",
-              "score": 0.5344
+              "score": 0.53
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::8",
-              "score": 0.462
+              "score": 0.4601
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::10",
-              "score": 0.4378
+              "score": 0.4347
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::10",
-              "score": 0.4167
+              "score": 0.415
             }
           ],
           "hit": true
@@ -891,27 +891,27 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::5",
-              "score": 0.6305
+              "score": 0.633
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::0",
-              "score": 0.6174
+              "score": 0.6172
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::7",
-              "score": 0.5718
+              "score": 0.5812
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::10",
-              "score": 0.525
+              "score": 0.5324
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::3",
-              "score": 0.5233
+              "score": 0.5296
             }
           ],
           "hit": true
@@ -932,17 +932,17 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::6",
-              "score": 0.4696
+              "score": 0.466
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::10",
-              "score": 0.4293
+              "score": 0.4235
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::5",
-              "score": 0.4123
+              "score": 0.4097
             }
           ],
           "hit": true
@@ -955,17 +955,17 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::1",
-              "score": 0.551
+              "score": 0.5487
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::2",
-              "score": 0.4596
+              "score": 0.4585
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::3",
-              "score": 0.448
+              "score": 0.4351
             }
           ],
           "hit": true
@@ -978,17 +978,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::3",
-              "score": 0.4157
+              "score": 0.4163
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::5",
-              "score": 0.3721
+              "score": 0.3722
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::2",
-              "score": 0.3511
+              "score": 0.3466
             }
           ],
           "hit": true
@@ -1001,17 +1001,17 @@
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::6",
-              "score": 0.2525
+              "score": 0.2526
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::0",
-              "score": 0.2009
+              "score": 0.1993
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::3",
-              "score": 0.1592
+              "score": 0.1535
             }
           ],
           "hit": true
@@ -1024,17 +1024,17 @@
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::1",
-              "score": 0.4494
+              "score": 0.4456
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::6",
-              "score": 0.4291
+              "score": 0.4329
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::7",
-              "score": 0.3948
+              "score": 0.3952
             }
           ],
           "hit": true
@@ -1047,17 +1047,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::8",
-              "score": 0.7418
+              "score": 0.7443
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::1",
-              "score": 0.6869
+              "score": 0.6876
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::5",
-              "score": 0.6332
+              "score": 0.6427
             }
           ],
           "hit": true
@@ -1070,17 +1070,17 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::6",
-              "score": 0.5041
+              "score": 0.4999
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::8",
-              "score": 0.4378
+              "score": 0.4347
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::5",
-              "score": 0.4294
+              "score": 0.4284
             }
           ],
           "hit": true
@@ -1093,12 +1093,12 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::1",
-              "score": 0.5777
+              "score": 0.5801
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::5",
-              "score": 0.5643
+              "score": 0.574
             },
             {
               "article_id": "kb-errors-006",
@@ -1119,27 +1119,27 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::6",
-              "score": 0.4696
+              "score": 0.466
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::10",
-              "score": 0.4293
+              "score": 0.4235
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::5",
-              "score": 0.4123
+              "score": 0.4097
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::1",
-              "score": 0.3414
+              "score": 0.3416
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::8",
-              "score": 0.3352
+              "score": 0.3267
             }
           ],
           "hit": true
@@ -1152,17 +1152,17 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::1",
-              "score": 0.551
+              "score": 0.5487
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::2",
-              "score": 0.4596
+              "score": 0.4585
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::3",
-              "score": 0.448
+              "score": 0.4351
             },
             {
               "article_id": "kb-sync-002",
@@ -1172,7 +1172,7 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::0",
-              "score": 0.4145
+              "score": 0.4129
             }
           ],
           "hit": true
@@ -1185,17 +1185,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::3",
-              "score": 0.4157
+              "score": 0.4163
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::5",
-              "score": 0.3721
+              "score": 0.3722
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::2",
-              "score": 0.3511
+              "score": 0.3466
             },
             {
               "article_id": "kb-sync-002",
@@ -1205,7 +1205,7 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::5",
-              "score": 0.3199
+              "score": 0.3165
             }
           ],
           "hit": true
@@ -1218,27 +1218,27 @@
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::6",
-              "score": 0.2525
+              "score": 0.2526
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::0",
-              "score": 0.2009
+              "score": 0.1993
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::3",
-              "score": 0.1592
+              "score": 0.1535
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::section_aware::5",
+              "score": 0.1451
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::8",
-              "score": 0.1519
-            },
-            {
-              "article_id": "kb-notify-005",
-              "chunk_id": "kb-notify-005::section_aware::6",
-              "score": 0.1457
+              "score": 0.1448
             }
           ],
           "hit": true
@@ -1251,27 +1251,27 @@
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::1",
-              "score": 0.4494
+              "score": 0.4456
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::6",
-              "score": 0.4291
+              "score": 0.4329
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::7",
-              "score": 0.3948
+              "score": 0.3952
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::4",
-              "score": 0.3904
+              "score": 0.3898
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::2",
-              "score": 0.3728
+              "score": 0.3663
             }
           ],
           "hit": true
@@ -1284,27 +1284,27 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::8",
-              "score": 0.7418
+              "score": 0.7443
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::1",
-              "score": 0.6869
+              "score": 0.6876
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::5",
-              "score": 0.6332
+              "score": 0.6427
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::7",
-              "score": 0.5545
+              "score": 0.5537
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::7",
-              "score": 0.5337
+              "score": 0.5403
             }
           ],
           "hit": true
@@ -1317,22 +1317,22 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::6",
-              "score": 0.5041
+              "score": 0.4999
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::8",
-              "score": 0.4378
+              "score": 0.4347
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::5",
-              "score": 0.4294
+              "score": 0.4284
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::8",
-              "score": 0.4148
+              "score": 0.4074
             },
             {
               "article_id": "kb-account-001",
@@ -1350,12 +1350,12 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::1",
-              "score": 0.5777
+              "score": 0.5801
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::5",
-              "score": 0.5643
+              "score": 0.574
             },
             {
               "article_id": "kb-errors-006",
@@ -1365,12 +1365,12 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::8",
-              "score": 0.525
+              "score": 0.5324
             },
             {
               "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::section_aware::7",
-              "score": 0.4395
+              "chunk_id": "kb-errors-006::section_aware::6",
+              "score": 0.4418
             }
           ],
           "hit": true
