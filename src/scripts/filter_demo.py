@@ -21,7 +21,7 @@ def dump(results):
             "article_id": doc.metadata["article_id"],
             "product_area": doc.metadata["product_area"],
             "chunk_id": doc.metadata["chunk_id"],
-            "score": round(score, 4),
+            "score": round(float(score), 4),
             "excerpt": doc.page_content[:160].replace("\n", " "),
         }
         for doc, score in results
@@ -46,7 +46,7 @@ def main() -> None:
     }
 
     OUT_PATH.parent.mkdir(exist_ok=True)
-    OUT_PATH.write_text(json.dumps(report, indent=2))
+    OUT_PATH.write_text(json.dumps(report, indent=2), encoding="utf-8")
 
     print(f"Unfiltered top-1: {report['unfiltered_top1_article_id']}")
     print(f"Filtered (product_area={FILTER_PRODUCT_AREA}) top-1: {report['filtered_top1_article_id']}")

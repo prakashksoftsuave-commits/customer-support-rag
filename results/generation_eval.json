@@ -3,7 +3,7 @@
     {
       "question": "How long does a password reset link stay valid before it expires?",
       "table_based": false,
-      "answer": "A password reset link is valid for 30 minutes for security reasons [source: kb-account-001::section_aware::6].",
+      "answer": "Password reset links remain valid for\u202f30\u202fminutes before they expire.\u202f[source: kb-account-001::section_aware::6]",
       "source_chunk_ids": [
         "kb-account-001::section_aware::6",
         "kb-account-001::section_aware::10",
@@ -14,18 +14,18 @@
     {
       "question": "Can someone with the Commenter role edit the actual content of a document?",
       "table_based": false,
-      "answer": "No, a Commenter can only add comments without editing the content [source: kb-share-003::section_aware::6].",
+      "answer": "No. Commenters can add comments but cannot edit the document\u2019s content\u202f[ source: kb-share-003::section_aware::6 ].",
       "source_chunk_ids": [
         "kb-share-003::section_aware::6",
         "kb-share-003::section_aware::0",
         "kb-share-003::section_aware::3",
-        "kb-share-003::section_aware::8"
+        "kb-share-003::section_aware::5"
       ]
     },
     {
       "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
       "table_based": true,
-      "answer": "The error code `NB\u2011SYNC\u2011101` may appear briefly during rapid file edits but resolves automatically [source: kb-errors-006::section_aware::8].",
+      "answer": "Error\u202f`NB\u2011SYNC\u2011101` is a known false\u2011positive that can pop up briefly when files are edited rapidly; it clears itself automatically and doesn\u2019t require any user action to fix.\u202f[source: kb-errors-006::section_aware::8]",
       "source_chunk_ids": [
         "kb-errors-006::section_aware::8",
         "kb-errors-006::section_aware::1",

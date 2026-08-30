@@ -129,19 +129,32 @@ notifications article.
 ## 7. Grounded answers with citations
 
 3 answerable questions run through the full chain (`section_aware`, k=4), each citation checked
-against its resolved chunk:
+against its resolved chunk. Run live against Groq (`openai/gpt-oss-120b`):
 
 1. **Q:** How long does a password reset link stay valid before it expires?
-   **A:** A password reset link is valid for 30 minutes for security reasons [source: kb-account-001::section_aware::6].
+   **A:** Password reset links remain valid for 30 minutes before they expire. [source: kb-account-001::section_aware::6]
    *Verified citation chunk: `kb-account-001::section_aware::6`.*
 
 2. **Q:** Can someone with the Commenter role edit the actual content of a document?
-   **A:** No, a Commenter can only add comments without editing the content [source: kb-share-003::section_aware::6].
-   *Verified citation chunk: `kb-share-003::section_aware::6`.*
+   **A:** No. Commenters can add comments but cannot edit the document's content [ source: kb-share-003::section_aware::6 ].
+   *Verified citation chunk: `kb-share-003::section_aware::6`* (model added extra spaces inside the
+   brackets here — cosmetic, not corrected, since the citation instruction only asks for the
+   `[source: <chunk_id>]` content, not exact whitespace).
 
-3. **Q (table-based):** What does error code NB-SYNC-101 mean and how do I fix it?
-   **A:** The error code `NB‑SYNC‑101` may appear briefly during rapid file edits but resolves automatically [source: kb-errors-006::section_aware::8].
+3. **Q (table-based):** What does error code NB‑SYNC‑101 mean and how do I fix it?
+   **A:** Error `NB‑SYNC‑101` is a known false-positive that can pop up briefly when files are
+   edited rapidly; it clears itself automatically and doesn't require any user action to fix.
+   [source: kb-errors-006::section_aware::8]
    *Verified citation chunk: `kb-errors-006::section_aware::8`.*
+
+**Regression found and fixed while re-verifying this section live:** the citation instruction and
+the `[source: <chunk_id>]` prefix on each context excerpt had been silently dropped from
+`SYSTEM_PROMPT`/`format_docs` in `src/rag/chain.py` at some point (visible in git history — present
+before the Week 4 hybrid/rerank changes, absent after). Answers were still correct, just no longer
+cited anything, which would have failed the "does every answer show which document it came from?"
+mentor check. Restored: the citation rule in `SYSTEM_PROMPT`, the `[source: ...]` prefix in
+`format_docs`, and the article_id→chunk_id normalization in `answer_question` (the model
+sometimes cites the shorter article_id instead of the full chunk_id).
 
 ## 8. Refusal examples
 
@@ -186,7 +199,106 @@ retrieval coverage, not because it has a higher Hit@5. For a KB with much longer
 hybrid approach would be the next thing to try: section-aware splitting first, then a secondary
 size cap only for oversized sections.
 
-## 11. Scope note
+## 12. Week 4 — Debugging retrieval: failure labeling and one measured fix
+
+Reproduce with `.venv\Scripts\python -m src.scripts.debug_retrieval` (raw output:
+`results/debug_retrieval.json`). Uses the shipped `section_aware` collection, k=3.
+
+### 12.1 Finding failing questions
+
+The 8 known-answer questions from section 2 all hit 8/8 at Top-3 for every chunking strategy —
+this KB is too small for hit-rate@3 to break on single-topic questions. Real failures showed up
+once the questions became **compound**: a question that genuinely blends two support topics
+(e.g. "session/logout" + "upload"), where the weaker topic's article can get crowded out of
+retrieval entirely by the stronger one.
+
+6 such questions were built and run through baseline (semantic-only) retrieval:
+
+| # | Question | Expected | Baseline Top-3 | Hit@3 |
+|---|---|---|---|---|
+| 1 | "I keep getting logged out and my files won't upload, what's going on?" | kb-account-001 | mobile-004, sync-002, mobile-004 | ❌ |
+| 2 | "My files keep failing to upload and I had to sign in again, why?" | kb-account-001 | sync-002, sync-002, errors-006 | ❌ |
+| 3 | "Every time I try to sync a big file my session ends and I'm logged out" | kb-account-001 | sync-002 ×3 | ❌ |
+| 4 | "Nothing uploads and I don't get any alerts about it either" | kb-sync-002 | notify-005, notify-005, mobile-004 | ❌ |
+| 5 | "My account keeps disconnecting whenever I try to move a lot of files" | kb-account-001 | sync-002 ×3 | ❌ |
+| 6 | "My connection to the workspace drops during big file transfers, why?" | kb-account-001 | sync-002 ×3 | ❌ |
+
+**Baseline hit-rate@3: 0/6.**
+
+### 12.2 Labeling: wrong document fetched, in all 6 cases
+
+For every failure, the expected article was checked against a wider Top-10 pool. In **all 6**,
+the expected article is **absent even from Top-10** — not just poorly ranked, genuinely never
+retrieved. That makes every one of these a **"wrong document fetched"** failure, not a
+generation failure: the LLM never had a chance, because the retrieval step never handed it the
+right source. (None of the 6 produced the other failure kind — "right document, wrong answer" —
+because none of them got the right document into context in the first place. That category is
+implemented and checked in `debug_retrieval.py` whenever `GROQ_API_KEY` is set — running it here
+had no key configured, so it's unexercised, not disproven.)
+
+### 12.3 First hypothesis, ruled out: reranking
+
+Reranking is the cheapest lever already in the app, so it was checked first. It **did not fix a
+single one** — reranked hit-rate@3 stayed **0/6**. This is expected, not a bug: reranking only
+reorders whatever the initial semantic search already retrieved into its candidate pool. If the
+correct article was never in that pool (as confirmed in 12.2), there is nothing for reranking to
+promote. This mirrors the module's own framing: switching to a better ranker doesn't fix a
+retrieval-fetch problem, since the ranker never sees what was never fetched.
+
+### 12.4 The one change measured: hybrid search
+
+Hybrid search (semantic + a keyword-overlap pass, `use_hybrid=True` in `src/rag/chain.py`) was
+applied as the single change, because it targets the actual mechanism of these failures: literal
+words like "logged out" and "session" are exactly what keyword scoring catches, even when the
+embedding model let them get diluted by the sync/upload half of the question.
+
+| # | Question | Hybrid Top-3 | Hit@3 |
+|---|---|---|---|
+| 1 | logged out + upload | mobile-004, sync-002, sync-002 | ❌ |
+| 2 | upload + sign in again | sync-002, sync-002, sync-002 | ❌ |
+| 3 | sync + session ends + logged out | sync-002, **account-001**, sync-002 | ✅ |
+| 4 | uploads + alerts | notify-005, notify-005, notify-005 | ❌ |
+| 5 | account disconnecting + move files | sync-002, errors-006, sync-002 | ❌ |
+| 6 | connection drops + file transfers | sync-002, errors-006, sync-002 | ❌ |
+
+**Hybrid hit-rate@3: 1/6 — up from 0/6 baseline (and 0/6 reranked).**
+
+A real, if modest, win: one genuine fetch failure recovered, from a change that touches nothing
+about generation or ranking — only which documents make it into the candidate pool at all.
+
+### 12.5 What the fix did not fix
+
+5 of 6 stayed misses even with hybrid search on. Question 3, the one that got fixed, uses the
+literal words "session" and "logged out" — exactly what keyword scoring catches. The other five
+either don't contain enough of `kb-account-001`'s literal vocabulary for keyword overlap to catch
+(questions 1, 2, 5, 6 — phrased around "won't upload", "sign in again", "disconnecting",
+"connection drops" rather than "session"/"logged out") or keyword-match toward the wrong article
+entirely (question 4, "uploads" + "alerts" pulls toward `kb-notify-005`, not the expected
+`kb-sync-002`). Naive keyword overlap only helps when the query happens to reuse the source
+article's own words — it doesn't help when the user's phrasing and the article's phrasing just
+don't share vocabulary. Fixing the remainder would need query decomposition/rewriting (splitting
+a compound question into its two intents before retrieving) rather than another retrieval-side
+tweak — deferred, not attempted, to keep this to one change.
+
+### 12.6 Not part of the measured change
+
+`src/rag/chain.py` also exposes `use_rerank` (real cross-encoder, checked above, ruled out for
+this failure set — not disabled, still useful for other cases) and a hybrid toggle in the
+Streamlit UI. Only hybrid search is what's reported as "the fix" above; reranking stayed in the
+app because it's a real, working feature, just not the one that moved this number.
+
+### 12.7 A note on how this was run
+
+This ran through the actual shipped app end-to-end (`.venv\Scripts\python -m
+src.scripts.debug_retrieval`) — not a simulation. The vector backend is FAISS
+(`VECTOR_BACKEND=faiss`, the default in `src/rag/config.py`), not Qdrant: the dev machine used for
+this write-up has a Windows Application Control Policy that blocks `qdrant-client`'s (and, it
+turns out, `chromadb`'s) grpc native extension outright. FAISS has no grpc dependency at all.
+`src/rag/vectorstore.py` keeps the Qdrant code path fully intact behind that one env var —
+`VECTOR_BACKEND=qdrant` switches back with no code changes, for a machine without that
+restriction.
+
+## 13. Scope note
 
 This is a fresh 6-article mock KB built for this practical, not a re-index of a larger historical
 corpus — ingestion (`src/scripts/ingest.py`) only ever touches `data/kb/`.

@@ -30,7 +30,7 @@ def hit_rate(vectorstore, questions, k):
                 {
                     "article_id": doc.metadata["article_id"],
                     "chunk_id": doc.metadata["chunk_id"],
-                    "score": round(score, 4),
+                    "score": round(float(score), 4),
                 }
                 for doc, score in results
             ],
@@ -40,7 +40,7 @@ def hit_rate(vectorstore, questions, k):
 
 
 def main() -> None:
-    questions = json.loads(QUESTIONS_PATH.read_text())["known_answer_questions"]
+    questions = json.loads(QUESTIONS_PATH.read_text(encoding="utf-8"))["known_answer_questions"]
 
     report = {"profiles": {}}
     for profile in CHUNK_PROFILES:
@@ -58,7 +58,7 @@ def main() -> None:
         report["profiles"][profile.name] = profile_report
 
     OUT_PATH.parent.mkdir(exist_ok=True)
-    OUT_PATH.write_text(json.dumps(report, indent=2))
+    OUT_PATH.write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(f"Wrote {OUT_PATH}")
 
 

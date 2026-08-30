@@ -3,6 +3,7 @@ out-of-corpus questions, and show how an ambiguous question spreads across artic
 
 import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+sys.stdout.reconfigure(encoding="utf-8")  # LLM output can contain characters Windows' default console codepage can't print
 
 import json
 
@@ -17,7 +18,7 @@ CITED_INDICES = [0, 3, 5]
 
 
 def main() -> None:
-    data = json.loads(QUESTIONS_PATH.read_text())
+    data = json.loads(QUESTIONS_PATH.read_text(encoding="utf-8"))
     vectorstore = get_vectorstore(SECTION_AWARE.collection)
     llm = get_llm()
 
@@ -54,7 +55,9 @@ def main() -> None:
         })
 
     OUT_PATH.parent.mkdir(exist_ok=True)
-    OUT_PATH.write_text(json.dumps({"cited": cited, "refusals": refusals, "ambiguous": ambiguous}, indent=2))
+    OUT_PATH.write_text(
+        json.dumps({"cited": cited, "refusals": refusals, "ambiguous": ambiguous}, indent=2), encoding="utf-8"
+    )
 
     print("--- Cited answers ---")
     for c in cited:

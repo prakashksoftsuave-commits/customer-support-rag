@@ -1,0 +1,165 @@
+{
+  "k": 3,
+  "baseline_hit_rate_at_3": "0/6",
+  "reranked_hit_rate_at_3": "0/6",
+  "hybrid_hit_rate_at_3": "1/6",
+  "one_change_measured": "hybrid search (semantic + keyword)",
+  "per_question": [
+    {
+      "question": "I keep getting logged out and my files won't upload, what's going on?",
+      "expected_article_id": "kb-account-001",
+      "note": "Compound question blending two topics (session/logout + upload). The session-timeout content is semantically thinner than the sync/upload content pulled in by the other half of the question.",
+      "baseline_top3": [
+        "kb-mobile-004",
+        "kb-sync-002",
+        "kb-mobile-004"
+      ],
+      "baseline_hit": false,
+      "reranked_top3": [
+        "kb-mobile-004",
+        "kb-sync-002",
+        "kb-mobile-004"
+      ],
+      "reranked_hit": false,
+      "hybrid_top3": [
+        "kb-mobile-004",
+        "kb-sync-002",
+        "kb-sync-002"
+      ],
+      "hybrid_hit": false,
+      "fixed_by_hybrid": false,
+      "failure_label": "wrong_document_fetched",
+      "failure_evidence": "expected kb-account-001 absent even from top-10"
+    },
+    {
+      "question": "My files keep failing to upload and I had to sign in again, why?",
+      "expected_article_id": "kb-account-001",
+      "note": "Same compound pattern, upload-heavy phrasing dominates.",
+      "baseline_top3": [
+        "kb-sync-002",
+        "kb-sync-002",
+        "kb-errors-006"
+      ],
+      "baseline_hit": false,
+      "reranked_top3": [
+        "kb-sync-002",
+        "kb-sync-002",
+        "kb-errors-006"
+      ],
+      "reranked_hit": false,
+      "hybrid_top3": [
+        "kb-sync-002",
+        "kb-sync-002",
+        "kb-sync-002"
+      ],
+      "hybrid_hit": false,
+      "fixed_by_hybrid": false,
+      "failure_label": "wrong_document_fetched",
+      "failure_evidence": "expected kb-account-001 absent even from top-10"
+    },
+    {
+      "question": "Every time I try to sync a big file my session ends and I'm logged out",
+      "expected_article_id": "kb-account-001",
+      "note": "Same compound pattern; 'sync a big file' pulls hard toward kb-sync-002.",
+      "baseline_top3": [
+        "kb-sync-002",
+        "kb-sync-002",
+        "kb-sync-002"
+      ],
+      "baseline_hit": false,
+      "reranked_top3": [
+        "kb-sync-002",
+        "kb-sync-002",
+        "kb-sync-002"
+      ],
+      "reranked_hit": false,
+      "hybrid_top3": [
+        "kb-sync-002",
+        "kb-account-001",
+        "kb-sync-002"
+      ],
+      "hybrid_hit": true,
+      "fixed_by_hybrid": true,
+      "failure_label": "wrong_document_fetched",
+      "failure_evidence": "expected kb-account-001 absent even from top-10"
+    },
+    {
+      "question": "Nothing uploads and I don't get any alerts about it either",
+      "expected_article_id": "kb-sync-002",
+      "note": "Compound question blending sync failure + missing notifications; notifications content dominates.",
+      "baseline_top3": [
+        "kb-notify-005",
+        "kb-notify-005",
+        "kb-mobile-004"
+      ],
+      "baseline_hit": false,
+      "reranked_top3": [
+        "kb-notify-005",
+        "kb-notify-005",
+        "kb-mobile-004"
+      ],
+      "reranked_hit": false,
+      "hybrid_top3": [
+        "kb-notify-005",
+        "kb-notify-005",
+        "kb-notify-005"
+      ],
+      "hybrid_hit": false,
+      "fixed_by_hybrid": false,
+      "failure_label": "wrong_document_fetched",
+      "failure_evidence": "expected kb-sync-002 absent even from top-10"
+    },
+    {
+      "question": "My account keeps disconnecting whenever I try to move a lot of files",
+      "expected_article_id": "kb-account-001",
+      "note": "Same compound pattern as above, phrased around 'disconnecting' during bulk file moves.",
+      "baseline_top3": [
+        "kb-sync-002",
+        "kb-sync-002",
+        "kb-sync-002"
+      ],
+      "baseline_hit": false,
+      "reranked_top3": [
+        "kb-share-003",
+        "kb-sync-002",
+        "kb-sync-002"
+      ],
+      "reranked_hit": false,
+      "hybrid_top3": [
+        "kb-sync-002",
+        "kb-errors-006",
+        "kb-sync-002"
+      ],
+      "hybrid_hit": false,
+      "fixed_by_hybrid": false,
+      "failure_label": "wrong_document_fetched",
+      "failure_evidence": "expected kb-account-001 absent even from top-10"
+    },
+    {
+      "question": "My connection to the workspace drops during big file transfers, why?",
+      "expected_article_id": "kb-account-001",
+      "note": "Same compound pattern; 'connection drops' + 'file transfers' skews toward kb-sync-002.",
+      "baseline_top3": [
+        "kb-sync-002",
+        "kb-sync-002",
+        "kb-sync-002"
+      ],
+      "baseline_hit": false,
+      "reranked_top3": [
+        "kb-share-003",
+        "kb-errors-006",
+        "kb-sync-002"
+      ],
+      "reranked_hit": false,
+      "hybrid_top3": [
+        "kb-sync-002",
+        "kb-errors-006",
+        "kb-sync-002"
+      ],
+      "hybrid_hit": false,
+      "fixed_by_hybrid": false,
+      "failure_label": "wrong_document_fetched",
+      "failure_evidence": "expected kb-account-001 absent even from top-10"
+    }
+  ]
+}
