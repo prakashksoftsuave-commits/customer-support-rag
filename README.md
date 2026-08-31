@@ -75,6 +75,8 @@ Run the experiments (each writes its output into `results/`):
 .venv\Scripts\python -m src.scripts.filter_demo
 .venv\Scripts\python -m src.scripts.generation_eval
 .venv\Scripts\python -m src.scripts.debug_retrieval
+.venv\Scripts\python -m src.scripts.collect_traces
+.venv\Scripts\python -m src.scripts.run_evals
 ```
 
 Launch the app:
@@ -119,6 +121,14 @@ fine concurrently. Qdrant mode doesn't have this restriction, since it's a real 
   document, wrong answer"), checks reranking (ruled out — it can't fix a document that was never
   retrieved), then measures hit-rate@3 with hybrid search on vs off. Full breakdown in
   `results/results.md` section 12.
+- **`collect_traces.py`** (Week 5) — collects 20 real traces from a fair, reproducible random
+  sample (fixed seed) of a mixed question pool, for manual error analysis. Write-up:
+  `results/error_analysis.md`.
+- **`run_evals.py`** (Week 6) — the one-command eval suite (`data/eval/eval_suite.json`, 22 cases
+  across 8 problem types, built from Week 4/5's real failures): free rule-based checks first,
+  validates the LLM judge against hand-graded labels before trusting it, then reports
+  before/after scores per problem type for query decomposition — the one change this measures.
+  Write-up: `results/eval_report.md`.
 
 ## Layout
 
@@ -126,11 +136,16 @@ fine concurrently. Qdrant mode doesn't have this restriction, since it's a real 
 data/kb/              the 6 help-center articles (YAML frontmatter + markdown), one is a
                        troubleshooting-table reference (error codes)
 data/eval/            8 known-answer questions, 1 ambiguous question, 3 out-of-corpus questions,
-                       6 known-to-fail compound questions (Week 4)
+                       6 known-to-fail compound questions (Week 4), 15 new stress questions and
+                       the 22-case eval suite (Week 6)
+data/traces/           20 real traces collected for Week 5's error analysis
 src/rag/              loader (built-in KB + pdf/docx/md/txt uploads), splitter, embeddings,
-                       vector store, RAG chain (LangChain) — hybrid search + reranking live here
+                       vector store, RAG chain (LangChain) — hybrid search, reranking, query
+                       decomposition, and the LLM judge all live in chain.py
 src/scripts/          the scripts that produce results/
 src/app/              the Streamlit app (built-in KB or your own uploaded documents)
-results/              results.md write-up + raw JSON output from each experiment
-tests/                loader metadata, chunking invariants, upload-loader edge cases
+results/              results.md (Week 3/4), error_analysis.md (Week 5), eval_report.md
+                       (Week 6) write-ups + raw JSON output from each experiment
+tests/                loader metadata, chunking invariants, upload-loader edge cases, judge
+                       JSON-parsing
 ```

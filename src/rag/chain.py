@@ -1,3 +1,5 @@
+import json
+
 from langchain_core.documents import Document
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
@@ -110,6 +112,92 @@ def retrieve(
     return combined
 
 
+DECOMPOSE_PROMPT = ChatPromptTemplate.from_messages(
+    [
+        (
+            "system",
+            "If the user's question blends two distinct support topics into one message, split it "
+            "into up to 2 separate single-topic questions, one per line, no numbering, no extra text. "
+            "If it's already about one topic, output it unchanged, on one line.",
+        ),
+        ("human", "{question}"),
+    ]
+)
+
+
+def decompose_query(llm: ChatGroq, question: str) -> list[str]:
+    """Split a compound question into its topic-pure halves, so each half retrieves on its own —
+    Week 3 showed single-topic questions retrieve fine; compound phrasing is what dilutes the
+    embedding across two topics at once."""
+    chain = DECOMPOSE_PROMPT | llm | StrOutputParser()
+    raw = chain.invoke({"question": question})
+    sub_questions = [line.strip("- ").strip() for line in raw.splitlines() if line.strip()]
+    return sub_questions[:2] if sub_questions else [question]
+
+
+def retrieve_decomposed(
+    vectorstore, question: str, llm: ChatGroq, k: int = 4, product_area: str | None = None
+) -> list[Document]:
+    """Retrieve k docs per decomposed sub-question, interleaved and capped at k total, so the
+    result is directly comparable to a plain retrieve() call at the same k."""
+    sub_questions = decompose_query(llm, question)
+    if len(sub_questions) == 1:
+        return retrieve(vectorstore, sub_questions[0], k=k, product_area=product_area)
+
+    per_question_docs = [retrieve(vectorstore, q, k=k, product_area=product_area) for q in sub_questions]
+    combined, seen = [], set()
+    iterators = [iter(docs) for docs in per_question_docs]
+    while len(combined) < k and iterators:
+        for it in list(iterators):
+            try:
+                doc = next(it)
+            except StopIteration:
+                iterators.remove(it)
+                continue
+            uid = doc.metadata.get("chunk_id") or doc.metadata.get("article_id")
+            if uid and uid not in seen:
+                combined.append(doc)
+                seen.add(uid)
+                if len(combined) >= k:
+                    break
+    return combined
+
+
+JUDGE_PROMPT = ChatPromptTemplate.from_messages(
+    [
+        (
+            "system",
+            "You are grading a support bot's answer against the context it was given and the question "
+            "asked. Score two things from 1 (worst) to 5 (best):\n"
+            "faithfulness: is every claim in the answer actually supported by the context (no invented "
+            "facts)?\n"
+            "relevancy: does the answer actually address the question asked?\n"
+            'Respond with ONLY a JSON object, no other text: {{"faithfulness": <1-5>, "relevancy": <1-5>}}',
+        ),
+        ("human", "Question: {question}\n\nContext:\n{context}\n\nAnswer: {answer}"),
+    ]
+)
+
+
+def _parse_judge_json(raw: str) -> dict:
+    """Pull {"faithfulness": int, "relevancy": int} out of raw judge output, tolerating the
+    markdown code fences models sometimes wrap JSON in. Returns Nones (not a raised exception)
+    on a parse failure, with the raw text kept so the failure is visible, not silent."""
+    cleaned = raw.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+    try:
+        parsed = json.loads(cleaned)
+        return {"faithfulness": parsed.get("faithfulness"), "relevancy": parsed.get("relevancy"), "raw": raw}
+    except (json.JSONDecodeError, AttributeError):
+        return {"faithfulness": None, "relevancy": None, "raw": raw}
+
+
+def judge_answer(llm: ChatGroq, question: str, context: str, answer: str) -> dict:
+    """LLM-as-judge: score faithfulness and relevancy 1-5."""
+    chain = JUDGE_PROMPT | llm | StrOutputParser()
+    raw = chain.invoke({"question": question, "context": context, "answer": answer})
+    return _parse_judge_json(raw)
+
+
 def answer_question(
     vectorstore,
     question: str,
@@ -118,10 +206,14 @@ def answer_question(
     product_area: str | None = None,
     use_hybrid: bool = False,
     use_rerank: bool = False,
+    use_decompose: bool = False,
 ) -> tuple[str, list[Document]]:
     """Retrieve, optionally rerank, then answer. Returns (answer, source_docs)."""
     llm = llm or get_llm()
-    docs = retrieve(vectorstore, question, k=k, product_area=product_area, use_hybrid=use_hybrid)
+    if use_decompose:
+        docs = retrieve_decomposed(vectorstore, question, llm, k=k, product_area=product_area)
+    else:
+        docs = retrieve(vectorstore, question, k=k, product_area=product_area, use_hybrid=use_hybrid)
     if use_rerank:
         reranker = get_reranker()
         docs = rerank_docs(docs, question, reranker)
