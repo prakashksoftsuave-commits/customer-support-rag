@@ -4,6 +4,7 @@ __pycache__/
 .env
 data/qdrant_storage/
 data/faiss_storage/
+langfuse/.env
 .pytest_cache/
 .streamlit/
 .claude/

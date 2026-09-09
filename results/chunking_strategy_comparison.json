@@ -14,17 +14,17 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_small::38",
-              "score": 0.8545
+              "score": 0.5728
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_small::31",
-              "score": 0.9075
+              "score": 0.5463
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::12",
-              "score": 1.0045
+              "score": 0.4977
             }
           ],
           "hit": true
@@ -37,17 +37,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::8",
-              "score": 0.7172
+              "score": 0.6414
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::4",
-              "score": 0.954
+              "score": 0.523
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::11",
-              "score": 0.9601
+              "score": 0.5199
             }
           ],
           "hit": true
@@ -60,17 +60,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::10",
-              "score": 0.7561
+              "score": 0.6219
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::20",
-              "score": 0.9729
+              "score": 0.5135
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::7",
-              "score": 1.0274
+              "score": 0.4863
             }
           ],
           "hit": true
@@ -83,17 +83,17 @@
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_small::24",
-              "score": 1.377
+              "score": 0.3115
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_small::9",
-              "score": 1.3787
+              "score": 0.3107
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_small::0",
-              "score": 1.4584
+              "score": 0.2708
             }
           ],
           "hit": true
@@ -106,63 +106,63 @@
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_small::12",
-              "score": 0.8068
+              "score": 0.5966
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_small::20",
-              "score": 0.9518
+              "score": 0.5241
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_small::5",
-              "score": 0.9569
+              "score": 0.5215
             }
           ],
           "hit": true
         },
         {
-          "question": "What does error code NB\u00e2\u20ac\u2018SYNC\u00e2\u20ac\u2018101 mean and how do I fix it?",
+          "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
           "table_based": true,
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::14",
-              "score": 0.6533
+              "score": 0.8363
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::30",
+              "score": 0.6977
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::4",
-              "score": 0.8626
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::28",
-              "score": 0.8906
+              "score": 0.6833
             }
           ],
           "hit": true
         },
         {
-          "question": "I got NB-AUTH-410 when using my password reset link \u00e2\u20ac\u201d what does that mean?",
+          "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
           "table_based": true,
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::12",
-              "score": 0.6754
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::14",
-              "score": 0.8824
+              "score": 0.6628
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::13",
-              "score": 0.9043
+              "score": 0.571
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::14",
+              "score": 0.5533
             }
           ],
           "hit": true
@@ -175,17 +175,17 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::14",
-              "score": 0.78
+              "score": 0.61
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::16",
-              "score": 0.7839
+              "score": 0.608
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::17",
-              "score": 0.8051
+              "score": 0.5975
             }
           ],
           "hit": true
@@ -201,27 +201,27 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_small::38",
-              "score": 0.8545
+              "score": 0.5728
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_small::31",
-              "score": 0.9075
+              "score": 0.5463
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::12",
-              "score": 1.0045
+              "score": 0.4977
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_small::11",
-              "score": 1.0903
+              "score": 0.4549
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_small::20",
-              "score": 1.097
+              "score": 0.4515
             }
           ],
           "hit": true
@@ -234,27 +234,27 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::8",
-              "score": 0.7172
+              "score": 0.6414
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::4",
-              "score": 0.954
+              "score": 0.523
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::11",
-              "score": 0.9601
+              "score": 0.5199
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::30",
-              "score": 0.9639
+              "score": 0.5181
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::19",
-              "score": 0.9842
+              "score": 0.5079
             }
           ],
           "hit": true
@@ -267,27 +267,27 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::10",
-              "score": 0.7561
+              "score": 0.6219
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::20",
-              "score": 0.9729
+              "score": 0.5135
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::7",
-              "score": 1.0274
+              "score": 0.4863
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::4",
-              "score": 1.1305
+              "score": 0.4348
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::23",
-              "score": 1.1431
+              "score": 0.4285
             }
           ],
           "hit": true
@@ -300,27 +300,27 @@
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_small::24",
-              "score": 1.377
+              "score": 0.3115
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_small::9",
-              "score": 1.3787
+              "score": 0.3107
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_small::0",
-              "score": 1.4584
+              "score": 0.2708
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::17",
-              "score": 1.4692
+              "score": 0.2654
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_small::23",
-              "score": 1.4872
+              "score": 0.2564
             }
           ],
           "hit": true
@@ -333,93 +333,93 @@
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_small::12",
-              "score": 0.8068
+              "score": 0.5966
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_small::20",
-              "score": 0.9518
+              "score": 0.5241
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_small::5",
-              "score": 0.9569
+              "score": 0.5215
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_small::22",
-              "score": 1.2037
+              "score": 0.3981
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_small::9",
-              "score": 1.2112
+              "score": 0.3827
             }
           ],
           "hit": true
         },
         {
-          "question": "What does error code NB\u00e2\u20ac\u2018SYNC\u00e2\u20ac\u2018101 mean and how do I fix it?",
+          "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
           "table_based": true,
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::14",
-              "score": 0.6533
+              "score": 0.8363
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::30",
+              "score": 0.6977
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::4",
-              "score": 0.8626
+              "score": 0.6833
+            },
+            {
+              "article_id": "kb-mobile-004",
+              "chunk_id": "kb-mobile-004::recursive_small::15",
+              "score": 0.6591
             },
             {
               "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::28",
-              "score": 0.8906
-            },
-            {
-              "article_id": "kb-sync-002",
-              "chunk_id": "kb-sync-002::recursive_small::29",
-              "score": 0.9268
-            },
-            {
-              "article_id": "kb-share-003",
-              "chunk_id": "kb-share-003::recursive_small::30",
-              "score": 0.9383
+              "chunk_id": "kb-errors-006::recursive_small::26",
+              "score": 0.5621
             }
           ],
           "hit": true
         },
         {
-          "question": "I got NB-AUTH-410 when using my password reset link \u00e2\u20ac\u201d what does that mean?",
+          "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
           "table_based": true,
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::12",
-              "score": 0.6754
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_small::14",
-              "score": 0.8824
+              "score": 0.6628
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::13",
-              "score": 0.9043
+              "score": 0.571
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_small::14",
+              "score": 0.5533
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_small::25",
+              "score": 0.47
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_small::38",
-              "score": 1.0999
-            },
-            {
-              "article_id": "kb-sync-002",
-              "chunk_id": "kb-sync-002::recursive_small::29",
-              "score": 1.135
+              "score": 0.4521
             }
           ],
           "hit": true
@@ -432,27 +432,27 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_small::14",
-              "score": 0.78
+              "score": 0.61
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::16",
-              "score": 0.7839
+              "score": 0.608
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::17",
-              "score": 0.8051
+              "score": 0.5975
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::4",
-              "score": 0.8307
+              "score": 0.5847
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_small::22",
-              "score": 0.8907
+              "score": 0.5546
             }
           ],
           "hit": true
@@ -473,17 +473,17 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::12",
-              "score": 1.03
+              "score": 0.5097
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::18",
-              "score": 1.153
+              "score": 0.4235
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::10",
-              "score": 1.1717
+              "score": 0.4141
             }
           ],
           "hit": true
@@ -496,17 +496,17 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::0",
-              "score": 1.0322
+              "score": 0.5314
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::1",
-              "score": 1.0789
+              "score": 0.4606
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::2",
-              "score": 1.1422
+              "score": 0.4289
             }
           ],
           "hit": true
@@ -519,17 +519,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::2",
-              "score": 1.1586
+              "score": 0.4207
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::5",
-              "score": 1.2736
+              "score": 0.3878
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::1",
-              "score": 1.2974
+              "score": 0.3513
             }
           ],
           "hit": true
@@ -542,17 +542,17 @@
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_large::7",
-              "score": 1.4947
-            },
-            {
-              "article_id": "kb-share-003",
-              "chunk_id": "kb-share-003::recursive_large::5",
-              "score": 1.5992
+              "score": 0.2526
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_large::0",
-              "score": 1.6174
+              "score": 0.2049
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_large::5",
+              "score": 0.2004
             }
           ],
           "hit": true
@@ -565,63 +565,63 @@
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::3",
-              "score": 0.8225
+              "score": 0.5887
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::5",
-              "score": 1.1342
+              "score": 0.4329
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::0",
-              "score": 1.1751
+              "score": 0.4326
             }
           ],
           "hit": true
         },
         {
-          "question": "What does error code NB\u00e2\u20ac\u2018SYNC\u00e2\u20ac\u2018101 mean and how do I fix it?",
+          "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
           "table_based": true,
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
               "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_large::0",
-              "score": 0.8771
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_large::9",
-              "score": 0.9782
+              "chunk_id": "kb-errors-006::recursive_large::10",
+              "score": 0.7443
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::7",
-              "score": 0.993
+              "score": 0.6511
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::3",
+              "score": 0.6084
             }
           ],
           "hit": true
         },
         {
-          "question": "I got NB-AUTH-410 when using my password reset link \u00e2\u20ac\u201d what does that mean?",
+          "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
           "table_based": true,
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::4",
-              "score": 0.8366
+              "score": 0.6122
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::12",
-              "score": 1.0181
+              "score": 0.49
             },
             {
-              "article_id": "kb-account-001",
-              "chunk_id": "kb-account-001::recursive_large::8",
-              "score": 1.122
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::10",
+              "score": 0.4347
             }
           ],
           "hit": true
@@ -634,17 +634,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::5",
-              "score": 0.734
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_large::0",
-              "score": 0.7656
+              "score": 0.633
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::7",
-              "score": 0.8376
+              "score": 0.5812
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::0",
+              "score": 0.5467
             }
           ],
           "hit": true
@@ -660,27 +660,27 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::12",
-              "score": 1.03
+              "score": 0.5097
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::18",
-              "score": 1.153
+              "score": 0.4235
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::10",
-              "score": 1.1717
+              "score": 0.4141
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::13",
-              "score": 1.1809
+              "score": 0.4096
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::4",
-              "score": 1.2617
+              "score": 0.3691
             }
           ],
           "hit": true
@@ -693,27 +693,27 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::0",
-              "score": 1.0322
+              "score": 0.5314
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::1",
-              "score": 1.0789
+              "score": 0.4606
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::2",
-              "score": 1.1422
+              "score": 0.4289
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::2",
-              "score": 1.1436
+              "score": 0.4282
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::6",
-              "score": 1.1861
+              "score": 0.407
             }
           ],
           "hit": true
@@ -726,27 +726,27 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::2",
-              "score": 1.1586
+              "score": 0.4207
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::5",
-              "score": 1.2736
+              "score": 0.3878
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::1",
-              "score": 1.2974
+              "score": 0.3513
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::2",
-              "score": 1.2996
+              "score": 0.3502
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::6",
-              "score": 1.3839
+              "score": 0.3081
             }
           ],
           "hit": true
@@ -759,27 +759,27 @@
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_large::7",
-              "score": 1.4947
-            },
-            {
-              "article_id": "kb-share-003",
-              "chunk_id": "kb-share-003::recursive_large::5",
-              "score": 1.5992
+              "score": 0.2526
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_large::0",
-              "score": 1.6174
+              "score": 0.2049
+            },
+            {
+              "article_id": "kb-share-003",
+              "chunk_id": "kb-share-003::recursive_large::5",
+              "score": 0.2004
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::5",
-              "score": 1.6764
+              "score": 0.1618
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::recursive_large::2",
-              "score": 1.6967
+              "score": 0.1517
             }
           ],
           "hit": true
@@ -792,93 +792,93 @@
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::3",
-              "score": 0.8225
+              "score": 0.5887
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::5",
-              "score": 1.1342
+              "score": 0.4329
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::0",
-              "score": 1.1751
+              "score": 0.4326
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::6",
-              "score": 1.2136
+              "score": 0.3932
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::recursive_large::2",
-              "score": 1.268
+              "score": 0.3716
             }
           ],
           "hit": true
         },
         {
-          "question": "What does error code NB\u00e2\u20ac\u2018SYNC\u00e2\u20ac\u2018101 mean and how do I fix it?",
+          "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
           "table_based": true,
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
               "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_large::0",
-              "score": 0.8771
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_large::9",
-              "score": 0.9782
+              "chunk_id": "kb-errors-006::recursive_large::10",
+              "score": 0.7443
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::7",
-              "score": 0.993
+              "score": 0.6511
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::recursive_large::3",
+              "score": 0.6084
             },
             {
               "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_large::1",
-              "score": 1.0328
+              "chunk_id": "kb-errors-006::recursive_large::0",
+              "score": 0.6069
             },
             {
               "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_large::10",
-              "score": 1.0821
+              "chunk_id": "kb-errors-006::recursive_large::9",
+              "score": 0.5662
             }
           ],
           "hit": true
         },
         {
-          "question": "I got NB-AUTH-410 when using my password reset link \u00e2\u20ac\u201d what does that mean?",
+          "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
           "table_based": true,
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::4",
-              "score": 0.8366
+              "score": 0.6122
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::recursive_large::12",
-              "score": 1.0181
-            },
-            {
-              "article_id": "kb-account-001",
-              "chunk_id": "kb-account-001::recursive_large::8",
-              "score": 1.122
+              "score": 0.49
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::10",
-              "score": 1.1463
+              "score": 0.4347
             },
             {
               "article_id": "kb-account-001",
-              "chunk_id": "kb-account-001::recursive_large::11",
-              "score": 1.2241
+              "chunk_id": "kb-account-001::recursive_large::10",
+              "score": 0.415
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::recursive_large::16",
+              "score": 0.4074
             }
           ],
           "hit": true
@@ -891,27 +891,27 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::5",
-              "score": 0.734
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::recursive_large::0",
-              "score": 0.7656
+              "score": 0.633
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::7",
-              "score": 0.8376
+              "score": 0.5812
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::recursive_large::0",
+              "score": 0.5467
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::recursive_large::10",
-              "score": 0.9353
+              "score": 0.5324
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::recursive_large::3",
-              "score": 0.9408
+              "score": 0.5115
             }
           ],
           "hit": true
@@ -932,17 +932,17 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::6",
-              "score": 1.068
+              "score": 0.4626
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::10",
-              "score": 1.153
+              "score": 0.4235
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::5",
-              "score": 1.1805
+              "score": 0.4097
             }
           ],
           "hit": true
@@ -955,17 +955,17 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::1",
-              "score": 0.9026
+              "score": 0.5487
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::0",
+              "score": 0.4725
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::2",
-              "score": 1.0831
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::section_aware::3",
-              "score": 1.1298
+              "score": 0.4585
             }
           ],
           "hit": true
@@ -978,17 +978,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::3",
-              "score": 1.1674
+              "score": 0.4163
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::5",
-              "score": 1.2557
+              "score": 0.3967
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::2",
-              "score": 1.3067
+              "score": 0.3466
             }
           ],
           "hit": true
@@ -1001,17 +1001,17 @@
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::6",
-              "score": 1.4947
+              "score": 0.2526
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::0",
-              "score": 1.6015
+              "score": 0.2228
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::3",
-              "score": 1.693
+              "score": 0.1535
             }
           ],
           "hit": true
@@ -1024,63 +1024,63 @@
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::1",
-              "score": 1.1088
+              "score": 0.4456
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::6",
-              "score": 1.1342
+              "score": 0.4329
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::7",
-              "score": 1.2095
+              "score": 0.3952
             }
           ],
           "hit": true
         },
         {
-          "question": "What does error code NB\u00e2\u20ac\u2018SYNC\u00e2\u20ac\u2018101 mean and how do I fix it?",
+          "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
           "table_based": true,
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
               "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::section_aware::1",
-              "score": 0.8377
+              "chunk_id": "kb-errors-006::section_aware::8",
+              "score": 0.7443
             },
             {
               "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::section_aware::7",
-              "score": 0.8597
+              "chunk_id": "kb-errors-006::section_aware::1",
+              "score": 0.6876
             },
             {
-              "article_id": "kb-sync-002",
-              "chunk_id": "kb-sync-002::section_aware::8",
-              "score": 0.8784
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::5",
+              "score": 0.6427
             }
           ],
           "hit": true
         },
         {
-          "question": "I got NB-AUTH-410 when using my password reset link \u00e2\u20ac\u201d what does that mean?",
+          "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
           "table_based": true,
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::6",
-              "score": 1.0817
+              "score": 0.4544
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::8",
-              "score": 1.1463
+              "score": 0.4347
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::5",
-              "score": 1.2111
+              "score": 0.4284
             }
           ],
           "hit": true
@@ -1093,17 +1093,17 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::1",
-              "score": 0.8398
+              "score": 0.5801
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::5",
-              "score": 0.852
+              "score": 0.574
             },
             {
               "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::section_aware::0",
-              "score": 0.9108
+              "chunk_id": "kb-errors-006::section_aware::8",
+              "score": 0.5324
             }
           ],
           "hit": true
@@ -1119,27 +1119,27 @@
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::6",
-              "score": 1.068
+              "score": 0.4626
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::10",
-              "score": 1.153
+              "score": 0.4235
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::5",
-              "score": 1.1805
+              "score": 0.4097
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::1",
-              "score": 1.3167
+              "score": 0.3416
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::8",
-              "score": 1.3466
+              "score": 0.3267
             }
           ],
           "hit": true
@@ -1152,27 +1152,27 @@
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::1",
-              "score": 0.9026
-            },
-            {
-              "article_id": "kb-sync-002",
-              "chunk_id": "kb-sync-002::section_aware::2",
-              "score": 1.0831
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::section_aware::3",
-              "score": 1.1298
-            },
-            {
-              "article_id": "kb-sync-002",
-              "chunk_id": "kb-sync-002::section_aware::3",
-              "score": 1.1568
+              "score": 0.5487
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::0",
-              "score": 1.1741
+              "score": 0.4725
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::2",
+              "score": 0.4585
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::3",
+              "score": 0.4351
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::3",
+              "score": 0.4216
             }
           ],
           "hit": true
@@ -1185,27 +1185,27 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::3",
-              "score": 1.1674
+              "score": 0.4163
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::5",
-              "score": 1.2557
+              "score": 0.3967
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::2",
-              "score": 1.3067
+              "score": 0.3466
             },
             {
               "article_id": "kb-sync-002",
               "chunk_id": "kb-sync-002::section_aware::3",
-              "score": 1.3196
+              "score": 0.3402
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::5",
-              "score": 1.367
+              "score": 0.3165
             }
           ],
           "hit": true
@@ -1218,27 +1218,27 @@
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::6",
-              "score": 1.4947
+              "score": 0.2526
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::0",
-              "score": 1.6015
+              "score": 0.2228
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::3",
-              "score": 1.693
+              "score": 0.1535
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::5",
-              "score": 1.7097
+              "score": 0.1451
             },
             {
               "article_id": "kb-share-003",
               "chunk_id": "kb-share-003::section_aware::8",
-              "score": 1.7103
+              "score": 0.1448
             }
           ],
           "hit": true
@@ -1251,93 +1251,93 @@
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::1",
-              "score": 1.1088
+              "score": 0.4456
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::6",
-              "score": 1.1342
+              "score": 0.4329
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::7",
-              "score": 1.2095
+              "score": 0.3952
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::4",
-              "score": 1.2203
+              "score": 0.3817
             },
             {
               "article_id": "kb-notify-005",
               "chunk_id": "kb-notify-005::section_aware::2",
-              "score": 1.2673
+              "score": 0.3663
             }
           ],
           "hit": true
         },
         {
-          "question": "What does error code NB\u00e2\u20ac\u2018SYNC\u00e2\u20ac\u2018101 mean and how do I fix it?",
+          "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
           "table_based": true,
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
               "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::8",
+              "score": 0.7443
+            },
+            {
+              "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::1",
-              "score": 0.8377
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::section_aware::7",
-              "score": 0.8597
-            },
-            {
-              "article_id": "kb-sync-002",
-              "chunk_id": "kb-sync-002::section_aware::8",
-              "score": 0.8784
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::section_aware::0",
-              "score": 0.982
+              "score": 0.6876
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::5",
-              "score": 0.9986
+              "score": 0.6427
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::7",
+              "score": 0.5537
+            },
+            {
+              "article_id": "kb-sync-002",
+              "chunk_id": "kb-sync-002::section_aware::7",
+              "score": 0.5403
             }
           ],
           "hit": true
         },
         {
-          "question": "I got NB-AUTH-410 when using my password reset link \u00e2\u20ac\u201d what does that mean?",
+          "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
           "table_based": true,
           "expected_article_id": "kb-errors-006",
           "retrieved": [
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::6",
-              "score": 1.0817
+              "score": 0.4544
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::8",
-              "score": 1.1463
+              "score": 0.4347
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::5",
-              "score": 1.2111
-            },
-            {
-              "article_id": "kb-sync-002",
-              "chunk_id": "kb-sync-002::section_aware::8",
-              "score": 1.2336
+              "score": 0.4284
             },
             {
               "article_id": "kb-account-001",
               "chunk_id": "kb-account-001::section_aware::8",
-              "score": 1.2378
+              "score": 0.4074
+            },
+            {
+              "article_id": "kb-account-001",
+              "chunk_id": "kb-account-001::section_aware::4",
+              "score": 0.3985
             }
           ],
           "hit": true
@@ -1350,27 +1350,27 @@
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::1",
-              "score": 0.8398
+              "score": 0.5801
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::5",
-              "score": 0.852
-            },
-            {
-              "article_id": "kb-errors-006",
-              "chunk_id": "kb-errors-006::section_aware::0",
-              "score": 0.9108
+              "score": 0.574
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::8",
-              "score": 0.9353
+              "score": 0.5324
             },
             {
               "article_id": "kb-errors-006",
               "chunk_id": "kb-errors-006::section_aware::6",
-              "score": 1.1165
+              "score": 0.4418
+            },
+            {
+              "article_id": "kb-errors-006",
+              "chunk_id": "kb-errors-006::section_aware::7",
+              "score": 0.4365
             }
           ],
           "hit": true

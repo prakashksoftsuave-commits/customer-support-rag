@@ -8,7 +8,7 @@ last_updated: 2026-03-30
 # Notification and Alert Settings
 
 ## Overview
-Effective notification management is essential for keeping users informed without overwhelming them. This article provides support agents with a deep dive into Nimbus notification types, configuration options, common issues, and escalation procedures. It also cross-references related articles such as **Account Access** and **Sharing Permissions**.
+Effective notification management is essential for keeping users informed without overwhelming them. This article provides support agents with a deep dive into the app's notification types, configuration options, common issues, and escalation procedures. It also cross-references related articles such as **Account Access** and **Sharing Permissions**.
 
 ## Notification Types
 - **Email notifications** – sent for comments, shares, mentions, and storage warnings.
@@ -36,11 +36,11 @@ Effective notification management is essential for keeping users informed withou
 1. **Verify User Preferences**
    - Open Settings → Notifications and confirm toggles for each event type.
 2. **Check Email Deliverability**
-   - Ask the user to check spam/junk folders and whitelist `notifications@nimbus.com`.
+   - Ask the user to check spam/junk folders and whitelist `notifications@filesync.example`.
    - Send a test email from the admin console.
 3. **Inspect Push Permission**
-   - On iOS: Settings → Nimbus → Notifications → Allow Notifications.
-   - On Android: Settings → Apps → Nimbus → Notifications → Enable.
+   - On iOS: Settings → the app → Notifications → Allow Notifications.
+   - On Android: Settings → Apps → the app → Notifications → Enable.
 4. **Review Folder Mute Settings**
    - Right-click a folder → Mute notifications. Ensure the folder isn’t unintentionally muted.
 5. **Clear In-App Notification Cache**
@@ -100,7 +100,7 @@ Create a **Notification Escalation Ticket** with:
 - Consult **[Error Code Reference](../error-code-reference.md)** for detailed error meanings.
 
 ## Support Notes (Internal)
-- Known issue: On Android 13, the OS may throttle push notifications for apps not whitelisted for “Battery optimization”. Recommend adding Nimbus to the whitelist.
+- Known issue: On Android 13, the OS may throttle push notifications for apps not whitelisted for “Battery optimization”. Recommend adding the app to the whitelist.
 - For large organizations, consider enabling the **Enterprise Notification Dashboard** for aggregated alert monitoring.
 - Log all escalation tickets with notification log snapshots for future analysis.
 

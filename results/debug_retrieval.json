@@ -17,8 +17,8 @@
       "baseline_hit": false,
       "reranked_top3": [
         "kb-mobile-004",
-        "kb-sync-002",
-        "kb-mobile-004"
+        "kb-mobile-004",
+        "kb-sync-002"
       ],
       "reranked_hit": false,
       "hybrid_top3": [
@@ -38,7 +38,7 @@
       "baseline_top3": [
         "kb-sync-002",
         "kb-sync-002",
-        "kb-errors-006"
+        "kb-sync-002"
       ],
       "baseline_hit": false,
       "reranked_top3": [
@@ -96,7 +96,7 @@
       "reranked_top3": [
         "kb-notify-005",
         "kb-notify-005",
-        "kb-mobile-004"
+        "kb-notify-005"
       ],
       "reranked_hit": false,
       "hybrid_top3": [
@@ -107,7 +107,7 @@
       "hybrid_hit": false,
       "fixed_by_hybrid": false,
       "failure_label": "wrong_document_fetched",
-      "failure_evidence": "expected kb-sync-002 absent even from top-10"
+      "failure_evidence": "expected kb-sync-002 exists at rank 10 in top-10"
     },
     {
       "question": "My account keeps disconnecting whenever I try to move a lot of files",

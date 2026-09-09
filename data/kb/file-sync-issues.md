@@ -8,7 +8,7 @@ last_updated: 2026-05-18
 # Fixing File Sync and Upload Problems
 
 ## Overview
-File synchronization is a core capability of Nimbus, enabling seamless access to files across devices. However, users sometimes encounter sync stalls, conflicts, or upload failures. This article provides support agents with a comprehensive guide to diagnosing and resolving sync-related issues, complete with troubleshooting tables, FAQs, and escalation procedures.
+File synchronization is a core capability of the app, enabling seamless access to files across devices. However, users sometimes encounter sync stalls, conflicts, or upload failures. This article provides support agents with a comprehensive guide to diagnosing and resolving sync-related issues, complete with troubleshooting tables, FAQs, and escalation procedures.
 
 ## Common Customer Symptoms
 - Files remain in a **"sync pending"** state for an extended period.
@@ -40,7 +40,7 @@ File synchronization is a core capability of Nimbus, enabling seamless access to
    - For files larger than 2 GB, compress them into a zip archive or split them using a tool like `split` before uploading.
 6. **Recover After Network Change**
    - After switching networks, click the **Sync** icon and select **Resume**.
-   - If the badge shows **"connection blocked"**, ensure outbound HTTPS (port 443) is allowed and that corporate firewalls permit `*.nimbuscloud.com`.
+   - If the badge shows **"connection blocked"**, ensure outbound HTTPS (port 443) is allowed and that corporate firewalls permit `*.filesync.example`.
 7. **Review Folder Exclusion Settings**
    - Right-click the folder → **Sync Settings** → verify **"Sync on this device"** is enabled.
    - Re-include the folder and allow a full re-download (may take time for large folders).
@@ -53,7 +53,7 @@ File synchronization is a core capability of Nimbus, enabling seamless access to
 |------------|---------|--------------|------------------------|
 | SYNC-101 | Queue stalled > 30 min | Large batch or network hiccup | Pause & resume sync; ensure stable connection |
 | SYNC-204 | Folder missing in cloud | Remote deletion before sync | Re-create folder locally, then move files back |
-| SYNC-305 | Persistent "connection blocked" | Firewall or VPN blocking ports | Open port 443 outbound, whitelist `*.nimbuscloud.com` |
+| SYNC-305 | Persistent "connection blocked" | Firewall or VPN blocking ports | Open port 443 outbound, whitelist `*.filesync.example` |
 
 ### Conflict Resolution Table
 | Scenario | Indicator | Action |
@@ -63,7 +63,7 @@ File synchronization is a core capability of Nimbus, enabling seamless access to
 
 ## Examples and Edge Cases
 - **Case A:** User reports a single large video file stuck at *sync pending* for 2 hours. Investigation shows the file size is 3.2 GB, exceeding the limit. After compressing to a zip (1.1 GB) and uploading, sync completes.
-- **Case B:** After a corporate VPN rollout, multiple users see *connection blocked*. Network team added an exception for `*.nimbuscloud.com` on port 443, resolving the issue.
+- **Case B:** After a corporate VPN rollout, multiple users see *connection blocked*. Network team added an exception for `*.filesync.example` on port 443, resolving the issue.
 - **Case C:** A user unintentionally excluded the **Projects** folder. Re-enabling sync triggered a full re-download of 500 MB of data.
 
 ## Frequently Asked Questions (FAQs)
@@ -96,7 +96,7 @@ Create a **Sync Escalation Ticket** containing:
 - Consult **[Mobile App Sync](../mobile-app.md)** for mobile-specific sync behavior.
 
 ## Support Notes (Internal)
-- Known issue: On macOS 13, the sync daemon may hang after a system sleep. Workaround: restart the `NimbusSync` service via Activity Monitor.
+- Known issue: On macOS 13, the sync daemon may hang after a system sleep. Workaround: restart the sync service via Activity Monitor.
 - For VPN environments, recommend a split-tunnel configuration to keep sync traffic direct.
 - Log all escalation tickets with sync queue snapshots for future analysis.
 

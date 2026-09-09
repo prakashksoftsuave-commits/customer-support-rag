@@ -8,7 +8,7 @@ last_updated: 2026-06-10
 # Sharing Files and Managing Permission Roles
 
 ## Overview
-Sharing and permission management are core collaboration features in Nimbus. This article provides support agents with an in-depth guide to creating share links, understanding role permissions, troubleshooting common issues, and escalating complex cases. It references related articles such as **File Sync Issues**, **Error Code Reference**, and **Notification Settings**.
+Sharing and permission management are core collaboration features of the app. This article provides support agents with an in-depth guide to creating share links, understanding role permissions, troubleshooting common issues, and escalating complex cases. It references related articles such as **File Sync Issues**, **Error Code Reference**, and **Notification Settings**.
 
 ## Common Customer Symptoms
 - Share link expires unexpectedly.

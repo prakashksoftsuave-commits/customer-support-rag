@@ -1,4 +1,4 @@
-# Nimbus Help Center Assistant — RAG
+# Help Center Assistant — RAG
 
 A small "ask my documents" app over a 6-article mock help-center KB for a fictional cloud
 file-sync product — or over your own uploaded pdf/docx/md/txt files. Ingests documents, retrieves
@@ -49,16 +49,41 @@ machine without that restriction, `qdrant` works exactly the same way it did bef
 To use Qdrant: set `VECTOR_BACKEND=qdrant` in `.env`, start Docker Desktop, then:
 
 ```
-docker run -d --name nimbus-qdrant -p 6333:6333 -p 6334:6334 -v "%cd%\data\qdrant_storage:/qdrant/storage" qdrant/qdrant
+docker run -d --name customer-support-qdrant -p 6333:6333 -p 6334:6334 -v "%cd%\data\qdrant_storage:/qdrant/storage" qdrant/qdrant
 ```
 
 Storage persists in `data/qdrant_storage/` on your machine even if the container is removed. To
-start it again later after a reboot: `docker start nimbus-qdrant`. To stop it: `docker stop
-nimbus-qdrant`. To wipe all vectors and start fresh: `docker rm -f nimbus-qdrant`, delete the
+start it again later after a reboot: `docker start customer-support-qdrant`. To stop it: `docker stop
+customer-support-qdrant`. To wipe all vectors and start fresh: `docker rm -f customer-support-qdrant`, delete the
 contents of `data/qdrant_storage/`, then re-run the `docker run` command above. Then re-run
 `ingest` (below) — collections are backend-specific, so switching backends means re-indexing.
 
 Open `http://localhost:6333/dashboard` any time to browse collections and points visually.
+
+### Tracing with Langfuse (self-hosted, optional)
+
+Every retrieval + generation call can be traced to a **locally self-hosted** Langfuse instance —
+not Langfuse Cloud. Start it once:
+
+```
+cd langfuse
+docker compose up -d
+```
+
+This spins up Postgres, ClickHouse, Redis, MinIO, and the Langfuse server itself, and
+headlessly provisions an org/project/API-keypair on first boot (via the `LANGFUSE_INIT_*` vars in
+`langfuse/.env`) — no browser signup needed. Set in the project's `.env`:
+
+```
+LANGFUSE_TRACING_ENABLED=true
+LANGFUSE_HOST=http://localhost:3000
+LANGFUSE_PUBLIC_KEY=<from langfuse/.env>
+LANGFUSE_SECRET_KEY=<from langfuse/.env>
+```
+
+Open `http://localhost:3000` (sign in with `LANGFUSE_INIT_USER_EMAIL`/`_PASSWORD` from
+`langfuse/.env`) to browse traces. To stop it: `docker compose down` from `langfuse/` (add `-v` to
+also wipe all trace data).
 
 ## Running it
 

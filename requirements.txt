@@ -12,5 +12,12 @@ langchain-community==0.3.5
 langchain-huggingface==0.1.2
 langchain-qdrant==0.2.0
 langchain-groq==0.2.1
+langsmith==0.1.147
+# ^ Not what we use for tracing (that's Langfuse, self-hosted — see langfuse/) — langchain-core's
+# callback manager imports langsmith.run_helpers directly, so it's a hard dependency either way.
+langfuse==4.15.1
+# langfuse's otel exporter deps want protobuf>=6, but qdrant-client's grpcio-tools and streamlit
+# both cap it at <6 — this pin is the version that actually satisfies all three at runtime.
+protobuf==5.29.6
 pdfplumber==0.11.4
 python-docx==1.1.2

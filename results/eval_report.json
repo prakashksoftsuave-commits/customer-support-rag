@@ -1,0 +1,979 @@
+{
+  "judge_validation": {
+    "agreement_rate": 0.875,
+    "rows": [
+      {
+        "id": "known_01",
+        "human_label": "pass",
+        "judge_pass": true,
+        "agree": true
+      },
+      {
+        "id": "known_02",
+        "human_label": "pass",
+        "judge_pass": true,
+        "agree": true
+      },
+      {
+        "id": "known_03",
+        "human_label": "pass",
+        "judge_pass": true,
+        "agree": true
+      },
+      {
+        "id": "known_04",
+        "human_label": "pass",
+        "judge_pass": true,
+        "agree": true
+      },
+      {
+        "id": "known_06",
+        "human_label": "pass",
+        "judge_pass": true,
+        "agree": true
+      },
+      {
+        "id": "ambiguous_01",
+        "human_label": "pass",
+        "judge_pass": true,
+        "agree": true
+      },
+      {
+        "id": "compound_05",
+        "human_label": "pass",
+        "judge_pass": true,
+        "agree": true
+      },
+      {
+        "id": "scope_01",
+        "human_label": "fail",
+        "judge_pass": true,
+        "agree": false
+      }
+    ]
+  },
+  "baseline": {
+    "report": {
+      "known_answer": {
+        "n": 6,
+        "rule_pass_rate": 1.0,
+        "rule_pass_n": 6,
+        "judge_pass_rate": 1.0,
+        "judge_pass_n": 6
+      },
+      "exact_code_lookup": {
+        "n": 2,
+        "rule_pass_rate": 0.0,
+        "rule_pass_n": 2,
+        "judge_pass_rate": null,
+        "judge_pass_n": 0
+      },
+      "out_of_corpus": {
+        "n": 3,
+        "rule_pass_rate": 1.0,
+        "rule_pass_n": 3,
+        "judge_pass_rate": null,
+        "judge_pass_n": 0
+      },
+      "ambiguous": {
+        "n": 1,
+        "rule_pass_rate": 1.0,
+        "rule_pass_n": 1,
+        "judge_pass_rate": 1.0,
+        "judge_pass_n": 1
+      },
+      "compound_retrieval": {
+        "n": 5,
+        "rule_pass_rate": 0.0,
+        "rule_pass_n": 5,
+        "judge_pass_rate": 1.0,
+        "judge_pass_n": 1
+      },
+      "meta_question": {
+        "n": 1,
+        "rule_pass_rate": 0.0,
+        "rule_pass_n": 1,
+        "judge_pass_rate": null,
+        "judge_pass_n": 0
+      },
+      "vague_input": {
+        "n": 1,
+        "rule_pass_rate": null,
+        "rule_pass_n": 0,
+        "judge_pass_rate": null,
+        "judge_pass_n": 0
+      },
+      "scope_conflation": {
+        "n": 1,
+        "rule_pass_rate": 1.0,
+        "rule_pass_n": 1,
+        "judge_pass_rate": 1.0,
+        "judge_pass_n": 1
+      }
+    },
+    "cases": [
+      {
+        "id": "known_01",
+        "problem_type": "known_answer",
+        "question": "How long does a password reset link stay valid before it expires?",
+        "answer": "Password reset links remain valid for\u202f30\u202fminutes before they expire.\u202f[source: kb-account-001::section_aware::6]",
+        "retrieved_article_ids": [
+          "kb-account-001",
+          "kb-account-001",
+          "kb-account-001",
+          "kb-account-001"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "known_02",
+        "problem_type": "known_answer",
+        "question": "When two devices edit the same file before syncing, what happens to the older version?",
+        "answer": "When the same file is edited on two devices before either upload finishes, Nimbus creates a **conflicted\u2011copy** of the older version (e.g.,\u202f`filename (conflicted copy,\u202fDEVICE,\u202fDATE).ext`). The newer version remains as the main file, and you can merge the changes and then delete the conflicted copy.\u202f[source: kb-sync-002::section_aware::2]\u202f[source: kb-sync-002::section_aware::3]",
+        "retrieved_article_ids": [
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-errors-006",
+          "kb-sync-002"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "known_03",
+        "problem_type": "known_answer",
+        "question": "What is the maximum size allowed for a single file upload?",
+        "answer": "The application enforces a\u202f2\u202fGB maximum size for a single file upload.\u202f[source: kb-errors-006::section_aware::3]",
+        "retrieved_article_ids": [
+          "kb-errors-006",
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-sync-002"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "known_04",
+        "problem_type": "known_answer",
+        "question": "Can someone with the Commenter role edit the actual content of a document?",
+        "answer": "No. Commenters can add comments but cannot edit the document\u2019s content\u202f[ source: kb-share-003::section_aware::6 ].",
+        "retrieved_article_ids": [
+          "kb-share-003",
+          "kb-share-003",
+          "kb-share-003",
+          "kb-share-003"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "known_05",
+        "problem_type": "known_answer",
+        "question": "If I turn off email notifications for every individual event, does that also stop the weekly digest email?",
+        "answer": "No. The weekly\u2011digest email is controlled by its own \u201cWeekly Digest\u201d toggle in Settings \u2192 Notifications, independent of the individual event email toggles. Turning off all the per\u2011event email notifications does not automatically stop the digest\u202f\u2014\u202fyou must disable the digest separately.\u202f[source: kb-notify-005::section_aware::4]",
+        "retrieved_article_ids": [
+          "kb-notify-005",
+          "kb-notify-005",
+          "kb-notify-005",
+          "kb-notify-005"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "known_06",
+        "problem_type": "known_answer",
+        "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
+        "answer": "`NB\u2011SYNC\u2011101` is a known false\u2011positive error that can appear briefly when a file is being edited rapidly; it resolves itself automatically and does not require any user action.\u202f[source: kb-errors-006::section_aware::8]",
+        "retrieved_article_ids": [
+          "kb-errors-006",
+          "kb-errors-006",
+          "kb-errors-006",
+          "kb-errors-006"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "known_07",
+        "problem_type": "exact_code_lookup",
+        "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-account-001",
+          "kb-errors-006",
+          "kb-account-001",
+          "kb-account-001"
+        ],
+        "refused": true,
+        "refusal_correct": false,
+        "retrieval_hit": true,
+        "citation_present": null,
+        "rule_pass": false,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "known_08",
+        "problem_type": "exact_code_lookup",
+        "question": "What should I do about error code NB-SHARE-512?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-errors-006",
+          "kb-errors-006",
+          "kb-errors-006",
+          "kb-errors-006"
+        ],
+        "refused": true,
+        "refusal_correct": false,
+        "retrieval_hit": true,
+        "citation_present": null,
+        "rule_pass": false,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "refuse_01",
+        "problem_type": "out_of_corpus",
+        "question": "What's the refund policy if I cancel my subscription in the middle of a billing cycle?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-account-001",
+          "kb-sync-002",
+          "kb-account-001",
+          "kb-account-001"
+        ],
+        "refused": true,
+        "refusal_correct": true,
+        "retrieval_hit": null,
+        "citation_present": null,
+        "rule_pass": true,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "refuse_02",
+        "problem_type": "out_of_corpus",
+        "question": "Can I still recover a file after its trash retention period has ended?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-errors-006",
+          "kb-mobile-004",
+          "kb-sync-002",
+          "kb-mobile-004"
+        ],
+        "refused": true,
+        "refusal_correct": true,
+        "retrieval_hit": null,
+        "citation_present": null,
+        "rule_pass": true,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "refuse_03",
+        "problem_type": "out_of_corpus",
+        "question": "Is there a native Nimbus desktop app for Linux?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-share-003",
+          "kb-mobile-004",
+          "kb-sync-002",
+          "kb-notify-005"
+        ],
+        "refused": true,
+        "refusal_correct": true,
+        "retrieval_hit": null,
+        "citation_present": null,
+        "rule_pass": true,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "ambiguous_01",
+        "problem_type": "ambiguous",
+        "question": "How do I stop getting notifications?",
+        "answer": "To stop receiving notifications, follow these steps:\n\n1. **Turn off all notification types** \u2013 Open **Settings \u2192 Notifications** and toggle off the switches for each event you don\u2019t want to be alerted about.\u202f[source: kb-notify-005::section_aware::4]\n\n2. **Disable push notifications completely** \u2013 In the same Settings page, turn off the **Push** toggle.\u202f[source: kb-notify-005::section_aware::7]\n\n3. **Mute specific folders** \u2013 Right\u2011click any folder that\u2019s still sending alerts and choose **Mute notifications** to stop alerts from that folder.\u202f[source: kb-notify-005::section_aware::4]\n\n4. **Stop email digests** \u2013 Go to **Settings \u2192 Notifications \u2192 Weekly Digest** and turn the toggle off, or adjust your email subscription status in the admin panel.\u202f[source: kb-notify-005::section_aware::4]\n\n5. **(Optional) Clear the in\u2011app notification cache** \u2013 If the notification bell still shows old alerts, clear the cache via **Settings \u2192 Advanced \u2192 Clear Notification Cache** and restart the client.\u202f[source: kb-notify-005::section_aware::4]",
+        "retrieved_article_ids": [
+          "kb-notify-005",
+          "kb-notify-005",
+          "kb-notify-005",
+          "kb-notify-005"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": null,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "compound_01",
+        "problem_type": "compound_retrieval",
+        "question": "I keep getting logged out and my files won't upload, what's going on?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-mobile-004",
+          "kb-sync-002",
+          "kb-mobile-004",
+          "kb-sync-002"
+        ],
+        "refused": true,
+        "refusal_correct": false,
+        "retrieval_hit": false,
+        "citation_present": null,
+        "rule_pass": false,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "compound_02",
+        "problem_type": "compound_retrieval",
+        "question": "My files keep failing to upload and I had to sign in again, why?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-errors-006",
+          "kb-sync-002"
+        ],
+        "refused": true,
+        "refusal_correct": false,
+        "retrieval_hit": false,
+        "citation_present": null,
+        "rule_pass": false,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "compound_03",
+        "problem_type": "compound_retrieval",
+        "question": "Every time I try to sync a big file my session ends and I'm logged out",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-sync-002"
+        ],
+        "refused": true,
+        "refusal_correct": false,
+        "retrieval_hit": false,
+        "citation_present": null,
+        "rule_pass": false,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "compound_04",
+        "problem_type": "compound_retrieval",
+        "question": "Nothing uploads and I don't get any alerts about it either",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-notify-005",
+          "kb-notify-005",
+          "kb-mobile-004",
+          "kb-notify-005"
+        ],
+        "refused": true,
+        "refusal_correct": false,
+        "retrieval_hit": false,
+        "citation_present": null,
+        "rule_pass": false,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "compound_05",
+        "problem_type": "compound_retrieval",
+        "question": "My account keeps disconnecting whenever I try to move a lot of files",
+        "answer": "Try these steps to stop the disconnects while moving many files:\n\n1. **Check the sync queue** \u2013 Open **Sync Queue** and see if it has more than\u202f50 items. If it does, pause the sync, then resume it to reset the queue\u3010source: kb-sync-002::section_aware::3\u3011.  \n2. **Verify your network** \u2013 Run a speed test and make sure latency is under\u202f150\u202fms with no packet loss. A wired Ethernet connection works best for large batches\u3010source: kb-sync-002::section_aware::3\u3011.  \n3. **Confirm firewall/port access** \u2013 After a network change (e.g., Wi\u2011Fi to VPN), click the **Sync** icon and choose **Resume**. If you see **\u201cconnection blocked,\u201d** ensure outbound HTTPS (port\u202f443) is allowed and that corporate firewalls permit `*.nimbuscloud.com`\u3010source: kb-sync-002::section_aware::3\u3011.  \n4. **Watch for large files** \u2013 Files larger than\u202f2\u202fGB hit an application\u2011enforced limit. Compress or split them before moving to avoid sync failures\u3010source: kb-sync-002::section_aware::3\u3011.  \n\nIf the problem persists after these checks, the root causes are usually an overloaded upload queue, unstable network, or firewall blocks after a network change\u3010source: kb-sync-002::section_aware::2\u3011.",
+        "retrieved_article_ids": [
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-sync-002"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": false,
+        "citation_present": true,
+        "rule_pass": false,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "meta_01",
+        "problem_type": "meta_question",
+        "question": "What can you help me with?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-notify-005",
+          "kb-errors-006",
+          "kb-account-001",
+          "kb-account-001"
+        ],
+        "refused": true,
+        "refusal_correct": false,
+        "retrieval_hit": null,
+        "citation_present": null,
+        "rule_pass": false,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "vague_01",
+        "problem_type": "vague_input",
+        "question": "help",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-notify-005",
+          "kb-errors-006",
+          "kb-errors-006",
+          "kb-share-003"
+        ],
+        "refused": true,
+        "refusal_correct": null,
+        "retrieval_hit": null,
+        "citation_present": null,
+        "rule_pass": null,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "scope_01",
+        "problem_type": "scope_conflation",
+        "question": "I want to make sure only my team can see a folder, not the whole company \u2014 how?",
+        "answer": "To keep the folder visible\u202fonly to your team, avoid using a public \u201canyone with the link\u201d share and instead invite just the team members (or set the folder to be shared only within the workspace).\n\n1. Open **Sharing Settings** for the folder.  \n2. Disable the public link or make sure \u201canyone with the link\u201d is turned off (Admins can enforce this globally under **Settings\u202f\u2192\u202fSharing\u202f\u2192\u202fLink Sharing**)\u3010source: kb-share-003::section_aware::3\u3011.  \n3. Invite the specific email addresses of your team members, granting them the appropriate role (e.g., Editor).  \n4. For larger folders, enable the **\u201cRestrict sharing to workspace\u201d** option so the folder cannot be exposed outside the workspace\u3010source: kb-share-003::section_aware::9\u3011.  \n\nAfter these steps, only the invited team members will be able to see and access the folder.",
+        "retrieved_article_ids": [
+          "kb-share-003",
+          "kb-share-003",
+          "kb-share-003",
+          "kb-mobile-004"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      }
+    ]
+  },
+  "after_decompose": {
+    "report": {
+      "known_answer": {
+        "n": 6,
+        "rule_pass_rate": 1.0,
+        "rule_pass_n": 6,
+        "judge_pass_rate": 1.0,
+        "judge_pass_n": 6
+      },
+      "exact_code_lookup": {
+        "n": 2,
+        "rule_pass_rate": 0.0,
+        "rule_pass_n": 2,
+        "judge_pass_rate": null,
+        "judge_pass_n": 0
+      },
+      "out_of_corpus": {
+        "n": 3,
+        "rule_pass_rate": 1.0,
+        "rule_pass_n": 3,
+        "judge_pass_rate": null,
+        "judge_pass_n": 0
+      },
+      "ambiguous": {
+        "n": 1,
+        "rule_pass_rate": 1.0,
+        "rule_pass_n": 1,
+        "judge_pass_rate": 1.0,
+        "judge_pass_n": 1
+      },
+      "compound_retrieval": {
+        "n": 5,
+        "rule_pass_rate": 0.4,
+        "rule_pass_n": 5,
+        "judge_pass_rate": 1.0,
+        "judge_pass_n": 3
+      },
+      "meta_question": {
+        "n": 1,
+        "rule_pass_rate": 1.0,
+        "rule_pass_n": 1,
+        "judge_pass_rate": 1.0,
+        "judge_pass_n": 1
+      },
+      "vague_input": {
+        "n": 1,
+        "rule_pass_rate": null,
+        "rule_pass_n": 0,
+        "judge_pass_rate": null,
+        "judge_pass_n": 0
+      },
+      "scope_conflation": {
+        "n": 1,
+        "rule_pass_rate": 1.0,
+        "rule_pass_n": 1,
+        "judge_pass_rate": 1.0,
+        "judge_pass_n": 1
+      }
+    },
+    "cases": [
+      {
+        "id": "known_01",
+        "problem_type": "known_answer",
+        "question": "How long does a password reset link stay valid before it expires?",
+        "answer": "Password reset links are valid for\u202f30\u202fminutes before they expire. [source: kb-account-001::section_aware::6]",
+        "retrieved_article_ids": [
+          "kb-account-001",
+          "kb-account-001",
+          "kb-account-001",
+          "kb-account-001"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "known_02",
+        "problem_type": "known_answer",
+        "question": "When two devices edit the same file before syncing, what happens to the older version?",
+        "answer": "When the same file is edited on two devices before either upload finishes, Nimbus creates a **conflicted\u2011copy** of the older version (e.g.,\u202f`filename (conflicted copy,\u202fDEVICE,\u202fDATE).ext`). The newer version remains as the main file, and you can merge the changes and then delete the conflicted copy.\u202f[source: kb-sync-002::section_aware::2]\u202f[source: kb-sync-002::section_aware::3]",
+        "retrieved_article_ids": [
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-errors-006",
+          "kb-sync-002"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "known_03",
+        "problem_type": "known_answer",
+        "question": "What is the maximum size allowed for a single file upload?",
+        "answer": "The application enforces a\u202f2\u202fGB maximum size for a single file upload.\u202f[source: kb-errors-006::section_aware::3]",
+        "retrieved_article_ids": [
+          "kb-errors-006",
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-sync-002"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "known_04",
+        "problem_type": "known_answer",
+        "question": "Can someone with the Commenter role edit the actual content of a document?",
+        "answer": "No. Commenters can add comments but cannot edit the document\u2019s content\u202f[ source: kb-share-003::section_aware::6 ].",
+        "retrieved_article_ids": [
+          "kb-share-003",
+          "kb-share-003",
+          "kb-share-003",
+          "kb-share-003"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "known_05",
+        "problem_type": "known_answer",
+        "question": "If I turn off email notifications for every individual event, does that also stop the weekly digest email?",
+        "answer": "No. The weekly\u2011digest email is a separate notification type with its own toggle, so turning off the individual email\u2011event toggles does not automatically stop the digest\u2014you must disable the \u201cWeekly Digest\u201d setting itself.\u202f[source: kb-notify-005::section_aware::1]\u202f[source: kb-notify-005::section_aware::4]",
+        "retrieved_article_ids": [
+          "kb-notify-005",
+          "kb-notify-005",
+          "kb-notify-005",
+          "kb-notify-005"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "known_06",
+        "problem_type": "known_answer",
+        "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
+        "answer": "`NB\u2011SYNC\u2011101` is a known false\u2011positive error that can appear briefly when a file is being edited rapidly; it clears itself automatically and does not require any user action to fix it.\u202f[source: kb-errors-006::section_aware::8]",
+        "retrieved_article_ids": [
+          "kb-errors-006",
+          "kb-errors-006",
+          "kb-errors-006",
+          "kb-errors-006"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "known_07",
+        "problem_type": "exact_code_lookup",
+        "question": "I got NB-AUTH-410 when using my password reset link \u2014 what does that mean?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-account-001",
+          "kb-errors-006",
+          "kb-account-001",
+          "kb-account-001"
+        ],
+        "refused": true,
+        "refusal_correct": false,
+        "retrieval_hit": true,
+        "citation_present": null,
+        "rule_pass": false,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "known_08",
+        "problem_type": "exact_code_lookup",
+        "question": "What should I do about error code NB-SHARE-512?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-errors-006",
+          "kb-errors-006",
+          "kb-errors-006",
+          "kb-errors-006"
+        ],
+        "refused": true,
+        "refusal_correct": false,
+        "retrieval_hit": true,
+        "citation_present": null,
+        "rule_pass": false,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "refuse_01",
+        "problem_type": "out_of_corpus",
+        "question": "What's the refund policy if I cancel my subscription in the middle of a billing cycle?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-account-001",
+          "kb-sync-002",
+          "kb-account-001",
+          "kb-account-001"
+        ],
+        "refused": true,
+        "refusal_correct": true,
+        "retrieval_hit": null,
+        "citation_present": null,
+        "rule_pass": true,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "refuse_02",
+        "problem_type": "out_of_corpus",
+        "question": "Can I still recover a file after its trash retention period has ended?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-errors-006",
+          "kb-mobile-004",
+          "kb-sync-002",
+          "kb-mobile-004"
+        ],
+        "refused": true,
+        "refusal_correct": true,
+        "retrieval_hit": null,
+        "citation_present": null,
+        "rule_pass": true,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "refuse_03",
+        "problem_type": "out_of_corpus",
+        "question": "Is there a native Nimbus desktop app for Linux?",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-share-003",
+          "kb-mobile-004",
+          "kb-sync-002",
+          "kb-notify-005"
+        ],
+        "refused": true,
+        "refusal_correct": true,
+        "retrieval_hit": null,
+        "citation_present": null,
+        "rule_pass": true,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "ambiguous_01",
+        "problem_type": "ambiguous",
+        "question": "How do I stop getting notifications?",
+        "answer": "To stop receiving notifications, adjust the settings in the Nimbus client:\n\n1. **Turn off the event toggles** \u2013 open **Settings \u2192 Notifications** and switch off the notifications you don\u2019t want.\u202f[source: kb-notify-005::section_aware::4]  \n2. **Disable push alerts completely** \u2013 in the same menu go to **Push** and turn the toggle off.\u202f[source: kb-notify-005::section_aware::7]  \n3. **Mute specific folders** \u2013 right\u2011click a folder, choose **Mute notifications**, and confirm the folder isn\u2019t unintentionally un\u2011muted.\u202f[source: kb-notify-005::section_aware::4]  \n4. **Stop the weekly email digest** \u2013 go to **Settings \u2192 Notifications \u2192 Weekly Digest** and toggle it off.\u202f[source: kb-notify-005::section_aware::4]  \n5. **Clear the in\u2011app notification cache** (optional, if the notification bell still shows old alerts) \u2013 **Desktop:** Settings \u2192 Advanced \u2192 Clear Notification Cache; **Web:** log out, clear browser cache, then log back in.\u202f[source: kb-notify-005::section_aware::4]  ",
+        "retrieved_article_ids": [
+          "kb-notify-005",
+          "kb-notify-005",
+          "kb-notify-005",
+          "kb-notify-005"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": null,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "compound_01",
+        "problem_type": "compound_retrieval",
+        "question": "I keep getting logged out and my files won't upload, what's going on?",
+        "answer": "It sounds like two things are happening at once:\n\n* **Unexpected sign\u2011outs** \u2013\u202fNimbus will log a user out when the session token expires, when the account is temporarily locked after repeated failed attempts, or when another device takes over the active session\u202f[ source: kb-account-001::section_aware::1 ]. You can verify whether a token is still valid and see any other devices that are signed in by opening **Settings \u2192 Security \u2192 Active Sessions**\u202f[ source: kb-account-001::section_aware::6 ].\n\n* **Files not uploading** \u2013\u202fSync failures are often caused by network problems or a blocked sync queue. Check the sync dashboard for any outage notice, look at the **Sync Queue** (if it\u2019s over 50 items, pause and resume the sync), and run a quick network test to confirm latency is under 150\u202fms and there\u2019s no packet loss\u202f[ source: kb-sync-002::section_aware::3 ]. After changing networks, click the **Sync** icon and choose **Resume**; if you see a \u201cconnection blocked\u201d badge, make sure outbound HTTPS (port\u202f443) and the `*.nimbuscloud.com` domains are allowed through any corporate firewall\u202f[ source: kb-sync-002::section_aware::3 ].\n\n**Next steps**\n\n1. Open **Settings \u2192 Security \u2192 Active Sessions** and revoke any unfamiliar tokens; consider enabling the \u201cSingle Session\u201d policy to force older tokens to expire automatically\u202f[ source: kb-account-001::section_aware::6 ].  \n2. Open the **Sync Dashboard** \u2192 **Sync Queue**; if the queue is large, pause the sync, then resume it to reset the queue.  \n3. Verify network stability (speed test, latency\u202f<\u202f150\u202fms, no packet loss) and ensure port\u202f443 outbound traffic is allowed.  \n4. After any network change, click **Sync \u2192 Resume** and watch for a \u201cconnection blocked\u201d warning; adjust firewall rules if needed.\n\nIf the sign\u2011out continues after you\u2019ve cleared other sessions and the upload still fails despite a stable network, the issue may be deeper (e.g., a locked account) and you may need to follow the account\u2011recovery flow or contact your workspace admin.\u202f[ source: kb-account-001::section_aware::1 ]",
+        "retrieved_article_ids": [
+          "kb-account-001",
+          "kb-sync-002",
+          "kb-account-001",
+          "kb-sync-002"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "compound_02",
+        "problem_type": "compound_retrieval",
+        "question": "My files keep failing to upload and I had to sign in again, why?",
+        "answer": "Your uploads are probably being blocked by one of the common sync issues\u2014such as a large upload queue, an unstable network, a paused sync, or a local file lock (or the file exceeds the 2\u202fGB single\u2011file limit)\u202f[ source: kb-sync-002::section_aware::1 ][ source: kb-sync-002::section_aware::2 ].  \n\nNeeding to sign in again is typical when the session has expired or the client has been signed out unexpectedly (for example after a password change or other account event)\u202f[ source: kb-account-001::section_aware::1 ].",
+        "retrieved_article_ids": [
+          "kb-sync-002",
+          "kb-account-001",
+          "kb-sync-002",
+          "kb-account-001"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "compound_03",
+        "problem_type": "compound_retrieval",
+        "question": "Every time I try to sync a big file my session ends and I'm logged out",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-sync-002"
+        ],
+        "refused": true,
+        "refusal_correct": false,
+        "retrieval_hit": false,
+        "citation_present": null,
+        "rule_pass": false,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "compound_04",
+        "problem_type": "compound_retrieval",
+        "question": "Nothing uploads and I don't get any alerts about it either",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-notify-005",
+          "kb-notify-005",
+          "kb-mobile-004",
+          "kb-notify-005"
+        ],
+        "refused": true,
+        "refusal_correct": false,
+        "retrieval_hit": false,
+        "citation_present": null,
+        "rule_pass": false,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "compound_05",
+        "problem_type": "compound_retrieval",
+        "question": "My account keeps disconnecting whenever I try to move a lot of files",
+        "answer": "Try these troubleshooting steps:\n\n1. **Check the sync service status** \u2013 open the tray icon \u2192 **Sync Dashboard** and look for any outage notices.\u202f[source: kb-sync-002::section_aware::3]\n\n2. **Inspect the sync queue** \u2013 open **Sync Queue**. If the queue has more than\u202f50\u202fitems, pause the sync, then resume it to reset the queue.\u202f[source: kb-sync-002::section_aware::3]\n\n3. **Verify network stability** \u2013 run a speed test and make sure latency is under\u202f150\u202fms with no packet loss. For large batches, use a wired Ethernet connection.\u202f[source: kb-sync-002::section_aware::3]\n\n4. **Recover after a network change** \u2013 after switching Wi\u2011Fi or VPN, click the **Sync** icon and choose **Resume**. If you see **\u201cconnection blocked,\u201d** confirm that outbound HTTPS (port\u202f443) is allowed and that corporate firewalls permit `*.nimbuscloud.com`.\u202f[source: kb-sync-002::section_aware::3]\n\n5. **Review folder exclusion settings** \u2013 right\u2011click the affected folder \u2192 **Sync Settings** \u2192 ensure **\u201cSync on this device\u201d** is enabled, then let the folder re\u2011download.\u202f[source: kb-sync-002::section_aware::3]\n\nThese steps address the common causes of disconnects when moving many files, such as a large upload queue, unstable network, or firewall blocks.\u202f[source: kb-sync-002::section_aware::2]",
+        "retrieved_article_ids": [
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-sync-002",
+          "kb-sync-002"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": false,
+        "citation_present": true,
+        "rule_pass": false,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "meta_01",
+        "problem_type": "meta_question",
+        "question": "What can you help me with?",
+        "answer": "I can help you troubleshoot a range of Nimbus issues, including:\n\n* **Notification problems** \u2013\u202foutdated email address, spam filters, toggles off, duplicate alerts, missing push notifications, stale in\u2011app bell, or missing digests\u202f[ source: kb-notify-005::section_aware::3 ]  \n* **Error\u2011banner resolution** \u2013\u202fidentify the banner code, find the matching table, apply the common cause and recommended fix, and follow escalation steps if needed\u202f[ source: kb-errors-006::section_aware::1 ]  \n* **Account\u2011login concerns** \u2013\u202finvalid credentials, password\u2011reset link expiration (30\u202fminutes), missing reset emails, 2FA code mismatches (clock drift), backup\u2011code reuse rules, SSO enable/disable, account lockout vs. disabled status, unexpected sign\u2011outs, session expiration, duplicate sessions, unknown\u2011device logins\u202f[ source: kb-account-001::section_aware::2 ; source: kb-account-001::section_aware::6 ]  \n* **Specific FAQs** \u2013\u202fhow to request a new password\u2011reset link, generate new backup codes, re\u2011enroll 2FA, view active sessions, enforce a single active session, and when to escalate sign\u2011in issues\u202f[ source: kb-account-001::section_aware::6 ]",
+        "retrieved_article_ids": [
+          "kb-notify-005",
+          "kb-errors-006",
+          "kb-account-001",
+          "kb-account-001"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": null,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      },
+      {
+        "id": "vague_01",
+        "problem_type": "vague_input",
+        "question": "help",
+        "answer": "I don't know \u2014 the help center articles I have don't cover that.",
+        "retrieved_article_ids": [
+          "kb-notify-005",
+          "kb-errors-006",
+          "kb-errors-006",
+          "kb-share-003"
+        ],
+        "refused": true,
+        "refusal_correct": null,
+        "retrieval_hit": null,
+        "citation_present": null,
+        "rule_pass": null,
+        "judge_faithfulness": null,
+        "judge_relevancy": null,
+        "judge_pass": null
+      },
+      {
+        "id": "scope_01",
+        "problem_type": "scope_conflation",
+        "question": "I want to make sure only my team can see a folder, not the whole company \u2014 how?",
+        "answer": "To keep the folder visible\u202fonly to your team, avoid using a public \u201canyone with the link\u201d share and instead invite just the team members (or set the folder to be shared\u202fonly within the workspace).\n\n1. Open **Sharing Settings** for the folder.  \n2. Disable the public link or make sure \u201canyone with the link\u201d is turned off (Admins can enforce this globally under **Settings\u202f\u2192\u202fSharing\u202f\u2192\u202fLink Sharing**)\u3010source: kb-share-003::section_aware::3\u3011.  \n3. Invite the specific email addresses of your team members, granting them the desired role (e.g., Editor).  \n4. For larger folders, enable the **\u201cRestrict sharing to workspace\u201d** option so the folder cannot be exposed outside the workspace\u3010source: kb-share-003::section_aware::9\u3011.  \n\nAfter these steps, only the invited team members will be able to see and access the folder.",
+        "retrieved_article_ids": [
+          "kb-share-003",
+          "kb-share-003",
+          "kb-share-003",
+          "kb-mobile-004"
+        ],
+        "refused": false,
+        "refusal_correct": true,
+        "retrieval_hit": true,
+        "citation_present": true,
+        "rule_pass": true,
+        "judge_faithfulness": 5,
+        "judge_relevancy": 5,
+        "judge_pass": true
+      }
+    ]
+  }
+}

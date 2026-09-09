@@ -8,7 +8,7 @@ last_updated: 2026-04-22
 # Using the Mobile App: Offline Files and Camera Backup
 
 ## Overview
-The Nimbus mobile app enables users to access files on the go, work offline, and automatically back up photos and videos. This article equips support agents with a thorough understanding of offline file handling, camera backup configuration, common pitfalls, and escalation procedures. It cross-references related knowledge-base articles such as **File Sync Issues**, **Notification Settings**, and **Error Code Reference**.
+The mobile app enables users to access files on the go, work offline, and automatically back up photos and videos. This article equips support agents with a thorough understanding of offline file handling, camera backup configuration, common pitfalls, and escalation procedures. It cross-references related knowledge-base articles such as **File Sync Issues**, **Notification Settings**, and **Error Code Reference**.
 
 ## Core Features
 - **Offline file availability** – mark files to be stored locally for access without connectivity.
@@ -43,8 +43,8 @@ The Nimbus mobile app enables users to access files on the go, work offline, and
    - Settings → Camera Backup → ensure **"Upload over Wi-Fi only"** is set according to user preference.
    - For cellular uploads, enable **"Use cellular data"** but warn about data consumption.
 4. **Check Battery-Optimization Settings**
-   - Android: Settings → Battery → Battery optimization → exclude **Nimbus**.
-   - iOS: Settings → Nimbus → Background App Refresh → ON.
+   - Android: Settings → Battery → Battery optimization → exclude **the app**.
+   - iOS: Settings → the app → Background App Refresh → ON.
 5. **Clear App Cache**
    - Settings → Storage → Clear Cache to free space and remove stale thumbnails.
 6. **Review Sync Queue**
@@ -52,8 +52,8 @@ The Nimbus mobile app enables users to access files on the go, work offline, and
 7. **Examine Error Codes**
    - Look for `NB-SYNC-101` or `NB-UP-317` in the mobile logs (Settings → Help → Show Logs).
 8. **Validate Push Notification Permissions**
-   - iOS: Settings → Notifications → Nimbus → Allow Notifications.
-   - Android: Settings → Apps → Nimbus → Notifications → Enable.
+   - iOS: Settings → Notifications → the app → Allow Notifications.
+   - Android: Settings → Apps → the app → Notifications → Enable.
 
 ## Troubleshooting Tables
 ### Offline File Errors
@@ -66,7 +66,7 @@ The Nimbus mobile app enables users to access files on the go, work offline, and
 | Error Code | Meaning | Common Cause | Recommended Resolution |
 |------------|---------|--------------|------------------------|
 | CAM-101 | Backup paused (Wi-Fi only) | Wi-Fi unavailable | Enable **"Use cellular data"** or connect to Wi-Fi |
-| CAM-202 | Battery optimization stopped backup | OS killed background task | Exclude Nimbus from battery optimization (see step 4) |
+| CAM-202 | Battery optimization stopped backup | OS killed background task | Exclude the app from battery optimization (see step 4) |
 
 ## Examples and Edge Cases
 - **Case A:** User reports offline files not appearing after a weekend trip. Investigation shows the device ran out of storage; after increasing the offline storage limit and clearing cache, files synced correctly.
@@ -103,7 +103,7 @@ Create a **Mobile App Escalation Ticket** containing:
 - Consult **[Error Code Reference](../error-code-reference.md)** for detailed error meanings.
 
 ## Support Notes (Internal)
-- Known issue: On Android 12, the app may delay offline downloads when the device is in Doze mode. Recommend adding Nimbus to the **Battery optimization whitelist**.
+- Known issue: On Android 12, the app may delay offline downloads when the device is in Doze mode. Recommend adding the app to the **Battery optimization whitelist**.
 - For iOS, advise users to enable **"Low Data Mode"** off if they experience slow sync.
 - Log all escalation tickets with sync queue snapshots for future performance analysis.
 

@@ -47,9 +47,15 @@ def main() -> None:
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with OUT_PATH.open("w", encoding="utf-8") as f:
         for i, question in enumerate(sample, 1):
-            answer, docs = answer_question(vectorstore, question, llm=llm, k=4)
+            trace_id = f"t{i:02d}"
+            run_config = {
+                "tags": ["week5-trace"],
+                "metadata": {"trace_id": trace_id},
+                "run_name": f"week5-{trace_id}",
+            }
+            answer, docs = answer_question(vectorstore, question, llm=llm, k=4, run_config=run_config)
             trace = {
-                "trace_id": f"t{i:02d}",
+                "trace_id": trace_id,
                 "timestamp": datetime.now(timezone.utc).isoformat(),
                 "question": question,
                 "config": {"chunk_profile": SECTION_AWARE.name, "k": 4, "hybrid": False, "rerank": False},
