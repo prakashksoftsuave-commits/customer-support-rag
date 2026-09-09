@@ -8,36 +8,36 @@
       "article_id": "kb-notify-005",
       "product_area": "notifications",
       "chunk_id": "kb-notify-005::section_aware::4",
-      "score": 0.7195,
+      "score": 0.6166,
       "excerpt": "## Detailed Troubleshooting Steps 1. **Verify User Preferences** - Open Settings \u2192 Notifications and confirm toggles for each event type. 2. **Check Email Deliv"
     },
     {
       "article_id": "kb-notify-005",
       "product_area": "notifications",
       "chunk_id": "kb-notify-005::section_aware::2",
-      "score": 0.8409,
+      "score": 0.5795,
       "excerpt": "## Common Customer Symptoms - Not receiving expected email alerts. - Duplicate notifications for the same event. - Missing push notifications on mobile. - In-ap"
     },
     {
       "article_id": "kb-notify-005",
       "product_area": "notifications",
       "chunk_id": "kb-notify-005::section_aware::7",
-      "score": 0.9145,
+      "score": 0.5428,
       "excerpt": "## Frequently Asked Questions (FAQs) 1. **Why am I receiving duplicate email notifications?** Duplicate alerts often occur when a folder is muted but the user a"
     },
     {
       "article_id": "kb-notify-005",
       "product_area": "notifications",
-      "chunk_id": "kb-notify-005::section_aware::6",
-      "score": 0.9823,
-      "excerpt": "## Examples and Edge Cases - **Case 1:** User reports no email for comment notifications. Investigation shows the user disabled **Comments** toggle. Re-enable t"
+      "chunk_id": "kb-notify-005::section_aware::0",
+      "score": 0.5172,
+      "excerpt": "# Notification and Alert Settings   ## Overview Effective notification management is essential for keeping users informed without overwhelming them. This articl"
     },
     {
       "article_id": "kb-notify-005",
       "product_area": "notifications",
-      "chunk_id": "kb-notify-005::section_aware::0",
-      "score": 0.9908,
-      "excerpt": "# Notification and Alert Settings   ## Overview Effective notification management is essential for keeping users informed without overwhelming them. This articl"
+      "chunk_id": "kb-notify-005::section_aware::6",
+      "score": 0.5088,
+      "excerpt": "## Examples and Edge Cases - **Case 1:** User reports no email for comment notifications. Investigation shows the user disabled **Comments** toggle. Re-enable t"
     }
   ],
   "filtered": [
@@ -45,35 +45,35 @@
       "article_id": "kb-mobile-004",
       "product_area": "mobile",
       "chunk_id": "kb-mobile-004::section_aware::9",
-      "score": 1.1241,
+      "score": 0.4379,
       "excerpt": "## Cross-Article References - See **[File Sync Issues](../file-sync-issues.md)** for deeper sync error analysis. - Refer to **[Notification and Alert Settings]("
     },
     {
       "article_id": "kb-mobile-004",
       "product_area": "mobile",
       "chunk_id": "kb-mobile-004::section_aware::2",
-      "score": 1.4774,
+      "score": 0.2613,
       "excerpt": "## Common Customer Symptoms - Files marked offline do not appear when the device is offline. - Camera backup stops after switching to cellular data. - The app c"
     },
     {
       "article_id": "kb-mobile-004",
       "product_area": "mobile",
       "chunk_id": "kb-mobile-004::section_aware::7",
-      "score": 1.5349,
+      "score": 0.2325,
       "excerpt": "## Frequently Asked Questions (FAQs) 1. **Why does my offline file not download automatically?** The app only downloads when on Wi-Fi and background sync is ena"
     },
     {
       "article_id": "kb-mobile-004",
       "product_area": "mobile",
       "chunk_id": "kb-mobile-004::section_aware::3",
-      "score": 1.5666,
+      "score": 0.2167,
       "excerpt": "## Root Causes | Symptom | Typical Cause | |---------|---------------| | Offline files missing | Incomplete download, low storage, or background sync disabled |"
     },
     {
       "article_id": "kb-mobile-004",
       "product_area": "mobile",
       "chunk_id": "kb-mobile-004::section_aware::8",
-      "score": 1.5686,
+      "score": 0.2157,
       "excerpt": "## Escalation Guidance - **Trigger 1:** Offline files remain missing after three sync attempts and cache clear. - **Trigger 2:** Camera backup repeatedly fails "
     }
   ]

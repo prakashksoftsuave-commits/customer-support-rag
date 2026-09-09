@@ -8,7 +8,7 @@ last_updated: 2026-06-02
 # Account Access: Sign-In, Passwords, and Two-Factor Authentication
 
 ## Overview
-Customers frequently encounter issues related to signing in, managing passwords, and using two-factor authentication (2FA). This article equips support agents with a comprehensive guide covering symptoms, root causes, detailed step-by-step troubleshooting, realistic support scenarios, escalation criteria, cross-article references, performance considerations, and best-practice recommendations. All terminology aligns with existing Nimbus documentation and error codes.
+Customers frequently encounter issues related to signing in, managing passwords, and using two-factor authentication (2FA). This article equips support agents with a comprehensive guide covering symptoms, root causes, detailed step-by-step troubleshooting, realistic support scenarios, escalation criteria, cross-article references, performance considerations, and best-practice recommendations. All terminology aligns with existing documentation and error codes.
 
 ## Common Customer Symptoms
 - Unable to sign in with correct credentials.
@@ -85,7 +85,7 @@ Customers frequently encounter issues related to signing in, managing passwords,
 | ACC-410 | 2FA code mismatch | Clock drift, wrong device | Sync device time, re-enroll 2FA |
 | ACC-420 | Backup code used | Backup code already consumed | Generate new backup codes |
 | ACC-500 | SSO required but not configured | Workspace admin disabled password login | Enable password login or guide through SSO setup |
-| ACC-610 | Reset email undeliverable | Spam filter, domain block | Whitelist Nimbus email domain, resend |
+| ACC-610 | Reset email undeliverable | Spam filter, domain block | Whitelist the app's email domain, resend |
 | ACC-720 | Duplicate session detected | Multiple active tokens | Revoke sessions, enforce single-session policy |
 | ACC-830 | Unknown device login | Credential compromise | Initiate account recovery and rotate credentials |
 
@@ -111,7 +111,7 @@ Customers frequently encounter issues related to signing in, managing passwords,
    Reset links are valid for 30 minutes for security reasons. Request a new link if the old one expires.
 2. **Can I reuse a backup code?**
    No. Each backup code is single-use. Generate a new set after using any.
-3. **What should I do if my authenticator app shows a different code than Nimbus expects?**
+3. **What should I do if my authenticator app shows a different code than the app expects?**
    Ensure your device clock is set to automatic time. If the problem persists, re-enroll 2FA.
 4. **How do I disable SSO for my account?**
    Only workspace admins can change the sign-in method. Contact your admin to enable password login.
@@ -155,7 +155,7 @@ Create a **Security Escalation Ticket** containing:
 ## Performance and Best-Practice Tips
 - **Enable MFA Enforcement:** Require 2FA for all privileged accounts to reduce credential-stuffing risk.
 - **Session Rotation:** Encourage users to log out after extended periods; idle sessions are automatically terminated after the configured timeout.
-- **Email Whitelisting:** Add `no-reply@Nimbus.com` to safe sender lists to avoid missed reset emails.
+- **Email Whitelisting:** Add `no-reply@filesync.example` to safe sender lists to avoid missed reset emails.
 - **Clock Synchronization:** Recommend enabling automatic time updates on all devices to prevent 2FA drift.
 - **Audit Logs:** Regularly review authentication logs for anomalous patterns such as rapid successive failures.
 

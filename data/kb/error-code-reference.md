@@ -8,7 +8,7 @@ last_updated: 2026-06-20
 # Error Code Reference
 
 ## Overview
-This article consolidates all error codes that may appear across the Nimbus desktop, web, and mobile applications. It is intended for support agents to quickly locate the meaning, typical cause, and recommended remediation for each code. The codes are grouped by functional area (Sync, Authentication, Sharing, Upload, etc.) and are **not** interchangeable between areas.
+This article consolidates all error codes that may appear across the desktop, web, and mobile applications. It is intended for support agents to quickly locate the meaning, typical cause, and recommended remediation for each code. The codes are grouped by functional area (Sync, Authentication, Sharing, Upload, etc.) and are **not** interchangeable between areas.
 
 ## How to Use This Document
 1. Identify the error banner shown to the user and note the exact code (e.g., `NB-SYNC-101`).

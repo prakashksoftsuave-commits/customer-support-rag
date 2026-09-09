@@ -1,4 +1,4 @@
-"""Ingest the Nimbus help-center KB into Qdrant under every chunking strategy/profile."""
+"""Ingest the help-center KB into Qdrant under every chunking strategy/profile."""
 
 import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))

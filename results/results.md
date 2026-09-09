@@ -1,6 +1,6 @@
-# Results — Nimbus Help Center RAG
+# Results — Help Center RAG
 
-A "ask my documents" app over a 6-article mock help-center KB for Nimbus, a fictional cloud
+A "ask my documents" app over a 6-article mock help-center KB for a fictional cloud
 file-sync product. Built with LangChain (text splitters, HuggingFace embeddings, Qdrant vector
 store, Groq chat model) over an embedded/local Qdrant index. Every chunk carries
 `source_file`, `article_id`, `product_area`, `last_updated` metadata.
@@ -164,7 +164,7 @@ All 3 out-of-corpus questions correctly refused, verbatim:
    **A:** I don't know — the help center articles I have don't cover that.
 2. **Q:** Can I still recover a file after its trash retention period has ended?
    **A:** I don't know — the help center articles I have don't cover that.
-3. **Q:** Is there a native Nimbus desktop app for Linux?
+3. **Q:** Is there a native desktop app for Linux?
    **A:** I don't know — the help center articles I have don't cover that.
 
 The system prompt forces this exact sentence rather than suggesting the model "use its best

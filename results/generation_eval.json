@@ -3,7 +3,7 @@
     {
       "question": "How long does a password reset link stay valid before it expires?",
       "table_based": false,
-      "answer": "Password reset links remain valid for\u202f30\u202fminutes before they expire.\u202f[source: kb-account-001::section_aware::6]",
+      "answer": "Password reset links remain valid for\u202f30\u202fminutes before they expire. [source: kb-account-001::section_aware::6]",
       "source_chunk_ids": [
         "kb-account-001::section_aware::6",
         "kb-account-001::section_aware::10",
@@ -14,7 +14,7 @@
     {
       "question": "Can someone with the Commenter role edit the actual content of a document?",
       "table_based": false,
-      "answer": "No. Commenters can add comments but cannot edit the document\u2019s content\u202f[ source: kb-share-003::section_aware::6 ].",
+      "answer": "No. Commenters can add comments but cannot edit the document\u2019s content.\u202f[source: kb-share-003::section_aware::6]",
       "source_chunk_ids": [
         "kb-share-003::section_aware::6",
         "kb-share-003::section_aware::0",
@@ -25,7 +25,7 @@
     {
       "question": "What does error code NB\u2011SYNC\u2011101 mean and how do I fix it?",
       "table_based": true,
-      "answer": "Error\u202f`NB\u2011SYNC\u2011101` is a known false\u2011positive that can pop up briefly when files are edited rapidly; it clears itself automatically and doesn\u2019t require any user action to fix.\u202f[source: kb-errors-006::section_aware::8]",
+      "answer": "`NB\u2011SYNC\u2011101` is a known false\u2011positive error that can show up briefly when files are edited rapidly; it clears itself automatically and does not require any user action to fix it.\u202f[source: kb-errors-006::section_aware::8]",
       "source_chunk_ids": [
         "kb-errors-006::section_aware::8",
         "kb-errors-006::section_aware::1",
@@ -46,7 +46,7 @@
       "correctly_refused": true
     },
     {
-      "question": "Is there a native Nimbus desktop app for Linux?",
+      "question": "Is there a native desktop app for Linux?",
       "answer": "I don't know \u2014 the help center articles I have don't cover that.",
       "correctly_refused": true
     }

@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {"id": "known_01", "question": "How long does a password reset link stay valid before it expires?", "problem_type": "known_answer", "expects": {"should_refuse": false, "expected_article_id": "kb-account-001"}},
+    {"id": "known_02", "question": "When two devices edit the same file before syncing, what happens to the older version?", "problem_type": "known_answer", "expects": {"should_refuse": false, "expected_article_id": "kb-sync-002"}},
+    {"id": "known_03", "question": "What is the maximum size allowed for a single file upload?", "problem_type": "known_answer", "expects": {"should_refuse": false, "expected_article_id": "kb-sync-002"}},
+    {"id": "known_04", "question": "Can someone with the Commenter role edit the actual content of a document?", "problem_type": "known_answer", "expects": {"should_refuse": false, "expected_article_id": "kb-share-003"}},
+    {"id": "known_05", "question": "If I turn off email notifications for every individual event, does that also stop the weekly digest email?", "problem_type": "known_answer", "expects": {"should_refuse": false, "expected_article_id": "kb-notify-005"}},
+    {"id": "known_06", "question": "What does error code NB‑SYNC‑101 mean and how do I fix it?", "problem_type": "known_answer", "expects": {"should_refuse": false, "expected_article_id": "kb-errors-006"}},
+    {"id": "known_07", "question": "I got NB-AUTH-410 when using my password reset link — what does that mean?", "problem_type": "exact_code_lookup", "expects": {"should_refuse": false, "expected_article_id": "kb-errors-006"}, "note": "Week 5 finding (trace t18): source article is in the corpus but the specific table row for this code often isn't retrieved."},
+    {"id": "known_08", "question": "What should I do about error code NB-SHARE-512?", "problem_type": "exact_code_lookup", "expects": {"should_refuse": false, "expected_article_id": "kb-errors-006"}, "note": "Week 5 finding (trace t01): same pattern as known_07."},
+
+    {"id": "refuse_01", "question": "What's the refund policy if I cancel my subscription in the middle of a billing cycle?", "problem_type": "out_of_corpus", "expects": {"should_refuse": true, "expected_article_id": null}},
+    {"id": "refuse_02", "question": "Can I still recover a file after its trash retention period has ended?", "problem_type": "out_of_corpus", "expects": {"should_refuse": true, "expected_article_id": null}},
+    {"id": "refuse_03", "question": "Is there a native Nimbus desktop app for Linux?", "problem_type": "out_of_corpus", "expects": {"should_refuse": true, "expected_article_id": null}},
+
+    {"id": "ambiguous_01", "question": "How do I stop getting notifications?", "problem_type": "ambiguous", "expects": {"should_refuse": false, "expected_article_id": null}},
+
+    {"id": "compound_01", "question": "I keep getting logged out and my files won't upload, what's going on?", "problem_type": "compound_retrieval", "expects": {"should_refuse": false, "expected_article_id": "kb-account-001"}},
+    {"id": "compound_02", "question": "My files keep failing to upload and I had to sign in again, why?", "problem_type": "compound_retrieval", "expects": {"should_refuse": false, "expected_article_id": "kb-account-001"}},
+    {"id": "compound_03", "question": "Every time I try to sync a big file my session ends and I'm logged out", "problem_type": "compound_retrieval", "expects": {"should_refuse": false, "expected_article_id": "kb-account-001"}},
+    {"id": "compound_04", "question": "Nothing uploads and I don't get any alerts about it either", "problem_type": "compound_retrieval", "expects": {"should_refuse": false, "expected_article_id": "kb-sync-002"}},
+    {"id": "compound_05", "question": "My account keeps disconnecting whenever I try to move a lot of files", "problem_type": "compound_retrieval", "expects": {"should_refuse": false, "expected_article_id": "kb-account-001"}, "note": "Ground truth here is debatable — Week 5 found the app's sync-focused answer to this question is actually legitimate and well-grounded, not wrong. The rule-based check below still requires kb-account-001 and will mark a good answer as a miss; the judge score is the more trustworthy signal for this specific case."},
+
+    {"id": "meta_01", "question": "What can you help me with?", "problem_type": "meta_question", "expects": {"should_refuse": false, "expected_article_id": null}, "note": "Week 5 finding (trace t03): answered from whatever 4 chunks happened to retrieve, presented as a complete capability list. No rule-based expectation; judge-graded only."},
+
+    {"id": "vague_01", "question": "help", "problem_type": "vague_input", "expects": {"should_refuse": null, "expected_article_id": null}, "note": "Week 5 finding (trace t05): gets the out-of-corpus refusal template, which is not wrong but reads as unhelpful for a greeting-style input. Not asserted pass/fail — monitored via judge relevancy only."},
+
+    {"id": "scope_01", "question": "I want to make sure only my team can see a folder, not the whole company — how?", "problem_type": "scope_conflation", "expects": {"should_refuse": false, "expected_article_id": "kb-share-003"}, "note": "Week 5 finding (trace t20): retrieval and citation correct, but the answer conflates 'workspace' scope with 'team' scope, which the KB never equates. A rule can't catch this — judge-graded on faithfulness."}
+  ],
+  "judge_validation_subset": {
+    "note": "Human-graded independently, BEFORE the judge ever saw these, so agreement can be checked before trusting the judge on the full suite. Deliberately restricted to cases where the app actually answers (doesn't refuse) — the judge only ever scores a real answer, so a case the app refuses can't be used to validate it; refusal-correctness is already checked for free by the rule-based check, not the judge. See results/results.md Week 6 section for the reasoning behind each label.",
+    "config": "baseline (use_decompose=false) — these labels grade the answer under the app's current default behavior",
+    "labels": {
+      "known_01": "pass",
+      "known_02": "pass",
+      "known_03": "pass",
+      "known_04": "pass",
+      "known_06": "pass",
+      "ambiguous_01": "pass",
+      "compound_05": "pass",
+      "scope_01": "fail"
+    }
+  }
+}
