@@ -100,7 +100,16 @@ Run the experiments (each writes its output into `results/`):
 .venv\Scripts\python -m src.scripts.filter_demo
 .venv\Scripts\python -m src.scripts.generation_eval
 .venv\Scripts\python -m src.scripts.debug_retrieval
+.venv\Scripts\python -m src.scripts.collect_traces
+.venv\Scripts\python -m src.scripts.run_evals
+.venv\Scripts\python -m src.scripts.race_agent_vs_workflow
+.venv\Scripts\python -m src.scripts.trajectory_eval
+.venv\Scripts\python -m src.scripts.prompt_injection_test
 ```
+
+The eval/trajectory/injection scripts make enough LLM calls in one run to occasionally trip a
+provider rate limit — `run_evals.py` retries automatically with backoff; if a script fails outright
+with a `RateLimitError`, just wait a bit and re-run it.
 
 Launch the app:
 
@@ -144,18 +153,42 @@ fine concurrently. Qdrant mode doesn't have this restriction, since it's a real 
   document, wrong answer"), checks reranking (ruled out — it can't fix a document that was never
   retrieved), then measures hit-rate@3 with hybrid search on vs off. Full breakdown in
   `results/results.md` section 12.
+- **`collect_traces.py`** (Week 5) — samples 20 real traces (question, retrieved chunks, answer)
+  from a mixed pool for manual error analysis. Write-up: `results/error_analysis.md`.
+- **`run_evals.py`** (Week 6) — one-command eval suite (`data/eval/eval_suite.json`, 22 cases):
+  validates the LLM judge against human labels first, then reports rule-based + judge-graded
+  before/after scores per problem type for query decomposition. Write-up: `results/results.md`
+  Week 6 section.
+- **`race_agent_vs_workflow.py`** (Week 7) — races a hand-built ReAct agent (`src/rag/agent.py`)
+  against a fixed deterministic workflow on 4 multi-step support tickets, comparing latency, LLM
+  calls, and — since Week 8 — tool-choice recall and rule-based outcome correctness per ticket.
+  Write-up: `results/agent_vs_workflow.md`.
+- **`trajectory_eval.py`** (Week 8) — runs each of Week 7's 4 tickets 5x through the agent to find
+  the outcome-vs-trajectory gap: cases where the final answer passes a rule-based correctness check
+  even though the agent skipped a tool it needed to actually know that. Write-up:
+  `results/trajectory_eval.md`.
+- **`prompt_injection_test.py`** (Week 8) — red-team test (mock data, sandboxed) simulating a
+  compromised tool response trying to leak other customers' data, run undefended vs. with
+  least-privilege tool scoping vs. fully defended (+ output validation). Write-up:
+  `results/prompt_injection_test.md`. Full Week 8 narrative tying the fix, the gap, and the attack
+  together: `results/agent_failure_modes.md`.
 
 ## Layout
 
 ```
 data/kb/              the 6 help-center articles (YAML frontmatter + markdown), one is a
                        troubleshooting-table reference (error codes)
-data/eval/            8 known-answer questions, 1 ambiguous question, 3 out-of-corpus questions,
-                       6 known-to-fail compound questions (Week 4)
+data/eval/            known-answer/ambiguous/out-of-corpus/failing questions (Weeks 3-4),
+                       eval_suite.json (Week 6, 22 cases across 8 problem types)
+data/traces/          20 sampled real traces for manual error analysis (Week 5)
 src/rag/              loader (built-in KB + pdf/docx/md/txt uploads), splitter, embeddings,
-                       vector store, RAG chain (LangChain) — hybrid search + reranking live here
+                       vector store, RAG chain (hybrid search, reranking, query decomposition,
+                       LLM-judge), tracing glue, and the hand-built ReAct agent + fixed workflow
+                       (Week 7-8)
 src/scripts/          the scripts that produce results/
 src/app/              the Streamlit app (built-in KB or your own uploaded documents)
-results/              results.md write-up + raw JSON output from each experiment
-tests/                loader metadata, chunking invariants, upload-loader edge cases
+results/              write-ups + raw JSON output from every experiment, Week 4 onward
+tests/                loader metadata, chunking invariants, upload-loader edge cases, judge JSON
+                       parsing, trajectory metrics, agent stop-safety/least-privilege/injection
+                       defenses
 ```
