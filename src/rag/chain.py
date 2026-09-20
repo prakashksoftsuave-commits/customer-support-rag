@@ -169,11 +169,20 @@ def decompose_query(llm: ChatGroq, question: str, run_config: dict | None = None
 
 
 def retrieve_decomposed(
-    vectorstore, question: str, llm: ChatGroq, k: int = 4, product_area: str | None = None, run_config: dict | None = None
+    vectorstore, question: str, llm: ChatGroq, k: int = 4, product_area: str | None = None,
+    run_config: dict | None = None, debug_info: dict | None = None,
 ) -> list[Document]:
     """Retrieve k docs per decomposed sub-question, interleaved and capped at k total, so the
-    result is directly comparable to a plain retrieve() call at the same k."""
+    result is directly comparable to a plain retrieve() call at the same k.
+
+    ``debug_info``, if given, gets ``sub_questions`` filled in as a side effect — this is how
+    callers that need to log what the decomposer actually split a question into (e.g. to debug why
+    a compound question still didn't retrieve correctly) can see it, without a second, possibly
+    non-identical LLM call just to find out.
+    """
     sub_questions = decompose_query(llm, question, run_config=run_config)
+    if debug_info is not None:
+        debug_info["sub_questions"] = sub_questions
     if len(sub_questions) == 1:
         return retrieve(vectorstore, sub_questions[0], k=k, product_area=product_area)
 
@@ -242,6 +251,7 @@ def answer_question(
     use_decompose: bool = False,
     chat_history: list[tuple[str, str]] | None = None,
     run_config: dict | None = None,
+    debug_info: dict | None = None,
 ) -> tuple[str, list[Document]]:
     """Retrieve, optionally rerank, then answer. Returns (answer, source_docs).
 
@@ -253,12 +263,18 @@ def answer_question(
     ``run_config`` is passed straight through to the underlying LangChain ``.invoke()`` calls —
     e.g. ``{"tags": ["week5-trace"], "metadata": {"trace_id": "t01"}}`` to make a run filterable
     in Langfuse. No-op if Langfuse tracing isn't enabled.
+
+    ``debug_info``, if given, gets ``sub_questions`` filled in when ``use_decompose=True`` — see
+    ``retrieve_decomposed``.
     """
     llm = llm or get_llm()
     chat_history = chat_history or []
     search_question = condense_question(llm, chat_history, question, run_config=run_config)
     if use_decompose:
-        docs = retrieve_decomposed(vectorstore, search_question, llm, k=k, product_area=product_area, run_config=run_config)
+        docs = retrieve_decomposed(
+            vectorstore, search_question, llm, k=k, product_area=product_area,
+            run_config=run_config, debug_info=debug_info,
+        )
     else:
         docs = retrieve(vectorstore, search_question, k=k, product_area=product_area, use_hybrid=use_hybrid)
     if use_rerank:
