@@ -157,8 +157,8 @@ fine concurrently. Qdrant mode doesn't have this restriction, since it's a real 
   from a mixed pool for manual error analysis. Write-up: `results/error_analysis.md`.
 - **`run_evals.py`** (Week 6) — one-command eval suite (`data/eval/eval_suite.json`, 22 cases):
   validates the LLM judge against human labels first, then reports rule-based + judge-graded
-  before/after scores per problem type for query decomposition. Write-up: `results/results.md`
-  Week 6 section.
+  before/after scores per problem type for query decomposition. Write-up:
+  `results/eval_report.md`.
 - **`race_agent_vs_workflow.py`** (Week 7) — races a hand-built ReAct agent (`src/rag/agent.py`)
   against a fixed deterministic workflow on 4 multi-step support tickets, comparing latency, LLM
   calls, and — since Week 8 — tool-choice recall and rule-based outcome correctness per ticket.
