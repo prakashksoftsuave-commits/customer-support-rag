@@ -8,7 +8,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 sys.stdout.reconfigure(encoding="utf-8")
 
 import json
+import time
 from collections import defaultdict
+
+from groq import RateLimitError
 
 from src.rag.chain import REFUSAL_TEXT, answer_question, format_docs, get_llm, judge_answer
 from src.rag.config import ROOT_DIR, SECTION_AWARE
@@ -16,6 +19,29 @@ from src.rag.vectorstore import get_vectorstore
 
 SUITE_PATH = ROOT_DIR / "data" / "eval" / "eval_suite.json"
 OUT_PATH = ROOT_DIR / "results" / "eval_report.json"
+
+
+def _with_retry(fn, max_retries: int = 6):
+    """22 cases x up to 4 LLM calls each x 2 passes (baseline/decompose) is enough volume to
+    reliably trip Groq's free-tier per-minute token limit partway through — and this suite is
+    supposed to run with one command (Week 6's own checklist item #1), not crash and need a manual
+    re-run. Retries with the server's own suggested wait time when it gives one."""
+    delay = 2.0
+    for attempt in range(max_retries):
+        try:
+            return fn()
+        except RateLimitError as e:
+            if attempt == max_retries - 1:
+                raise
+            wait = delay
+            try:
+                wait = max(delay, float(str(e).split("try again in")[1].split("s")[0].strip()) + 0.5)
+            except (IndexError, ValueError):
+                pass
+            print(f"    [rate limited, retrying in {wait:.1f}s]")
+            time.sleep(wait)
+            delay *= 1.5
+    raise RuntimeError("unreachable")
 JUDGE_PASS_THRESHOLD = 4  # faithfulness AND relevancy must both be >= this to count as a judge pass
 AGREEMENT_WARN_BELOW = 0.7
 
@@ -27,7 +53,10 @@ def judge_pass(scores: dict) -> bool | None:
 
 
 def run_case(vectorstore, llm, case: dict, use_decompose: bool) -> dict:
-    answer, docs = answer_question(vectorstore, case["question"], llm=llm, k=4, use_decompose=use_decompose)
+    debug_info = {}
+    answer, docs = _with_retry(lambda: answer_question(
+        vectorstore, case["question"], llm=llm, k=4, use_decompose=use_decompose, debug_info=debug_info
+    ))
     retrieved_ids = [d.metadata["article_id"] for d in docs]
     refused = REFUSAL_TEXT in answer
 
@@ -35,12 +64,24 @@ def run_case(vectorstore, llm, case: dict, use_decompose: bool) -> dict:
     refusal_correct = None if expects["should_refuse"] is None else (refused == expects["should_refuse"])
     retrieval_hit = None if not expects["expected_article_id"] else (expects["expected_article_id"] in retrieved_ids)
     citation_present = None if refused else ("source:" in answer.lower())
-    checks = [c for c in (refusal_correct, retrieval_hit, citation_present) if c is not None]
+
+    # Week 5 flagged "help"-style vague input as a UX gap with no rule to check it — this closes
+    # that gap. A one-word greeting isn't out-of-corpus, it's just underspecified, so getting back
+    # the exact same flat refusal template built for genuinely unanswerable questions is the
+    # failure mode being checked for here (see results/results.md Week 5 §3 and this file's
+    # eval_suite.json note on vague_01). This is expected to still fail until that's actually
+    # fixed — no prompt change was made to address it in this pass — and that's an honest signal,
+    # not a bug: recording it as a real, currently-failing check beats silently contributing none.
+    vague_input_helpful = None
+    if case["problem_type"] == "vague_input":
+        vague_input_helpful = answer.strip() != REFUSAL_TEXT
+
+    checks = [c for c in (refusal_correct, retrieval_hit, citation_present, vague_input_helpful) if c is not None]
     rule_pass = all(checks) if checks else None
 
     scores = {"faithfulness": None, "relevancy": None}
     if not refused:
-        scores = judge_answer(llm, case["question"], format_docs(docs), answer)
+        scores = _with_retry(lambda: judge_answer(llm, case["question"], format_docs(docs), answer))
 
     return {
         "id": case["id"],
@@ -48,10 +89,15 @@ def run_case(vectorstore, llm, case: dict, use_decompose: bool) -> dict:
         "question": case["question"],
         "answer": answer,
         "retrieved_article_ids": retrieved_ids,
+        # Only set when use_decompose=True — lets you see *what* a compound question was split
+        # into, which Week 6's original write-up flagged as missing when debugging why
+        # compound_03/compound_04 still didn't recover under decomposition.
+        "sub_questions": debug_info.get("sub_questions"),
         "refused": refused,
         "refusal_correct": refusal_correct,
         "retrieval_hit": retrieval_hit,
         "citation_present": citation_present,
+        "vague_input_helpful": vague_input_helpful,
         "rule_pass": rule_pass,
         "judge_faithfulness": scores["faithfulness"],
         "judge_relevancy": scores["relevancy"],

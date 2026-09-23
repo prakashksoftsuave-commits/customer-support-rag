@@ -104,6 +104,7 @@ with st.sidebar:
         hybrid = st.checkbox("Enable hybrid search (semantic + keyword)", value=False)
 
     rerank = st.checkbox("Enable reranking (cross-encoder)", value=False)
+    decompose = st.checkbox("Enable query decomposition (fixes compound questions)", value=True)
 
 if source == "My uploaded documents":
     if not st.session_state.get("uploaded_ready"):
@@ -157,6 +158,7 @@ if question := st.chat_input("Ask a question about the loaded documents"):
                 product_area=filter_area,
                 use_hybrid=hybrid,
                 use_rerank=rerank,
+                use_decompose=decompose,
                 chat_history=chat_history,
                 run_config={
                     "tags": ["streamlit-chat"],

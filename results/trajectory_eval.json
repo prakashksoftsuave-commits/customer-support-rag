@@ -1,0 +1,400 @@
+{
+  "summary": {
+    "n_trials_per_ticket": 5,
+    "overall_avg_tool_choice_recall": 0.68,
+    "overall_outcome_correct_rate": 0.95,
+    "outcome_vs_trajectory_gap_count": 9,
+    "outcome_vs_trajectory_gap_rate": 0.45,
+    "per_ticket": {
+      "ticket_01_account_lock": {
+        "n": 5,
+        "avg_tool_choice_recall": 0.9,
+        "outcome_correct_rate": 1.0,
+        "gap_count": 1,
+        "both_wrong_count": 0,
+        "both_correct_count": 4
+      },
+      "ticket_02_sync_quota_conflict": {
+        "n": 5,
+        "avg_tool_choice_recall": 0.6,
+        "outcome_correct_rate": 0.8,
+        "gap_count": 4,
+        "both_wrong_count": 1,
+        "both_correct_count": 0
+      },
+      "ticket_03_simple_share_link": {
+        "n": 5,
+        "avg_tool_choice_recall": 0.2,
+        "outcome_correct_rate": 1.0,
+        "gap_count": 4,
+        "both_wrong_count": 0,
+        "both_correct_count": 1
+      },
+      "ticket_04_complex_auth_reset": {
+        "n": 5,
+        "avg_tool_choice_recall": 1.0,
+        "outcome_correct_rate": 1.0,
+        "gap_count": 0,
+        "both_wrong_count": 0,
+        "both_correct_count": 5
+      }
+    }
+  },
+  "trials": [
+    {
+      "ticket_id": "ticket_01_account_lock",
+      "trial": 1,
+      "expected_tools": [
+        "account_status",
+        "error_lookup"
+      ],
+      "tools_called": [
+        "error_lookup"
+      ],
+      "tool_choice_recall": 0.5,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "RIGHT ANSWER, WRONG PATH",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 2,
+      "final_answer": "Hello Maria,\n\nI\u2019m sorry you\u2019re unable to access your account. The error **NB\u2011AUTH\u2011500** indicates that your account was automatically locked because the system detected suspicious activity \u2013 most commonly a series of failed sign\u2011in attempts.\n\n**How to unlock your account**\n\n1. **If you have an admin or IT team**  \n   - Ask an admin to open the **Admin Console** \u2192 **User Management** \u2192 locate your user (maria@startup.io).  \n   - Select the user and click **\u201cUnlock Account.\u201d**  \n   - The admin should also review recent sign\u2011in activity to ensure there\u2019s no ongoing security risk.\n\n2. **If you don\u2019t have an admin**  \n   - Please contact our Security Team directly at **security@ourcompany.com** (or reply to this email).  \n   - Provide your email address and the error code **NB\u2011AUTH\u2011500**.  \n   - Our team will verify your identity and unlock the account for you.\n\n**Preventing future lockouts**\n\n- Ensure you\u2019re using the correct password. If you\u2019re unsure, you can reset it via the \u201cForgot password?\u201d link on the sign\u2011in page.  \n- Enable two\u2011factor authentication (2FA) to add an extra layer of security.  \n- Avoid repeated sign\u2011in attempts with an incorrect password; after a few failures the system will lock the account as a protective measure.\n\nIf you need any help with the password reset or setting up 2FA, just let me know\u2014I\u2019m happy to walk you through the steps.\n\nThank you for your patience, and please let me know once the account is unlocked or if there\u2019s anything else I can assist with.\n\nBest regards,  \n[Your Name]  \nCustomer Support Engineer"
+    },
+    {
+      "ticket_id": "ticket_01_account_lock",
+      "trial": 2,
+      "expected_tools": [
+        "account_status",
+        "error_lookup"
+      ],
+      "tools_called": [
+        "account_status",
+        "error_lookup"
+      ],
+      "tool_choice_recall": 1.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "both_correct",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 3,
+      "final_answer": "**Hello Maria,**\n\nI see that your account is currently **locked** and the error you received (**NB\u2011AUTH\u2011500**) indicates that the lock was triggered by **multiple failed sign\u2011in attempts** \u2013 a security measure we use to protect your data.\n\nHere\u2019s what you can do to regain access:\n\n1. **Reset your password**  \n   - Go to the login page and click **\u201cForgot password?\u201d**  \n   - Follow the email instructions to set a new password.  \n   - Because you have **2\u2011FA enabled**, you\u2019ll be prompted to verify the sign\u2011in with your authenticator app or backup code.\n\n2. **If the password reset does not unlock the account**  \n   - The lock can also be cleared from the admin console. Since you are the primary user of a **Pro** account, you can:\n     - Log in to the **Admin Console** (if you have another admin account that isn\u2019t locked) and navigate to **Security\u202f\u2192\u202fAccount Locks**.  \n     - Locate your user entry and click **\u201cUnlock\u201d**.\n\n3. **Contact our Security Team**  \n   - If you don\u2019t have another admin account or the above steps don\u2019t work, please reach out to our security team directly.  \n   - You can do this by replying to this email or opening a support ticket from a different email address, referencing **error NB\u2011AUTH\u2011500** and your account **maria@startup.io**.  \n   - For faster handling, include a brief verification (e.g., the last 4 digits of the credit card on file or the name of your organization).\n\n4. **Prevent future lockouts**  \n   - Ensure you\u2019re using the correct password and that your 2\u2011FA device is up\u2011to\u2011date.  \n   - If you share credentials with teammates, consider creating separate user accounts with appropriate permissions instead of sharing a single login.\n\nYour storage usage (18\u202fGB of 20\u202fGB) is well within your plan limits, so there\u2019s no impact there.\n\nIf you run into any trouble during the reset or need the admin console link, just let me know and I\u2019ll provide the exact URL and further guidance.\n\n**We\u2019re here to help you get back in quickly\u2014please let me know once you\u2019ve tried the steps or if you need additional assistance.**\n\nBest regards,  \n[Your Name]  \nCustomer Support \u2013 Pro Tier  \nNimbleBox (or your product name)  \nsupport@nimblebox.com"
+    },
+    {
+      "ticket_id": "ticket_01_account_lock",
+      "trial": 3,
+      "expected_tools": [
+        "account_status",
+        "error_lookup"
+      ],
+      "tools_called": [
+        "error_lookup",
+        "account_status"
+      ],
+      "tool_choice_recall": 1.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "both_correct",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 3,
+      "final_answer": "**Hello Maria,**\n\nI\u2019m sorry you\u2019re experiencing this issue. Here\u2019s what\u2019s happening and how you can get back into your account:\n\n### What the error means\n- **Error code:** **NB\u2011AUTH\u2011500**  \n- **Meaning:** Your account has been **locked due to suspicious activity**.  \n- **Cause:** The system detected **multiple failed sign\u2011in attempts** (your account shows 5 recent failed logins).\n\n### Current account status\n- Your account (**maria@startup.io**) is currently **locked**.  \n- You\u2019re on the **Pro** plan with 2\u2011FA enabled, and you\u2019re close to your storage limit (18\u202fGB of 20\u202fGB used). The lockout is unrelated to storage, but it\u2019s good to know your quota is still within limits.\n\n### How to unlock the account\n1. **Contact your organization\u2019s admin or security team**  \n   - They have access to the admin console where the lock can be cleared manually.  \n   - Provide them with the error code **NB\u2011AUTH\u2011500** and let them know you\u2019ve had several failed login attempts.\n\n2. **If you are the admin**  \n   - Log in to the **Admin Console** \u2192 **User Management** \u2192 locate your user record \u2192 click **Unlock Account**.  \n   - After unlocking, you may want to reset your password to ensure you can sign in without further issues.\n\n3. **If you cannot reach an admin immediately**  \n   - Wait for the automatic lockout period to expire (typically 30\u202fminutes to 1\u202fhour). After that, try signing in again with the correct password.  \n   - If you suspect your password may be compromised, use the **\u201cForgot password?\u201d** link on the sign\u2011in page to reset it.\n\n4. **Enable additional security measures** (optional but recommended)  \n   - Since 2\u2011FA is already enabled, consider reviewing recent activity in the **Security Dashboard** once you\u2019re back in.  \n   - If you notice any unfamiliar devices or locations, remove them and change your password.\n\n### Quick checklist for you\n- [ ] Reach out to your admin/security team with the error code NB\u2011AUTH\u2011500.  \n- [ ] If you are the admin, unlock the account via the Admin Console.  \n- [ ] Reset your password if you think it might be compromised.  \n- [ ] After unlocking, log in and verify that 2\u2011FA works as expected.  \n\nIf you run into any trouble during the unlock process or need further assistance, please let me know and I\u2019ll be happy to help!"
+    },
+    {
+      "ticket_id": "ticket_01_account_lock",
+      "trial": 4,
+      "expected_tools": [
+        "account_status",
+        "error_lookup"
+      ],
+      "tools_called": [
+        "account_status",
+        "error_lookup"
+      ],
+      "tool_choice_recall": 1.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "both_correct",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 3,
+      "final_answer": "**  \n\nHi Maria,\n\nI\u2019m sorry you\u2019re unable to access your account. Here\u2019s what\u2019s happened and how we can get you back in:\n\n### Why the account is locked  \n- **Error NB\u2011AUTH\u2011500** indicates that the system detected **suspicious activity** \u2013 specifically, a series of failed sign\u2011in attempts (your account shows 5 consecutive failures).  \n- To protect your data, the security system automatically **locked the account** after those attempts.\n\n### How to unlock the account  \n\n1. **If you have an admin or team\u2011owner role**  \n   - Log in to the **Admin Console** (or have another admin on your team do it).  \n   - Navigate to **Users \u2192 Account Security \u2192 Locked Accounts**.  \n   - Locate **maria@startup.io** and click **\u201cUnlock\u201d**.  \n   - The user will receive an email prompting them to verify their identity (via 2\u2011FA) before the next sign\u2011in.\n\n2. **If you are the only admin / cannot access the console**  \n   - Please reply to this ticket or open a new support request, and we\u2019ll manually unlock the account for you.  \n   - For security, we\u2019ll ask you to confirm a few details (e.g., the last 4 digits of the payment method on file, or a recent activity timestamp) before proceeding.\n\n3. **After the account is unlocked**  \n   - **Reset your password**: go to the sign\u2011in page, click **\u201cForgot password?\u201d**, and follow the reset link.  \n   - **Verify your two\u2011factor authentication (2FA)**: make sure your authenticator app or security key is up\u2011to\u2011date.  \n   - **Avoid repeated failed attempts**: if you suspect someone else is trying to access your account, consider updating your password and reviewing recent activity in the security log.\n\n### Quick checklist  \n\n- \u2705 Confirm you have access to the admin console (or let us know you need assistance).  \n- \u2705 Reset your password after the unlock.  \n- \u2705 Verify 2FA is working correctly.  \n\nIf you\u2019d like us to unlock the account on your behalf, just let me know and I\u2019ll take care of it right away.  \n\nThank you for your patience, and please don\u2019t hesitate to reach out if you have any other questions or need further assistance.  \n\nBest regards,  \n[Your Name]  \nCustomer Support \u2013 [Your Company]"
+    },
+    {
+      "ticket_id": "ticket_01_account_lock",
+      "trial": 5,
+      "expected_tools": [
+        "account_status",
+        "error_lookup"
+      ],
+      "tools_called": [
+        "error_lookup",
+        "account_status"
+      ],
+      "tool_choice_recall": 1.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "both_correct",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 3,
+      "final_answer": "**Hello Maria,**\n\nI\u2019m sorry you\u2019re unable to access your account. Here\u2019s what\u2019s happening and how you can get back in:\n\n### What caused the lock?\n- **Error\u202fNB\u2011AUTH\u2011500** means the account was locked because of **suspicious activity \u2013 specifically, multiple failed sign\u2011in attempts** (your account recorded 5 failed logins).  \n- As a security measure, the system automatically locked the account to protect your data.\n\n### Current account status\n- **Account:** `maria@startup.io`  \n- **Status:** Locked  \n- **Plan:** Pro (20\u202fGB storage, 18\u202fGB used)  \n- **Two\u2011Factor Authentication:** Enabled  \n\n### How to unlock the account\n\n#### 1. If you are the **admin** of your organization  \nYou can unlock the account directly from the Admin Console:\n\n1. Sign in to the **Admin Console** using another admin\u2019s credentials (or a master admin account).  \n2. Navigate to **Users \u2192 Maria\u202f(Startup.io)**.  \n3. Click **\u201cUnlock Account\u201d**.  \n4. After unlocking, you\u2019ll be prompted to **reset your password**. Follow the reset link sent to `maria@startup.io`.  \n5. When you sign in again, you\u2019ll need to complete the **2\u2011FA challenge** (e.g., enter the code from your authenticator app or approve the push notification).\n\n#### 2. If you are **not an admin** (or you don\u2019t have another admin\u2019s credentials)  \nPlease contact your organization\u2019s security or IT team and ask them to unlock the account for you. They will follow the same steps above in the Admin Console.\n\n#### 3. If you need immediate assistance from us  \nReply to this email or open a support ticket and include:\n\n- Your full name and email (`maria@startup.io`)  \n- Confirmation that you have access to the 2\u2011FA device linked to the account  \n\nWe\u2019ll verify your identity and unlock the account on your behalf, then send you a password\u2011reset link.\n\n### Preventing future lockouts\n- **Avoid repeated incorrect passwords** \u2013 after a few failed attempts the system will lock the account.  \n- **Use a password manager** to store the correct password.  \n- **Ensure your 2\u2011FA device is accessible** before signing in, especially after a password change.  \n\nIf you have any questions or need the unlock performed right away, just let us know and we\u2019ll take care of it.\n\nThank you for your patience, and welcome back soon!\n\n**Best regards,**  \nCustomer Support Team  \n[Your Company]"
+    },
+    {
+      "ticket_id": "ticket_02_sync_quota_conflict",
+      "trial": 1,
+      "expected_tools": [
+        "account_status",
+        "error_lookup",
+        "kb_search"
+      ],
+      "tools_called": [
+        "error_lookup",
+        "account_status"
+      ],
+      "tool_choice_recall": 0.67,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "RIGHT ANSWER, WRONG PATH",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 3,
+      "final_answer": "**Hello John,**\n\nThanks for reaching out. I\u2019ve looked into the error you\u2019re seeing (NB\u2011UP\u2011330) and checked the status of your account.\n\n### What the error means\n- **NB\u2011UP\u2011330** is triggered when a single file you try to upload is larger than the **2\u202fGB per\u2011file limit** for our service.  \n- The system can\u2019t accept files that exceed this size, regardless of how much free space you have left.\n\n### Your account\u2019s storage situation\n- Your free\u2011tier account has a **total storage limit of 2\u202fGB**.  \n- Currently you\u2019re using **2.1\u202fGB**, which means you\u2019ve already exceeded the overall quota.\n\n### Why the upload is failing\nBecause both of the following are true:\n\n1. **The file you\u2019re uploading is larger than 2\u202fGB** (the per\u2011file limit).  \n2. **Your account is already over its total storage quota**, so there\u2019s no room for additional data.\n\n### How to resolve this\n\n| Option | What to do | When it helps |\n|--------|------------|---------------|\n| **Reduce the file size** | \u2022 Compress the file into a ZIP (or another archive) <br>\u2022 Split the file into smaller chunks (e.g., using tools like 7\u2011Zip, WinRAR, or `split` on macOS/Linux) | If the file can be broken into pieces\u202f<\u202f2\u202fGB each. |\n| **Free up space** | \u2022 Delete or archive files you no longer need <br>\u2022 Move older files to an external drive or another cloud service | When you want to stay on the free tier. |\n| **Upgrade your plan** | \u2022 Go to **Account\u202f\u2192\u202fPlan & Billing** and choose a paid tier (e.g., 10\u202fGB, 100\u202fGB, etc.) <br>\u2022 After upgrading, you\u2019ll have a higher total storage limit and the same 2\u202fGB per\u2011file cap (larger plans may raise this limit). | If you regularly need to store or upload large files. |\n| **Combine both** | \u2022 Delete some existing data **and** compress/split the new file | Best if you need a quick fix without changing plans. |\n\n### Quick steps to free up space (Free tier)\n\n1. **Log in** to your account.  \n2. Navigate to **Files** \u2192 **All Files**.  \n3. Sort by **Size** (largest first) to spot the biggest items.  \n4. Select any files you no longer need and click **Delete**.  \n5. Empty the **Trash** folder to reclaim the space.\n\n### Upgrading your plan\n\n1. Click your avatar \u2192 **Account Settings** \u2192 **Plan & Billing**.  \n2. Choose a plan that meets your storage needs.  \n3. Follow the prompts to complete the purchase.  \n4. Once upgraded, you\u2019ll instantly have the additional quota.\n\n---\n\n**Next steps for you**\n\n1. Check the size of the file you\u2019re trying to upload. If it\u2019s >\u202f2\u202fGB, compress or split it.  \n2. Review your current storage (you\u2019re at 2.1\u202fGB of a 2\u202fGB limit). Delete or move files you can live without, or consider upgrading.  \n3. After you\u2019ve either reduced the file size or freed enough space, try the upload again.\n\nIf you run into any trouble while deleting files, compressing, or upgrading, just let me know\u2014I\u2019m happy to walk you through the process step\u2011by\u2011step.\n\nBest regards,  \n**[Your Name]**  \nCustomer Support Engineer  \n\u200b"
+    },
+    {
+      "ticket_id": "ticket_02_sync_quota_conflict",
+      "trial": 2,
+      "expected_tools": [
+        "account_status",
+        "error_lookup",
+        "kb_search"
+      ],
+      "tools_called": [
+        "error_lookup",
+        "account_status"
+      ],
+      "tool_choice_recall": 0.67,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "RIGHT ANSWER, WRONG PATH",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 3,
+      "final_answer": "**Hi John,**\n\nThanks for reaching out. I\u2019ve looked into the error you\u2019re seeing (NB\u2011UP\u2011330) and also checked the status of your account.\n\n### What the error means\n- **NB\u2011UP\u2011330**: *\u201cUpload exceeds 2\u202fGB single\u2011file limit.\u201d*  \n  This occurs when a single file is larger than the maximum allowed size for an upload.\n\n### What your account status shows\n- **Account:** active (free tier)  \n- **Storage used:**\u202f2.1\u202fGB of a **2\u202fGB** total quota  \n\nBecause you\u2019re already over the overall storage quota, any additional upload\u2014especially one larger than 2\u202fGB\u2014will be blocked.\n\n### How to resolve the issue\n\n1. **Free up space**  \n   - Delete or archive files you no longer need.  \n   - You can view your current files in the **Storage** section of the web app and sort by size to find the biggest items.\n\n2. **Reduce the file size**  \n   - If the file you\u2019re trying to upload is larger than 2\u202fGB, compress it into a ZIP archive or split it into smaller chunks (e.g., using tools like 7\u2011Zip, WinRAR, or `split` on macOS/Linux).  \n   - After splitting, upload each part separately.\n\n3. **Upgrade your plan** (optional but recommended if you regularly need more storage)  \n   - Our **Pro** plan provides 100\u202fGB of storage and raises the single\u2011file upload limit to 10\u202fGB.  \n   - You can upgrade from the **Account Settings \u2192 Billing** page, or let me know and I can send you a direct upgrade link.\n\n4. **Verify after changes**  \n   - Once you\u2019ve freed space or upgraded, try uploading the (now smaller) file again.  \n   - If you still encounter issues, let me know the exact file size and any new error codes you see.\n\n### Quick steps to delete files\n\n1. Log in to your account.  \n2. Go to **Files \u2192 Storage**.  \n3. Select the files you want to remove (you can sort by \u201cSize\u201d to see the biggest ones first).  \n4. Click **Delete** and confirm.  \n5. The freed space will be reflected immediately.\n\n---\n\nIf you need help locating large files, guidance on compressing/splitting, or assistance with the upgrade process, just let me know\u2014I\u2019m happy to walk you through any of those steps.\n\n**Best regards,**  \nCustomer Support Team  \n(Feel free to reply to this email if you have any further questions.)"
+    },
+    {
+      "ticket_id": "ticket_02_sync_quota_conflict",
+      "trial": 3,
+      "expected_tools": [
+        "account_status",
+        "error_lookup",
+        "kb_search"
+      ],
+      "tools_called": [
+        "error_lookup",
+        "account_status"
+      ],
+      "tool_choice_recall": 0.67,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "RIGHT ANSWER, WRONG PATH",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 3,
+      "final_answer": "**Hi John,**\n\nI\u2019ve looked into the error you\u2019re seeing and checked your account status.\n\n### What the error means\n- **Error\u202fNB\u2011UP\u2011330**: *\u201cUpload exceeds 2\u202fGB single\u2011file limit.\u201d*  \n  This is triggered when a single file you try to upload is larger than 2\u202fGB. The limit applies to all accounts, regardless of tier.\n\n### Your account status\n- **Account:** active (free tier)  \n- **Current storage used:**\u202f2.1\u202fGB of a 2.0\u202fGB free\u2011tier quota  \n\nSo, in addition to the file\u2011size limit, you\u2019re also slightly over your overall storage quota.\n\n---\n\n## How to resolve the upload issue\n\n1. **Reduce the file size**  \n   - **Compress** the file into a ZIP (or another archive format).  \n   - **Split** the file into smaller parts (e.g., using tools like 7\u2011Zip, WinRAR, or `split` on macOS/Linux) so each part is \u2264\u202f2\u202fGB, then upload the parts separately.\n\n2. **Free up or increase storage**  \n   - **Delete** any files you no longer need from your account to bring usage below the 2\u202fGB limit.  \n   - **Upgrade** to a paid plan (e.g., Pro or Business) which raises the total storage quota and also gives you a higher per\u2011file limit (up to 10\u202fGB on Pro). You can upgrade from the **Account Settings \u2192 Billing** page.\n\n3. **After freeing space or upgrading**, try uploading the (now smaller) file again. The upload should succeed as long as each individual file is \u2264\u202f2\u202fGB and your total storage stays within your plan\u2019s limit.\n\n---\n\n### Quick steps to delete files\n\n1. Log in to your dashboard.  \n2. Navigate to **Files**.  \n3. Select the files you want to remove (checkboxes on the left).  \n4. Click **Delete** and confirm.\n\n### Quick steps to upgrade\n\n1. Go to **Account Settings \u2192 Billing**.  \n2. Choose the plan that fits your needs (Pro gives 10\u202fGB total storage and a 10\u202fGB per\u2011file limit).  \n3. Follow the prompts to enter payment information and confirm.\n\n---\n\nIf you need help compressing/splitting the file or have any questions about the upgrade process, just let me know\u2014I\u2019m happy to walk you through it.  \n\n**Best regards,**  \nCustomer Support Team"
+    },
+    {
+      "ticket_id": "ticket_02_sync_quota_conflict",
+      "trial": 4,
+      "expected_tools": [
+        "account_status",
+        "error_lookup",
+        "kb_search"
+      ],
+      "tools_called": [
+        "account_status"
+      ],
+      "tool_choice_recall": 0.33,
+      "outcome_correct": false,
+      "outcome_vs_trajectory": "both_wrong",
+      "retry_count": 1,
+      "stopped_by_limit": false,
+      "llm_calls": 3,
+      "final_answer": "**Answer:**  \n\nHi John,\n\nThe error\u202f**NB\u2011UP\u2011330** you\u2019re seeing means the upload can\u2019t complete because your account has run out of storage space.\n\nAccording to our records for **john@domain.com**:\n\n- **Current plan:** Free tier  \n- **Storage used:**\u202f2.1\u202fGB  \n- **Storage limit:**\u202f2.0\u202fGB  \n\nYou\u2019ve exceeded the free\u2011tier quota by\u202f0.1\u202fGB, which is why the upload fails.\n\n### What you can do next\n\n1. **Free up space**  \n   - Go to **Files \u2192 Manage Files** in the web app.  \n   - Sort by size or date and delete any files you no longer need.  \n   - Empty the **Trash** (or \u201cDeleted Items\u201d) folder to reclaim the space immediately.\n\n2. **Upgrade your storage**  \n   - If you regularly need more space, consider upgrading to a paid plan:  \n     - **Pro Plan:** 10\u202fGB storage \u2013 $4.99\u202f/\u202fmonth  \n     - **Team Plan:** 100\u202fGB storage \u2013 $14.99\u202f/\u202fmonth  \n   - You can upgrade from **Account Settings \u2192 Billing** or follow this link: [Upgrade My Plan](https://app.example.com/billing/upgrade).\n\n3. **Alternative temporary workaround**  \n   - Compress large files into ZIP archives before uploading to reduce their size.  \n   - Split very large files into smaller chunks (e.g., using 100\u202fMB parts) and upload them separately.\n\nIf you need help locating or deleting files, or if you\u2019d like assistance with the upgrade process, just let me know\u2014I\u2019m happy to walk you through it.\n\nThank you for using our service, and please reach out if anything else comes up!"
+    },
+    {
+      "ticket_id": "ticket_02_sync_quota_conflict",
+      "trial": 5,
+      "expected_tools": [
+        "account_status",
+        "error_lookup",
+        "kb_search"
+      ],
+      "tools_called": [
+        "error_lookup",
+        "account_status"
+      ],
+      "tool_choice_recall": 0.67,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "RIGHT ANSWER, WRONG PATH",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 3,
+      "final_answer": "**Answer**\n\nHi John,\n\nThanks for reaching out. I\u2019ve looked into the error you\u2019re seeing (NB\u2011UP\u2011330) and also checked the status of your account.\n\n1. **What the error means**  \n   - **NB\u2011UP\u2011330** is triggered when a single file is larger than the platform\u2019s **2\u202fGB upload limit**. The file you\u2019re trying to upload exceeds this size.\n\n2. **Your account\u2019s storage situation**  \n   - Your free\u2011tier account currently uses **2.1\u202fGB of the 2\u202fGB total storage** that\u2019s available. In other words, you\u2019re already over the quota.\n\nBecause of both factors, the upload cannot succeed right now.\n\n---\n\n### How to resolve\n\n**Option A \u2013 Reduce the file size**  \n- **Compress** the file into a ZIP (or another archive format) to bring it under 2\u202fGB.  \n- **Split** the file into smaller chunks (e.g., using tools like 7\u2011Zip, WinRAR, or command\u2011line split) and upload each part separately.\n\n**Option B \u2013 Free up storage**  \n- Delete or archive files you no longer need.  \n- Move older files to an external drive or another cloud service, then delete them from your account.\n\n**Option C \u2013 Upgrade your plan**  \n- Upgrading to a paid tier raises both the overall storage limit and the per\u2011file upload limit (e.g., the Pro plan allows up to 10\u202fGB per file and 100\u202fGB total storage).  \n- You can upgrade from the **Account Settings \u2192 Billing** page, or let me know if you\u2019d like a link to the plan comparison.\n\n---\n\n### Next steps for you\n\n1. **If you can compress or split the file**, try uploading the smaller version first.  \n2. **If you need more space**, either delete some existing files or consider upgrading. Let me know which route you\u2019d prefer, and I can guide you through the process or provide a direct upgrade link.\n\nPlease let me know if you run into any other issues or need help with the file\u2011splitting/compression steps\u2014I\u2019m happy to walk you through them.\n\nBest regards,  \n[Your Name]  \nCustomer Support Engineer"
+    },
+    {
+      "ticket_id": "ticket_03_simple_share_link",
+      "trial": 1,
+      "expected_tools": [
+        "kb_search"
+      ],
+      "tools_called": [],
+      "tool_choice_recall": 0.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "RIGHT ANSWER, WRONG PATH",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 1,
+      "final_answer": "Question: How do I share a folder so that only specific invited users can edit it, and commenters cannot?"
+    },
+    {
+      "ticket_id": "ticket_03_simple_share_link",
+      "trial": 2,
+      "expected_tools": [
+        "kb_search"
+      ],
+      "tools_called": [],
+      "tool_choice_recall": 0.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "RIGHT ANSWER, WRONG PATH",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 1,
+      "final_answer": "Question: How do I share a folder so that only specific invited users can edit it, and commenters cannot?"
+    },
+    {
+      "ticket_id": "ticket_03_simple_share_link",
+      "trial": 3,
+      "expected_tools": [
+        "kb_search"
+      ],
+      "tools_called": [],
+      "tool_choice_recall": 0.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "RIGHT ANSWER, WRONG PATH",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 1,
+      "final_answer": "**\n\nHi\u202f[Customer Name],\n\nYou can share a folder so that only the people you invite can edit it, while anyone you give *Comment* access will be unable to make changes. Follow these steps:\n\n1. **Open the folder you want to share**  \n   - In the web app, navigate to the folder and click the **\u22ee\u202fMore options** button (or right\u2011click the folder).\n\n2. **Select \u201cShare\u201d**  \n   - A sharing dialog will appear.\n\n3. **Invite the users who need edit rights**  \n   - In the **Invite people** field, type the email addresses of the collaborators.  \n   - Click the permission dropdown next to each address and choose **Can edit**.  \n   - (Optional) Add a short note if you\u2019d like, then click **Send**.\n\n4. **Add commenters (if you have any)**  \n   - If you also want people who can only comment, repeat the invite step for those users but select **Can comment** from the dropdown instead of **Can edit**.  \n   - Users with *Can comment* can add comments but cannot modify files or folder structure.\n\n5. **Restrict link\u2011based access**  \n   - At the bottom of the sharing dialog you\u2019ll see **Link sharing**.  \n   - Set it to **Only people added can access** (or **Off**). This prevents anyone with the link from gaining edit or comment rights unless you explicitly invite them.\n\n6. **Confirm the permissions**  \n   - After you\u2019ve added everyone, you\u2019ll see a list of members with their roles (Edit / Comment).  \n   - Verify that only the intended users have the **Can edit** role.\n\n7. **Save / Close**  \n   - Click **Done** (or close the dialog). The folder is now shared exactly as you specified.\n\n### Quick checklist\n\n| \u2705 | Action |\n|---|---|\n| \u2705 | Invite specific users and set their role to **Can edit** |\n| \u2705 | Invite any commenters and set their role to **Can comment** |\n| \u2705 | Turn off \u201cAnyone with the link\u201d or set it to **Only people added** |\n| \u2705 | Double\u2011check the members list before closing the dialog |\n\n### What happens next?\n\n- **Editors** can add, delete, rename, and move files inside the folder.  \n- **Commenters** can view files and leave comments, but they cannot change the folder\u2019s contents.  \n- Anyone not on the list will have **no access** at all.\n\nIf you run into any trouble (e.g., a user still sees edit options when they should only comment), let me know the email address of the affected user and I can verify the permission settings on our side.\n\nHope this helps! Let me know if you need anything else.  \n\nBest regards,  \n[Your Name]  \nCustomer Support \u2013 [Your Company]"
+    },
+    {
+      "ticket_id": "ticket_03_simple_share_link",
+      "trial": 4,
+      "expected_tools": [
+        "kb_search"
+      ],
+      "tools_called": [],
+      "tool_choice_recall": 0.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "RIGHT ANSWER, WRONG PATH",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 1,
+      "final_answer": "**\n\nHi\u202f[Customer Name],\n\nYou can share a folder so that only the people you invite can edit it, while anyone you give *comment* access will not be able to make changes. Follow the steps below:\n\n---\n\n### 1. Open the folder you want to share\n1. In the left\u2011hand navigation, locate the folder.\n2. Click the **\u22ee\u202fMore options** button next to the folder name (or right\u2011click the folder) and choose **Share**.\n\n### 2. Invite the users who need edit rights\n1. In the **Invite people** field, type the email addresses of the collaborators who should be able to edit.\n2. Click the **Permission** dropdown next to the field and select **Can edit**.\n3. (Optional) Add a personal note, then click **Send invitation**.\n\n> **Result:** Those users will receive an email invitation and will have full edit rights inside the folder and all its contents.\n\n### 3. Add commenters (people who should only comment)\n1. In the same **Share** dialog, click **Add people** again.\n2. Enter the email addresses of the people who should only comment.\n3. From the **Permission** dropdown, choose **Can comment**.\n4. Click **Send invitation**.\n\n> **Result:** Commenters can open files, add comments, and view the folder, but they cannot modify or delete any files.\n\n### 4. Restrict link\u2011based access (so only invited users can act)\n1. Still in the **Share** dialog, look at the **Link sharing** section at the bottom.\n2. Set **Link access** to **Only people added can open** (or **Off** if you don\u2019t want a shareable link at all).\n3. Click **Save**.\n\n> This ensures that anyone who isn\u2019t explicitly invited (even if they have the link) cannot view or edit the folder.\n\n### 5. Verify the permissions\n1. After you\u2019ve sent the invitations, return to the folder and open **Share** again.\n2. You\u2019ll see a list of members with their assigned roles (Can edit / Can comment).  \n   - **Can edit** \u2192 full edit rights.  \n   - **Can comment** \u2192 view + comment only.  \n\nIf you need to change a user\u2019s role later, simply click the role next to their name and select a different permission.\n\n---\n\n## Quick checklist\n\n| Step | Action | Result |\n|------|--------|--------|\n| 1 | Open **Share** for the folder | Dialog appears |\n| 2 | Invite editors \u2192 **Can edit** | Editors can modify files |\n| 3 | Invite commenters \u2192 **Can comment** | Commenters can only comment |\n| 4 | Set **Link access** to \u201cOnly people added\u201d | No one else can get in |\n| 5 | Review the members list | Confirm correct roles |\n\n---\n\n### Common pitfalls & how to avoid them\n| Issue | Why it happens | Fix |\n|-------|----------------|-----|\n| Commenters can still edit | They were given **Can edit** by mistake or the folder inherited edit rights from a parent folder. | Re\u2011open **Share**, change their role to **Can comment**, and ensure the parent folder isn\u2019t set to \u201cAnyone with the link can edit\u201d. |\n| Uninvited users can view the folder | Link sharing is set to \u201cAnyone with the link can view\u201d. | Switch link sharing to \u201cOnly people added can open\u201d. |\n| New files inherit wrong permissions | Files created by an editor inherit that editor\u2019s default permissions. | After creating a file, double\u2011check its sharing settings or set the folder\u2019s default permission to \u201cCan comment\u201d for new members, then manually upgrade the needed editors. |\n\n---\n\n### Need more help?\nIf you run into any trouble (e.g., a user isn\u2019t receiving the invitation, or you see an unexpected permission level), just let me know their email address and I can check the account status or any sync limits that might be affecting sharing.\n\nThanks for reaching out, and happy collaborating!\n\nBest regards,  \n[Your Name]  \nCustomer Support Engineer  \n\n---"
+    },
+    {
+      "ticket_id": "ticket_03_simple_share_link",
+      "trial": 5,
+      "expected_tools": [
+        "kb_search"
+      ],
+      "tools_called": [
+        "kb_search"
+      ],
+      "tool_choice_recall": 1.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "both_correct",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 2,
+      "final_answer": "Question: How do I share a folder so that only specific invited users can edit it, and commenters cannot?"
+    },
+    {
+      "ticket_id": "ticket_04_complex_auth_reset",
+      "trial": 1,
+      "expected_tools": [
+        "error_lookup"
+      ],
+      "tools_called": [
+        "error_lookup"
+      ],
+      "tool_choice_recall": 1.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "both_correct",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 2,
+      "final_answer": "**What happened?**  \nThe error code **NB\u2011AUTH\u2011410** means that the password\u2011reset link you clicked was **older than 30\u202fminutes**, so it has expired and can no longer be used.\n\n**Why it occurs**  \nWhen you request a password reset, we generate a secure link that is only valid for a short window (30\u202fminutes) for security reasons. If the link isn\u2019t used within that time\u2014perhaps because you were delayed, the email landed in a spam folder, or you opened it on a different device\u2014you\u2019ll see this error.\n\n**What to do next**\n\n1. **Request a new reset link**  \n   - Go to the sign\u2011in page and click **\u201cForgot password?\u201d** (or the equivalent).  \n   - Enter your email address and submit the request.\n\n2. **Open the new email promptly**  \n   - Check your inbox (and spam/junk folders) for the fresh reset email.  \n   - Click the link as soon as you receive it\u2014ideally within a few minutes.\n\n3. **Complete the reset**  \n   - Follow the on\u2011screen prompts to set a new password.  \n   - Make sure the new password meets our complexity requirements (e.g., at least 8 characters, includes a number and a special character).\n\n4. **If you still have trouble**  \n   - Verify that you\u2019re using the same email address associated with your account.  \n   - Ensure your browser isn\u2019t blocking the link (disable any aggressive pop\u2011up blockers temporarily).  \n   - If the problem persists after a fresh request, let us know and we can manually assist with resetting your credentials.\n\nIf you need any further help\u2014such as confirming which email is on file or checking your account status\u2014just reply to this message and we\u2019ll be happy to assist!"
+    },
+    {
+      "ticket_id": "ticket_04_complex_auth_reset",
+      "trial": 2,
+      "expected_tools": [
+        "error_lookup"
+      ],
+      "tools_called": [
+        "error_lookup"
+      ],
+      "tool_choice_recall": 1.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "both_correct",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 2,
+      "final_answer": "**What happened?**  \nThe error code **NB\u2011AUTH\u2011410** means that the password\u2011reset link you clicked was **older than 30\u202fminutes**, so it has expired and can no longer be used.\n\n**Why it occurs**  \nWhen you request a password reset, our system generates a one\u2011time link that is only valid for 30\u202fminutes for security reasons. If the link isn\u2019t used within that window (or if the email is delayed, opened later, or the link is copied and saved), the system will reject it and return NB\u2011AUTH\u2011410.\n\n**What to do next**\n\n1. **Request a new reset link**  \n   - Go to the sign\u2011in page and click **\u201cForgot password?\u201d** (or the equivalent link).  \n   - Enter the email address associated with your account and submit the request.\n\n2. **Open the new email promptly**  \n   - Check your inbox (and spam/junk folder) for the new password\u2011reset email.  \n   - Click the link **immediately**\u2014within the next 30\u202fminutes.\n\n3. **If you still don\u2019t receive the email**  \n   - Verify that you\u2019re using the correct email address for the account.  \n   - Add `no\u2011reply@yourservice.com` (or the domain shown in the email) to your contacts or safe\u2011sender list.  \n   - If the email is still missing after a few minutes, let us know and we can manually trigger a reset.\n\n4. **If the new link also expires**  \n   - Make sure your device\u2019s clock is set correctly; an inaccurate system time can cause the link to appear expired.  \n   - Try a different browser or device, or clear your browser cache before clicking the link.\n\nIf you follow these steps and still encounter problems, please reply with:\n\n- The email address you\u2019re using for the account, and  \n- Any error message you see after clicking the new link.\n\nWe\u2019ll investigate further and help you regain access as quickly as possible."
+    },
+    {
+      "ticket_id": "ticket_04_complex_auth_reset",
+      "trial": 3,
+      "expected_tools": [
+        "error_lookup"
+      ],
+      "tools_called": [
+        "error_lookup"
+      ],
+      "tool_choice_recall": 1.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "both_correct",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 2,
+      "final_answer": "**What happened?**  \nThe error code **NB\u2011AUTH\u2011410** means that the password\u2011reset link you clicked was **older than 30\u202fminutes**, so it has expired and can no longer be used.\n\n**Why it occurs**  \nWhen you request a password reset, our system generates a one\u2011time link that is only valid for 30\u202fminutes for security reasons. If the link isn\u2019t used within that window (or if the email is delayed, opened later, or the link is copied and saved), the system will reject it and return NB\u2011AUTH\u2011410.\n\n**What to do next**\n\n1. **Request a new reset link**  \n   - Go to the sign\u2011in page and click **\u201cForgot password?\u201d** (or the equivalent link).  \n   - Enter the email address associated with your account and submit the request.\n\n2. **Open the new email promptly**  \n   - Check your inbox (and spam/junk folders) for the new password\u2011reset email.  \n   - Click the link **immediately**\u2014within the next 30\u202fminutes.\n\n3. **If you still don\u2019t receive the email**  \n   - Verify that you\u2019re using the correct email address for the account.  \n   - Add `no\u2011reply@yourservice.com` (or the domain shown in the email) to your contacts or safe\u2011sender list.  \n   - If the email is still missing after a few minutes, let us know and we can manually trigger a reset.\n\n4. **If the new link also expires**  \n   - Make sure your device\u2019s clock is set correctly, as an inaccurate system time can cause the link to appear expired.  \n   - Try a different browser or device, or clear your browser cache before clicking the link.\n\nIf you follow these steps and still encounter problems, please reply with the email address you\u2019re using (or a ticket reference) and we\u2019ll investigate further.  \n\nLet us know if there\u2019s anything else we can help you with!"
+    },
+    {
+      "ticket_id": "ticket_04_complex_auth_reset",
+      "trial": 4,
+      "expected_tools": [
+        "error_lookup"
+      ],
+      "tools_called": [
+        "error_lookup"
+      ],
+      "tool_choice_recall": 1.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "both_correct",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 2,
+      "final_answer": "**What happened?**  \nThe error code **NB\u2011AUTH\u2011410** means that the password\u2011reset link you clicked was **older than 30\u202fminutes**, so it has expired and can no longer be used.\n\n**Why it occurs**  \nWhen you request a password reset, we generate a secure link that is only valid for a short window (30\u202fminutes) for security reasons. If the link isn\u2019t used within that time\u2014perhaps because you were delayed, the email landed in a spam folder, or you opened it on a different device\u2014you\u2019ll see this error.\n\n**What to do next**\n\n1. **Request a new reset link**  \n   - Go to the sign\u2011in page and click **\u201cForgot password?\u201d** (or the equivalent).  \n   - Enter your email address and submit the request.\n\n2. **Open the new email promptly**  \n   - Check your inbox (and spam/junk folders) for the fresh reset email.  \n   - Click the link **as soon as you receive it**\u2014within the next 30\u202fminutes.\n\n3. **Complete the reset**  \n   - Follow the on\u2011screen prompts to set a new password.  \n   - Make sure the new password meets our complexity requirements (e.g., at least 8 characters, includes a number and a special character).\n\n4. **If you still have trouble**  \n   - Verify that you\u2019re using the same email address associated with your account.  \n   - Ensure your browser isn\u2019t blocking the link (disable any aggressive pop\u2011up blockers temporarily).  \n   - If the problem persists after a fresh request, let us know and we can manually assist with resetting your password.\n\nFeel free to reach out if you need any further help\u2014happy to assist!"
+    },
+    {
+      "ticket_id": "ticket_04_complex_auth_reset",
+      "trial": 5,
+      "expected_tools": [
+        "error_lookup"
+      ],
+      "tools_called": [
+        "error_lookup"
+      ],
+      "tool_choice_recall": 1.0,
+      "outcome_correct": true,
+      "outcome_vs_trajectory": "both_correct",
+      "retry_count": 0,
+      "stopped_by_limit": false,
+      "llm_calls": 2,
+      "final_answer": "**What happened?**  \nThe error code **NB\u2011AUTH\u2011410** means that the password\u2011reset link you clicked was **older than 30\u202fminutes**, so it has expired and can no longer be used.\n\n**Why it occurs**  \nWhen you request a password reset, our system generates a one\u2011time link that is only valid for 30\u202fminutes for security reasons. If the link isn\u2019t used within that window (or if you open an old email), the system returns NB\u2011AUTH\u2011410.\n\n**What to do next**\n\n1. **Request a new reset link**  \n   - Go to the sign\u2011in page and click **\u201cForgot password?\u201d** (or the equivalent link).  \n   - Enter the email address associated with your account and submit the request.\n\n2. **Use the new link promptly**  \n   - Check your inbox (and spam/junk folder) for the new email.  \n   - Click the link **within 30\u202fminutes** of receiving it.\n\n3. **If you still can\u2019t reset your password**  \n   - Make sure you\u2019re using the correct email address for the account.  \n   - Verify that your browser isn\u2019t blocking pop\u2011ups or redirecting the link.  \n   - If the problem persists, reply to this ticket or contact us with the email address you used, and we\u2019ll manually assist with resetting your password.\n\nLet me know if you run into any other issues or need further help!"
+    }
+  ]
+}
