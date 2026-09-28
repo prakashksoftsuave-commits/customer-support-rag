@@ -135,6 +135,52 @@ AVAILABLE_TOOLS = {
     }
 }
 
+import asyncio
+from mcp.client.stdio import stdio_client
+from mcp import ClientSession, StdioServerParameters
+import sys
+import os
+
+def _run_mcp_tool_sync(server_script: str, tool_name: str, arg: str):
+    async def _run():
+        server_params = StdioServerParameters(command=sys.executable, args=[server_script])
+        async with stdio_client(server_params) as (read, write):
+            async with ClientSession(read, write) as session:
+                await session.initialize()
+                # FastMCP accepts kwargs matching the parameter names. 
+                # Since all our test tools take exactly one string argument, we dynamically figure out its name.
+                # If we don't know it, we just guess common names.
+                param_name = "query"
+                if tool_name == "ticket_history": param_name = "ticket_id"
+                elif tool_name == "escalate_ticket": param_name = "ticket_and_reason"
+                
+                args_dict = {param_name: arg.strip('"\'')}
+                result = await session.call_tool(tool_name, arguments=args_dict)
+                texts = [item.text for item in result.content if item.type == "text"]
+                return "\n".join(texts)
+    return asyncio.run(_run())
+
+def _load_mcp_tools_sync(server_script: str):
+    async def _load():
+        server_params = StdioServerParameters(command=sys.executable, args=[server_script])
+        async with stdio_client(server_params) as (read, write):
+            async with ClientSession(read, write) as session:
+                await session.initialize()
+                result = await session.list_tools()
+                return result.tools
+    return asyncio.run(_load())
+
+try:
+    server_path = os.path.join(os.path.dirname(__file__), "ticket_server.py")
+    _mcp_tools = _load_mcp_tools_sync(server_path)
+    for _tool in _mcp_tools:
+        AVAILABLE_TOOLS[_tool.name] = {
+            "fn": lambda arg, tname=_tool.name, spath=server_path: _run_mcp_tool_sync(spath, tname, arg),
+            "description": f"{_tool.name}(ticket_id: str) -> {_tool.description}"
+        }
+except Exception as e:
+    print(f"Warning: could not load MCP tools: {e}")
+
 
 # ==========================================
 # 2. HAND-BUILT ReAct AGENT (Visible Loop)
@@ -204,11 +250,11 @@ to follow.
 """
 
 
-def _invoke_with_retry(llm, prompt: str, max_retries: int = 6, stop: list[str] | None = None) -> str:
+def _invoke_with_retry(llm, prompt: str, max_retries: int = 6, stop: list[str] | None = None, run_config: dict | None = None) -> str:
     delay = 1.5
     for attempt in range(max_retries):
         try:
-            return llm.invoke(prompt, stop=stop).content
+            return llm.invoke(prompt, stop=stop, config=with_tracing(run_config)).content
         except Exception as e:
             err_str = str(e).lower()
             if "429" in err_str or "rate limit" in err_str:
@@ -261,7 +307,7 @@ class SupportReActAgent:
                 )
         return self.tools[action]["fn"](action_input)
 
-    def solve(self, ticket_text: str, memory_context: str = "", authorized_email: str | None = None) -> AgentResult:
+    def solve(self, ticket_text: str, memory_context: str = "", authorized_email: str | None = None, run_config: dict | None = None) -> AgentResult:
         start_time = time.time()
         steps: list[AgentStep] = []
         scratchpad = ""
@@ -300,7 +346,7 @@ class SupportReActAgent:
             # round-trip per step — without it the model just writes a fabricated Observation and
             # keeps going in the same completion (see REACT_STOP_SEQUENCES above).
             llm_calls += 1
-            response = _invoke_with_retry(self.llm, prompt_content, stop=REACT_STOP_SEQUENCES)
+            response = _invoke_with_retry(self.llm, prompt_content, stop=REACT_STOP_SEQUENCES, run_config=run_config)
 
             # Check for Final Answer
             if "Final Answer:" in response:

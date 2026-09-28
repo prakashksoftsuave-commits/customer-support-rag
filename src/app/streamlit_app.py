@@ -4,6 +4,7 @@ import uuid
 
 import streamlit as st
 from src.rag.chain import get_llm, answer_question
+from src.rag.agent import SupportReActAgent
 from src.rag.config import CHUNK_PROFILES, LANGFUSE_HOST, LANGFUSE_TRACING_ENABLED, UPLOAD_PROFILE
 from src.rag.loader import SUPPORTED_UPLOAD_EXTENSIONS, load_uploaded_documents
 from src.rag.splitting import split_documents
@@ -105,6 +106,8 @@ with st.sidebar:
 
     rerank = st.checkbox("Enable reranking (cross-encoder)", value=False)
     decompose = st.checkbox("Enable query decomposition (fixes compound questions)", value=True)
+    st.divider()
+    agent_mode = st.toggle("🤖 Enable Agent Mode (uses MCP Tools)", value=False, help="Use the ReAct agent with MCP tool discovery instead of standard RAG.")
 
 if source == "My uploaded documents":
     if not st.session_state.get("uploaded_ready"):
@@ -149,28 +152,53 @@ if question := st.chat_input("Ask a question about the loaded documents"):
         st.markdown(question)
 
     with st.chat_message("assistant"):
-        with st.spinner("Searching..."):
-            answer, docs = answer_question(
-                vectorstore,
-                question,
-                llm=llm,
-                k=top_k,
-                product_area=filter_area,
-                use_hybrid=hybrid,
-                use_rerank=rerank,
-                use_decompose=decompose,
-                chat_history=chat_history,
-                run_config={
-                    "tags": ["streamlit-chat"],
-                    "metadata": {"conversation_id": st.session_state.active_id, "collection": collection},
-                },
-            )
-        st.markdown(answer)
-        st.write("**Retrieved documents:**")
-        for i, doc in enumerate(docs, 1):
-            label = f"{i}. {doc.metadata['title']} — {doc.metadata['article_id']} ({doc.metadata['product_area']})"
-            with st.expander(label):
-                st.text(doc.page_content)
+        if agent_mode:
+            with st.spinner("Agent is reasoning..."):
+                agent = SupportReActAgent()
+                memory_str = "\n".join([f"{role}: {msg}" for role, msg in chat_history])
+                result = agent.solve(
+                    question, 
+                    memory_context=memory_str,
+                    run_config={
+                        "tags": ["streamlit-agent"],
+                        "metadata": {"conversation_id": st.session_state.active_id}
+                    }
+                )
+                answer = result.final_answer
+                docs = [] # Agent handles docs via tools
+            
+            st.markdown(answer)
+            if result.steps:
+                with st.expander("View Agent Reasoning Steps"):
+                    for step in result.steps:
+                        st.write(f"**Step {step.step_num}**")
+                        if step.thought: st.caption(f"Thought: {step.thought}")
+                        if step.action: st.code(f"Action: {step.action}({step.action_input})")
+                        if step.observation: st.text(step.observation)
+        else:
+            with st.spinner("Searching..."):
+                answer, docs = answer_question(
+                    vectorstore,
+                    question,
+                    llm=llm,
+                    k=top_k,
+                    product_area=filter_area,
+                    use_hybrid=hybrid,
+                    use_rerank=rerank,
+                    use_decompose=decompose,
+                    chat_history=chat_history,
+                    run_config={
+                        "tags": ["streamlit-chat"],
+                        "metadata": {"conversation_id": st.session_state.active_id, "collection": collection},
+                    },
+                )
+            st.markdown(answer)
+            if docs:
+                st.write("**Retrieved documents:**")
+                for i, doc in enumerate(docs, 1):
+                    label = f"{i}. {doc.metadata.get('title', 'Doc')} — {doc.metadata.get('article_id', '')} ({doc.metadata.get('product_area', '')})"
+                    with st.expander(label):
+                        st.text(doc.page_content)
 
     active_conv["messages"].append({"role": "assistant", "content": answer, "docs": docs})
     st.rerun()  # refresh the sidebar so the auto-generated title shows immediately
